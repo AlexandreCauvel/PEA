@@ -26,6 +26,10 @@
 
 \usepackage{xspace}% used by \sigla
 
+\usepackage[version=4]{mhchem}
+\usepackage{siunitx}
+\DeclareSIUnit\molar{M}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%       DEFINE COVER FIELDS
@@ -123,9 +127,24 @@ Define the scope of your project through requirements and allocate priorities in
 \section{Work Breakdown Structure (WBS)}
 Define the WBS, including Work Packages (WPs), tasks, Gantt Chart, indentifying risks and mitigation strategy.
 \chapter{Literature Review}
-A review of the existing literature relevant to your project. Discuss theories, models, and previous studies.
+\section{Influence of IMPs on LDH growth}
+
+As previously discussed, AC46000 contains a diverse range of intermetallic particles (IMPs), including copper-rich phases such as \ce{Al2Cu} and \ce{Al7Cu2Fe}, iron-rich phases such as \ce{Al5FeSi} and \ce{Al15(Fe,Mn)3Si2}, and eutectic silicon particles. To assess the influence of these IMPs on LDH growth and corrosion behavior, it is important to consider their electrochemical potential relative to the aluminium matrix \cite{Gudic2024,Kasinska2020}.
+
+The copper-rich phases are strongly cathodic relative to the Al matrix, with \ce{Al2Cu} exhibiting a potential difference of approximately +400 mV \cite{Gudic2024}. This drives intense localized micro-galvanic coupling, promoting rapid oxygen reduction and a sharp rise in local pH. In the context of LDH growth, these conditions trigger the preferential and rapid precipitation of thick, "flower-like" LDH islands directly over the cathodic sites \cite{Cao2026}. This localized growth is sustained by the anodic dissolution of the surrounding aluminium matrix, commonly referred to as trenching \cite{Bouali2022}. The trenching process generates voids at the periphery of the intermetallic particles where LDH flakes fail to nucleate \cite{Bouali2022}. These uncoated gaps compromise the corrosion resistance of the substrate, as chloride ions and other aggressive species can readily penetrate the exposed defects and initiate pitting corrosion \cite{Bouali2022}. The resulting inhomogeneous LDH film also reduces the adhesion of subsequently applied polymer coatings or paints \cite{Bouali2022}, and in severe cases extensive trenching can render the intermetallic particles prone to detachment, further undermining the integrity of overlying layers \cite{Bouali2022}.
+
+The iron-rich phases are also strongly cathodic, approximately +300 mV above the aluminium matrix \cite{Gudic2024}, and the galvanic coupling they generate similarly leads to inhomogeneous LDH growth and increased susceptibility to corrosion.
+
+Although eutectic silicon particles are likewise cathodic, with a potential difference of approximately +250 mV relative to the Al matrix, they are electrochemically inert and do not act as nucleation sites for LDH. Since they provide no source of the metal cations (\ce{Al^2+/Al^3+}, \ce{Mg^2+}) required for LDH formation, no coating growth is triggered at these sites \cite{Gudic2024,DelOlmo2025}.
+
 \chapter{Methodology}
-Include an explanation of the methods you will use to carry out your project.
+\section{Pre-treatments}
+As previously discussed, the presence of intermetallic phases (IMPs) on the surface of the aluminum alloy can negatively affect LDH growth and must therefore be removed prior to coating. Two different pre-treatment procedures were tested: a chemical treatment and an industrial treatment.
+
+The first procedure consisted of cleaning at room temperature for \qty{120}{\second} in a \qty{0.1}{\molar} \ce{NaOH} solution, followed by etching for \qty{480}{\second} in a \qty{0.1}{\molar} \ce{HNO3} solution. Each step was followed by rinsing with deionized water and final drying in air.
+
+The second procedure consisted of cleaning in Metaclean T2001 (alkaline cleaner based on metal silicates with complexing and surface-active agents) at approximately \qty{65}{\degreeCelsius} for \qty{25}{\minute}, followed by rinsing with deionized water. The specimens were then etched in TurcoLiquid Aluminetch N2 (sodium hydroxide and phosphate-based solution) at \qty{65}{\degreeCelsius} for \qty{45}{\second}, rinsed with deionized water, and desmutted in TurcoLiquid Smutgo NC (based on ferric sulfate, nitric acid, sodium hydrogendifluoride, and sulfuric acid) at \qty{30}{\degreeCelsius} for approximately \qty{5}{\minute}, before a final rinse with deionized water and drying in air.
+
 \chapter{Results}
 Present the results of your project clearly and concisely, using tables and figures where necessary.
 \chapter{Discussion}
@@ -135,7 +154,7 @@ Discuss any limitations of your study.
 \chapter{Conclusion \& Future Work}
 Sum up the main findings and their importance, and discuss how they have the WBS going forward.
 
-See~\cite{Joshua2012} for more tips on writing a report.
+
 
 
 \bibliographystyle{plain}
