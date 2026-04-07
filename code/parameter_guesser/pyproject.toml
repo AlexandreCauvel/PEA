@@ -1,0 +1,11 @@
+[project]
+name = "parameter-guesser"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gamry-parser>=0.4.6",
+    "impedance>=1.7.1",
+    "schemdraw>=0.22",
+]

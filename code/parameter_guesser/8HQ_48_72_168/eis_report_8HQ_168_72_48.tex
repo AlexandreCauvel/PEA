@@ -1,0 +1,62 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{caption} 
+\geometry{a4paper, margin=0.5in, landscape} 
+
+\begin{document}
+
+\section*{Comparative EIS Kinetics Report}
+\textbf{Model Structure:} \texttt{R0-p(R1-p(R2-W2,CPE2),CPE1)}
+
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{circuit_2RC_W.png}
+\end{center}
+
+\renewcommand{\arraystretch}{1.6} 
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        \textbf{Element} & \textbf{Unit} & \textbf{Bounds} & \textbf{Cauvel\_2\_8HQ\_168H} & \textbf{Cauvel\_2\_8HQ\_72H} & \textbf{Cauvel\_2\_8HQ\_48H} \\ \hline
+        $R_{0}$ & $\Omega$ & $[1.0e-03, 1.0e+03]$ & $7.57e+01 \pm 2.5e+01$ & $7.02e+01 \pm 3.9e-01$ & $6.22e+01 \pm 3.3e-01$ \\ \hline
+        $R_{1}$ & $\Omega$ & $[1.0e-03, 1.0e+08]$ & $1.08e-03 \pm 5.2e+02$ & $3.17e+03 \pm 1.3e+02$ & $3.57e+03 \pm 2.1e+02$ \\ \hline
+        $R_{2}$ & $\Omega$ & $[1.0e+03, 1.0e+08]$ & $2.72e+04 \pm 4.6e+03$ & $1.58e+04 \pm 3.2e+02$ & $1.92e+04 \pm 4.0e+02$ \\ \hline
+        $W2$ & $\Omega$ sec$^{-1}$/2 & $[1.0e-03, 1.0e+07]$ & $1.00e-03 \pm 4.8e+02$ & $6.47e+02 \pm 6.1e+01$ & $8.74e+02 \pm 7.2e+01$ \\ \hline
+        $Q_{2}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-09, 1.0e-03]$ & $1.34e-04 \pm 6.6e-06$ & $3.73e-05 \pm 1.2e-06$ & $2.38e-05 \pm 1.0e-06$ \\ \hline
+        $n_{2}$ & - & $[1.0e-01, 1.0e+00]$ & $4.84e-01 \pm 2.5e-02$ & $8.72e-01 \pm 1.6e-02$ & $8.72e-01 \pm 1.8e-02$ \\ \hline
+        $Q_{1}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-10, 1.0e-03]$ & $1.47e-07 \pm 4.1e-06$ & $2.73e-05 \pm 8.6e-07$ & $2.54e-05 \pm 8.4e-07$ \\ \hline
+        $n_{1}$ & - & $[7.0e-01, 9.0e-01]$ & $9.00e-01 \pm 8.9e+00$ & $7.15e-01 \pm 4.2e-03$ & $7.47e-01 \pm 4.4e-03$ \\ \hline
+        \textbf{$\chi^2$} & - & -  & $1.699e-03$ & $3.408e-04$ & $3.441e-04$ \\ \hline
+
+    \end{tabular}
+\end{table}
+
+
+\newpage
+\section*{Analysis Results: 168H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_2_8HQ_168H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_2\_8HQ\_168H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 72H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_2_8HQ_72H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_2\_8HQ\_72H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 48H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_2_8HQ_48H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_2\_8HQ\_48H}
+\end{center}
+
+
+\end{document}
