@@ -1,0 +1,15 @@
+[project]
+name = "eis-plotter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gamry-parser>=0.4.6",
+    "impedance>=1.7.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+    "schemdraw>=0.22",
+    "scipy>=1.17.1",
+]

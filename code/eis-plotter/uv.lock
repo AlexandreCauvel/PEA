@@ -120,6 +120,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "schemdraw" },
     { name = "scipy" },
 ]
 
@@ -130,6 +131,7 @@ requires-dist = [
     { name = "matplotlib", specifier = ">=3.10.8" },
     { name = "numpy", specifier = ">=2.4.3" },
     { name = "pandas", specifier = ">=3.0.1" },
+    { name = "schemdraw", specifier = ">=0.22" },
     { name = "scipy", specifier = ">=1.17.1" },
 ]
 
@@ -757,6 +759,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/85/70/92482ccffb96f5441aab93e26c4d66489eb599efdcf96fad90c14bbfb976/rpds_py-0.30.0-cp314-cp314t-musllinux_1_2_x86_64.whl", hash = "sha256:dbd936cde57abfee19ab3213cf9c26be06d60750e60a8e4dd85d1ab12c8b1f40", size = 556030, upload-time = "2025-11-30T20:24:10.956Z" },
     { url = "https://files.pythonhosted.org/packages/20/53/7c7e784abfa500a2b6b583b147ee4bb5a2b3747a9166bab52fec4b5b5e7d/rpds_py-0.30.0-cp314-cp314t-win32.whl", hash = "sha256:dc824125c72246d924f7f796b4f63c1e9dc810c7d9e2355864b3c3a73d59ade0", size = 211570, upload-time = "2025-11-30T20:24:12.735Z" },
     { url = "https://files.pythonhosted.org/packages/d0/02/fa464cdfbe6b26e0600b62c528b72d8608f5cc49f96b8d6e38c95d60c676/rpds_py-0.30.0-cp314-cp314t-win_amd64.whl", hash = "sha256:27f4b0e92de5bfbc6f86e43959e6edd1425c33b5e69aab0984a72047f2bcf1e3", size = 226532, upload-time = "2025-11-30T20:24:14.634Z" },
+]
+
+[[package]]
+name = "schemdraw"
+version = "0.22"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/6a/0e/3d2a9c2541ced42877e8b6049fb17c093329ccb81344529dc12a33d4c118/schemdraw-0.22.tar.gz", hash = "sha256:59d1fcfe817f93f8bfc37a3f4645186dc03316bbcfd9ac68804fd6cb3aa69f51", size = 10881350, upload-time = "2025-11-30T23:45:03.279Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/a0/ab/b281071bc11555670a82c538e4be35e7f5ad5e4cb4de7ac356a05a4b2c6a/schemdraw-0.22-py3-none-any.whl", hash = "sha256:fb294fe086b89a7dc9bedce43dc39014a9b9e369864eab438f22009c9f0e1175", size = 148359, upload-time = "2025-11-30T23:42:04.794Z" },
 ]
 
 [[package]]

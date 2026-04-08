@@ -1,0 +1,62 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{caption} 
+\geometry{a4paper, margin=0.5in, landscape} 
+
+\begin{document}
+
+\section*{Comparative EIS Kinetics Report}
+\textbf{Model Structure:} \texttt{R0-p(R1-p(R2,CPE2),CPE1)} \\
+\textbf{Used data:} original data
+
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{../../2RC.png}
+\end{center}
+
+\renewcommand{\arraystretch}{1.6} 
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        \textbf{Element} & \textbf{Unit} & \textbf{Bounds} & \textbf{Cauvel\_3\_BTA\_1H} & \textbf{Cauvel\_3\_BTA\_4H} & \textbf{Cauvel\_3\_BTA\_8H} \\ \hline
+        $R_{0}$ & $\Omega$ & $[1.0e-03, 1.0e+03]$ & $7.69e+01 \pm 2.4e+00$ & $7.52e+01 \pm 7.4e-01$ & $7.53e+01 \pm 5.4e-01$ \\ \hline
+        $R_{1}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $5.01e+04 \pm 1.4e+03$ & $7.74e+04 \pm 5.7e+02$ & $6.07e+04 \pm 3.4e+04$ \\ \hline
+        $R_{2}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $1.38e+02 \pm 1.4e+03$ & $3.90e+02 \pm 5.7e+02$ & $1.80e+04 \pm 3.4e+04$ \\ \hline
+        $Q_{2}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $1.04e-11 \pm 3.1e-01$ & $1.05e-11 \pm 7.4e-02$ & $4.32e-06 \pm 8.8e-06$ \\ \hline
+        $n_{2}$ & - & $[5.0e-01, 1.0e+00]$ & $5.30e-01 \pm 0.0e+00$ & $9.80e-01 \pm 8.9e-14$ & $1.00e+00 \pm 5.3e-01$ \\ \hline
+        $Q_{1}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $9.43e-06 \pm 1.3e-06$ & $1.07e-05 \pm 1.7e-06$ & $1.18e-05 \pm 4.5e-07$ \\ \hline
+        $n_{1}$ & - & $[5.0e-01, 1.0e+00]$ & $9.25e-01 \pm 2.1e-02$ & $8.95e-01 \pm 2.2e-02$ & $8.73e-01 \pm 5.7e-03$ \\ \hline
+        \textbf{$\chi^2$} & - & -  & $2.072e-02$ & $2.059e-03$ & $9.687e-04$ \\ \hline
+
+    \end{tabular}
+\end{table}
+
+
+\newpage
+\section*{Analysis Results: 1H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_3_BTA_1H_2RC.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_3\_BTA\_1H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 4H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_3_BTA_4H_2RC.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_3\_BTA\_4H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 8H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_3_BTA_8H_2RC.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_3\_BTA\_8H}
+\end{center}
+
+
+\end{document}
