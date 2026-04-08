@@ -1,0 +1,62 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{caption} 
+\geometry{a4paper, margin=0.5in, landscape} 
+
+\begin{document}
+
+\section*{Comparative EIS Kinetics Report}
+\textbf{Model Structure:} \texttt{R0-p(R1-p(R2,CPE2),CPE1)} \\
+\textbf{Used data:} altered data, first 6 points removed and points with $freq > 2e+04$ removed
+
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{../../../2RC.png}
+\end{center}
+
+\renewcommand{\arraystretch}{1.6} 
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \begin{tabular}{|l|c|c|c|c|c|}
+        \hline
+        \textbf{Element} & \textbf{Unit} & \textbf{Bounds} & \textbf{Cauvel\_4\_NaVO3\_1H} & \textbf{Cauvel\_4\_NaVO3\_4H} & \textbf{Cauvel\_4\_NaVO3\_8H} \\ \hline
+        $R_{0}$ & $\Omega$ & $[1.0e-03, 1.0e+03]$ & $5.34e-03 \pm 3.8e+02$ & $6.38e+01 \pm 4.2e-01$ & $6.59e+01 \pm 4.0e-01$ \\ \hline
+        $R_{1}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $7.50e+01 \pm 3.8e+02$ & $1.57e+02 \pm 1.4e+02$ & $2.91e+05 \pm 2.0e+03$ \\ \hline
+        $R_{2}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $1.79e+05 \pm 3.6e+03$ & $2.38e+05 \pm 2.1e+03$ & $1.97e+04 \pm 2.0e+03$ \\ \hline
+        $Q_{2}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $8.30e-06 \pm 6.9e-07$ & $2.38e-06 \pm 3.1e-06$ & $1.01e-11 \pm 2.8e-05$ \\ \hline
+        $n_{2}$ & - & $[5.0e-01, 1.0e+00]$ & $8.98e-01 \pm 5.5e-03$ & $8.74e-01 \pm 9.7e-02$ & $9.47e-01 \pm 2.9e+05$ \\ \hline
+        $Q_{1}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $9.02e-08 \pm 7.4e-07$ & $6.76e-06 \pm 3.1e-06$ & $9.60e-06 \pm 1.2e-07$ \\ \hline
+        $n_{1}$ & - & $[5.0e-01, 1.0e+00]$ & $7.85e-01 \pm 3.5e-01$ & $8.87e-01 \pm 3.9e-02$ & $8.68e-01 \pm 2.7e-03$ \\ \hline
+        \textbf{$\chi^2$} & - & -  & $5.662e-04$ & $1.756e-04$ & $2.785e-04$ \\ \hline
+
+    \end{tabular}
+\end{table}
+
+
+\newpage
+\section*{Analysis Results: 1H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_1H_2RC.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_1H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 4H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_4H_2RC.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_4H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 8H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_8H_2RC.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_8H}
+\end{center}
+
+
+\end{document}

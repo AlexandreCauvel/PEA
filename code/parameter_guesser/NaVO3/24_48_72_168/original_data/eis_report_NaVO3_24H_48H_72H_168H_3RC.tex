@@ -1,0 +1,72 @@
+
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{geometry}
+\usepackage{caption} 
+\geometry{a4paper, margin=0.5in, landscape} 
+
+\begin{document}
+
+\section*{Comparative EIS Kinetics Report}
+\textbf{Model Structure:} \texttt{R0-p(R1-p(R2-p(R3,CPE3),CPE2),CPE1)} \\
+\textbf{Used data:} original data
+
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{../../3RC.png}
+\end{center}
+
+\renewcommand{\arraystretch}{1.6} 
+\begin{table}[h!]
+    \centering
+    \footnotesize
+    \begin{tabular}{|l|c|c|c|c|c|c|}
+        \hline
+        \textbf{Element} & \textbf{Unit} & \textbf{Bounds} & \textbf{Cauvel\_4\_NaVO3\_24H} & \textbf{Cauvel\_4\_NaVO3\_48H} & \textbf{Cauvel\_4\_NaVO3\_72H} & \textbf{Cauvel\_4\_NaVO3\_168H} \\ \hline
+        $R_{0}$ & $\Omega$ & $[1.0e-03, 1.0e+03]$ & $3.84e-02 \pm 1.7e+02$ & $6.77e+01 \pm 2.7e-01$ & $6.57e+01 \pm 1.2e-01$ & $3.30e+01 \pm 2.1e+02$ \\ \hline
+        $R_{1}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $6.69e+01 \pm 1.7e+02$ & $2.26e+01 \pm 7.7e+00$ & $3.24e+05 \pm 3.7e+03$ & $3.64e+01 \pm 2.1e+02$ \\ \hline
+        $R_{2}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $3.08e+05 \pm 7.9e+03$ & $3.16e+05 \pm 4.4e+03$ & $3.72e+05 \pm 1.0e+01$ & $2.83e+05 \pm 7.3e+03$ \\ \hline
+        $R_{3}$ & $\Omega$ & $[1.0e+00, 1.0e+08]$ & $1.86e+05 \pm 7.5e+04$ & $1.00e+08 \pm 5.7e-04$ & $1.00e+08 \pm 2.9e-05$ & $9.42e+07 \pm 1.7e-02$ \\ \hline
+        $Q_{3}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $1.76e-04 \pm 6.6e-05$ & $2.52e-04 \pm 3.9e-05$ & $9.84e-05 \pm 2.3e-04$ & $3.73e-05 \pm 4.4e-06$ \\ \hline
+        $n_{3}$ & - & $[5.0e-01, 1.0e+00]$ & $1.00e+00 \pm 1.3e-01$ & $1.00e+00 \pm 5.4e-02$ & $1.00e+00 \pm 7.7e-01$ & $6.16e-01 \pm 3.4e-02$ \\ \hline
+        $Q_{2}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $1.03e-05 \pm 3.3e-07$ & $7.26e-06 \pm 8.0e-07$ & $1.56e-04 \pm 2.9e-05$ & $1.09e-05 \pm 4.5e-08$ \\ \hline
+        $n_{2}$ & - & $[5.0e-01, 1.0e+00]$ & $8.50e-01 \pm 2.8e-03$ & $7.88e-01 \pm 8.1e-03$ & $1.00e+00 \pm 7.6e-02$ & $8.28e-01 \pm 1.2e-03$ \\ \hline
+        $Q_{1}$ & $\Omega$$^{-1}$ sec$^{a}$ & $[1.0e-11, 1.0e-03]$ & $8.86e-08 \pm 3.9e-07$ & $3.75e-06 \pm 7.9e-07$ & $1.07e-05 \pm 2.6e-08$ & $2.88e-09 \pm 6.3e-09$ \\ \hline
+        $n_{1}$ & - & $[5.0e-01, 1.0e+00]$ & $6.88e-01 \pm 1.7e-01$ & $9.04e-01 \pm 1.2e-02$ & $8.38e-01 \pm 4.8e-04$ & $1.00e+00 \pm 7.4e-01$ \\ \hline
+        \textbf{$\chi^2$} & - & -  & $1.965e-04$ & $9.036e-05$ & $5.871e-05$ & $1.254e-04$ \\ \hline
+
+    \end{tabular}
+\end{table}
+
+
+\newpage
+\section*{Analysis Results: 24H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_24H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_24H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 48H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_48H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_48H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 72H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_72H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_72H}
+\end{center}
+
+\newpage
+\section*{Analysis Results: 168H}
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{plots_Cauvel_4_NaVO3_168H.pdf}
+    \captionof{figure}{EIS Fit Results for Cauvel\_4\_NaVO3\_168H}
+\end{center}
+
+
+\end{document}
