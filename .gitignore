@@ -10,3 +10,8 @@
 *.synctex.gz
 *.fdb_latexmk
 *.fls
+
+**/.ipynb_checkpoints/
+
+**/xrd_analysis/
+
