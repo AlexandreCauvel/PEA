@@ -128,6 +128,88 @@ Define the scope of your project through requirements and allocate priorities in
 \section{Work Breakdown Structure (WBS)}
 Define the WBS, including Work Packages (WPs), tasks, Gantt Chart, indentifying risks and mitigation strategy.
 \chapter{Literature Review}
+
+\section{Thermodynamic Basis for Corrosion}
+
+Corrosion is fundamentally a spontaneous thermodynamic process driven by the tendency of metals to revert to their most stable, lower-energy states, such as oxides ($M_nO_p$) or sulfides ($M_nS_p$) \cite{Sastri2007, Revie2008, Vargel2020}. This transition is quantified by a negative change in Gibbs free energy ($\Delta G$), indicating that the oxidation reaction is energetically favoured over the retention of the metallic state. Mathematically, this thermodynamic driving force is related to the electrochemical potential $E$ through the relation:
+
+\begin{equation}
+    \Delta G = -nFE
+    \label{eq:gibbs}
+\end{equation}
+
+where $n$ is the number of electrons transferred per mole of reaction and $F$ is the Faraday constant\cite{Sastri2007, Ghali2010, Revie2008}. A negative $\Delta G$ corresponds to a positive $E$, confirming that the reaction proceeds spontaneously in the direction of corrosion.
+
+\section{Notion of Potential and Passivity}
+\label{sec:potential}
+
+In practice, the thermodynamic behaviour of a metal is governed by its electrochemical potential in a given environment. While standard electrode potentials ($E^\circ$) provide a useful thermodynamic reference, they are defined under idealised conditions (unit activity, 298~K, 1~atm) and therefore have limited direct applicability to real corrosion environments. Corrosion studies consequently rely on the open-circuit potential (OCP), defined as the potential difference between the metal and a reference electrode measured in the absence of any externally applied current \cite{Vargel2020, Roberge2000}. Since absolute electrode potentials cannot be determined experimentally, OCP values are always reported relative to a specified reference electrode in a given electrolyte \cite{Vargel2020, Sastri2007, Revie2008}.
+
+The OCP must be carefully distinguished from $E^\circ$, the latter representing the ideal thermodynamic driving force for a given half-reaction under standard conditions. For aluminium, $E^\circ = -1.66\ \mathrm{V}$ versus the standard hydrogen electrode (SHE), which serves as the universal 0~V reference. In contrast, the OCP reflects the steady-state potential established in a specific environment, at which the rates of anodic and cathodic partial reactions are equal and no net current flows \cite{Sastri2007, Revie2008, Marcus2011}. In 
+aqueous environments, aluminium typically exhibits an OCP in the range of $-0.5\ \mathrm{V}$ to $-0.7\ \mathrm{V}$ versus SHE \cite{Vargel2020, Revie2008}. This substantial positive shift relative to $E^\circ$ arises from the rapid and spontaneous formation of a thin, adherent alumina film upon exposure to air or aqueous media:
+
+\begin{equation}
+    2\,\mathrm{Al} + \frac{3}{2}\,\mathrm{O_2} \rightarrow \mathrm{Al_2O_3}
+    \label{eq:alumina}
+\end{equation}
+
+This native passive oxide layer acts as a physical barrier between the metal and the electrolyte, significantly retarding further oxidation and shifting the OCP in the noble direction. The stability of this passive film, however, is strongly dependent on environmental conditions, particularly pH, temperature, and the presence of aggressive anions such as chloride \cite{Vargel2020, Sastri2007, Ghali2010, Revie2008}.
+
+\section{Pourbaix Diagrams}
+\label{sec:pourbaix}
+
+A powerful tool for visualising the thermodynamic stability of a metal as a function of both electrochemical potential and pH is the Pourbaix diagram, also known as the $E$--pH diagram. For a given metal--electrolyte system, the diagram delineates three distinct thermodynamic domains \cite{Revie2008, Ghali2010}:
+
+\begin{itemize}
+    \item \textbf{Corrosion}, where the stable species are soluble ionic products (e.g.\ $\mathrm{Al^{3+}}$, $\mathrm{AlO_2^-}$), indicating active dissolution of the metal;
+    \item \textbf{Passivation}, where the stable species are insoluble oxides or hydroxides (e.g.\ $\mathrm{Al_2O_3}$, $\mathrm{Al(OH)_3}$) that form a protective layer on the metal surface;
+    \item \textbf{Immunity}, where the metal itself is the thermodynamically stable phase and dissolution is thermodynamically unfavourable.
+\end{itemize}
+
+The $E$--pH diagram for aluminium, shown in [REFERENCIAR FIGURE], illustrates the amphoteric nature of the metal: aluminium is susceptible to corrosion in both strongly acidic and strongly alkaline media, with only a relatively narrow intermediate pH range --- approximately pH~4 to pH~8.5 --- corresponding to the passivation domain \cite{Vargel2020, Ghali2010, Revie2008}. This behaviour is 
+consistent with the dissolution reactions at either extreme:
+
+\begin{equation}
+    \mathrm{Al} + 3\,\mathrm{H^+} \rightarrow \mathrm{Al^{3+}} + \frac{3}{2}\,\mathrm{H_2}
+    \quad \text{(acidic dissolution)}
+    \label{eq:acidic}
+\end{equation}
+
+\begin{equation}
+    \mathrm{Al} + \mathrm{OH^-} + \mathrm{H_2O} \rightarrow \mathrm{AlO_2^-} + 
+    \frac{3}{2}\,\mathrm{H_2}
+    \quad \text{(alkaline dissolution)}
+    \label{eq:alkaline}
+\end{equation}
+
+It must be emphasised, however, that Pourbaix diagrams are strictly equilibrium constructs: they identify thermodynamically stable phases and the direction of spontaneous reactions, but provide no information on the kinetics of corrosion or the rate at which these reactions proceed \cite{Revie2008, Vargel2020, Sastri2007}. A metal situated within the passivation domain may still corrode if the passive film is mechanically damaged or chemically disrupted \cite{Ghali2010,Revie2008}. An example of this is when aluminium is exposed to chloride-containing environments, where localised breakdown of the passive film can initiate pitting corrosion despite nominally passive conditions \cite{Vargel2020,Sastri2007}.
+
+\section{Kinetics of Corrosion}
+\label{sec:kinetics}
+
+The kinetics of corrosion are fundamentally governed by the rate of charge transfer at the interface between a metal and its surrounding aqueous environment \cite{Vargel2020}. During corrosion, metal atoms are oxidised at anodic sites, releasing electrons into the metal lattice, while electroactive species in solution simultaneously capture these electrons at cathodic sites \cite{Vargel2020}. 
+These two partial reactions --- the anodic oxidation and the cathodic reduction --- are spatially and electrically coupled, and their relative rates determine the overall corrosion rate.
+
+This charge exchange is confined to a highly structured interfacial region, approximately 10~nm in thickness, known as the electrical double layer \cite{Vargel2020}. Upon immersion of a metal in an electrolyte, the perturbation 
+of the local molecular and ionic arrangement gives rise to a charge separation at the interface, which is sustained to maintain overall electroneutrality \cite{Vargel2020, Sastri2007}. The structure of the double layer is described by a combination of the Helmholtz, Stern, and Gouy--Chapman models, which together delineate three distinct regions \cite{Vargel2020, Sastri2007}:
+
+\begin{itemize}
+    \item \textbf{Compact Stern Layer (Inner Helmholtz Plane):} This innermost region, extending approximately 3~\AA\ from the surface, comprises oriented water molecules and specifically adsorbed species --- most notably desolvated 
+    anions such as chloride, which have shed their hydration shell to bond directly to the metal surface \cite{Vargel2020, Sastri2007};
+
+    \item \textbf{Outer Helmholtz Plane:} Situated approximately 5 to 6~\AA\ from the surface, this plane marks the closest approach of solvated ionic species that retain their hydration shell \cite{Vargel2020, Sastri2007};
+
+    \item \textbf{Diffuse Gouy--Chapman Layer:} Extending from the outer Helmholtz plane into the bulk electrolyte, this region consists of a diffuse ionic distribution whose thickness, characterised by the Debye length, 
+    decreases with increasing ionic strength \cite{Vargel2020, Sastri2007}.
+\end{itemize}
+
+The architecture of the double layer directly controls corrosion kinetics by imposing physical and electrostatic barriers to ionic transport and charge transfer \cite{Sastri2007}. These barriers give rise to polarisation --- a 
+measurable retardation of the electrochemical reactions --- which ultimately governs the practical rate at which a metal corrodes \cite{Vargel2020, Sastri2007}. 
+
+In the context of equivalent circuit modelling, the double layer is represented as a capacitance in parallel with a charge-transfer resistance, where the capacitive element reflects the charge separation across the interface and the 
+resistive element reflects the activation barrier to Faradaic reactions \cite{Sastri2007}.
+
+
 \section{Influence of IMPs on LDH growth}
 
 AC46000 contains a diverse range of intermetallic particles (IMPs), including copper-rich phases such as \ce{Al2Cu} and \ce{Al7Cu2Fe}, iron-rich phases such as \ce{Al5FeSi} and \ce{Al15(Fe,Mn)3Si2}, and eutectic silicon particles. To assess the influence of these IMPs on LDH growth and corrosion behavior, it is important to consider their electrochemical potential relative to the aluminium matrix \cite{Gudic2024,Kasinska2020}.
