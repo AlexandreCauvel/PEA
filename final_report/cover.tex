@@ -10,7 +10,7 @@
 %% Modified by Pedro Casau <pcasau@ua.pt>
 
 % Add 'final' parameter to remove "Relatório Intermédio" from cover page
-\documentclass[11pt,twoside,a4paper]{report}
+\documentclass[11pt,twoside,a4paper,final]{report}
 
 \usepackage[engineering,deti]{uaThesisTemplate}
 
@@ -218,8 +218,7 @@ A powerful tool for visualising the thermodynamic stability of a metal as a func
     \item \textbf{Immunity}, where the metal itself is the thermodynamically stable phase and dissolution is thermodynamically unfavourable.
 \end{itemize}
 
-The $E$--pH diagram for aluminium, shown in [REFERENCIAR FIGURE], illustrates the amphoteric nature of the metal: aluminium is susceptible to corrosion in both strongly acidic and strongly alkaline media, with only a relatively narrow intermediate pH range (approximately pH~4 to pH~8.5) corresponding to the passivation domain \cite{Vargel2020, Ghali2010, Revie2008}. This behaviour is 
-consistent with the dissolution reactions at either extreme:
+The $E$--pH diagram for aluminium, shown in [REFERENCIAR FIGURE], illustrates the amphoteric nature of the metal: aluminium is susceptible to corrosion in both strongly acidic and strongly alkaline media, with only a relatively narrow intermediate pH range (approximately pH~4 to pH~8.5) corresponding to the passivation domain \cite{Vargel2020, Ghali2010, Revie2008}. This behaviour is consistent with the dissolution reactions at either extreme:
 
 \begin{equation}
     \mathrm{Al} + 3\,\mathrm{H^+} \rightarrow \mathrm{Al^{3+}} + \frac{3}{2}\,\mathrm{H_2}
@@ -236,6 +235,38 @@ consistent with the dissolution reactions at either extreme:
 
 It must be emphasised, however, that Pourbaix diagrams are strictly equilibrium constructs: they identify thermodynamically stable phases and the direction of spontaneous reactions, but provide no information on the kinetics of corrosion or the rate at which these reactions proceed \cite{Revie2008, Vargel2020, Sastri2007}. A metal situated within the passivation domain may still corrode if the passive film is mechanically damaged or chemically disrupted \cite{Ghali2010,Revie2008}. An example of this is when aluminium is exposed to chloride-containing environments, where localised breakdown of the passive film can initiate pitting corrosion despite nominally passive conditions \cite{Vargel2020,Sastri2007}.
 
+\section{Breakdown of Passivity by Chloride} %% PENDING REVIEW (DONE)
+\label{sec:chloride}
+
+Although the native alumina film confers effective passivation across a broad pH range, as established in Sections~\ref{sec:potential} and~\ref{sec:pourbaix}, it is particularly vulnerable to localised breakdown in the presence of chloride ions \cite{Vargel2020,Sastri2007}. This vulnerability stems from the specific physicochemical properties of the chloride anion: its small ionic radius and relatively low hydration energy allow it to shed its hydration shell readily and adsorb directly onto the oxide surface, in contrast to larger or more strongly hydrated anions that remain solvated and interact only weakly with the film \cite{Vargel2020, Sastri2007}.
+
+The mechanism of passive film breakdown by chloride is most widely described by competitive adsorption at the oxide surface \cite{Revie2008}. Chloride ions compete with hydroxyl ions and water molecules for adsorption sites on the passive film, and their preferential adsorption at surface defects, grain boundaries, or IMP/matrix interfaces locally disrupts the continuity and stoichiometry of the oxide \cite{Vargel2020,Zhang2018,McCafferty2010}. This competitive displacement can be expressed as:
+
+\begin{equation}
+    \mathrm{Al(OH)_{ads}} + \mathrm{Cl^{-}} \rightarrow \mathrm{AlCl_{ads}} + 
+    \mathrm{OH^{-}}
+    \label{eq:cl_adsorption}
+\end{equation}
+
+where the adsorbed hydroxide species that stabilise the passive film are progressively replaced by chloride \cite{Vargel2020, Ghali2010}. Once a critical local chloride concentration is reached, the thinned oxide layer ruptures, exposing the bare metal directly to the electrolyte \cite{Vargel2020, Revie2008}. The exposed aluminium then undergoes accelerated anodic dissolution, forming soluble aluminium chloride according to \cite{Vargel2020}:
+
+\begin{equation}
+    \mathrm{Al} + \text{n}\,\mathrm{Cl^{-}} \rightarrow \mathrm{AlCl_n} + 3e^{-}
+    \label{eq:al_dissolution}
+\end{equation}
+
+The $\mathrm{AlCl_n}$ produced is highly soluble and readily hydrolyses in the presence of water, generating a locally acidic environment that further accelerates dissolution and inhibits repassivation \cite{Vargel2020, Ghali2010}:
+
+\begin{equation}
+    \mathrm{AlCl_3} + 3\,\mathrm{H_2O} \rightarrow \mathrm{Al(OH)_3} + 
+    3\,\mathrm{HCl}
+    \label{eq:hydrolysis}
+\end{equation}
+
+This transition from passive to active dissolution is characterised electrochemically by the pitting potential ($E_{\text{pit}}$): below this threshold the passive film remains intact, whereas above it localised attack proceeds spontaneously \cite{Revie2008, Ghali2010}. Increasing bulk chloride concentration shifts $E_{\text{pit}}$ in the active direction, reducing the electrochemical window over which passive protection is maintained \cite{Vargel2020}.
+
+The consequences of chloride-induced depassivation are severe in the context of aluminium alloys: once the film ruptures, the autocatalytic pit growth mechanism described in Section~\ref{sec:pitting} is activated, and repassivation becomes increasingly difficult as the local chemistry evolves \cite{Vargel2020,Ghali2010}. This underscores the inadequacy of purely barrier-based protection strategies and motivates the use of active corrosion protection systems, such as inhibitor-loaded LDH coatings, capable of suppressing film breakdown and restoring passivity at localised defects \cite{MartinezViademonte2020, BoualiReview2020}.
+
 \section{Kinetics of Corrosion}
 \label{sec:kinetics}
 
@@ -246,6 +277,17 @@ This charge exchange is confined to a highly structured interfacial region, appr
 The innermost compact Stern layer contains oriented water molecules and specifically adsorbed species; of particular relevance is the adsorption of chloride ions, which, owing to their small ionic radius and low hydration energy, readily shed their hydration shell to adsorb directly onto the metal surface, locally disrupting the passive oxide film and rendering it the primary initiator of pitting corrosion \cite{Vargel2020, Sastri2007}. Beyond this lies the outer Helmholtz plane, marking the closest approach of solvated ionic species that retain their hydration shell and therefore cannot interact directly with the surface \cite{Vargel2020, Sastri2007}. Further out, the diffuse Gouy--Chapman layer extends into the bulk electrolyte, consisting of a loosely organised ionic distribution whose thickness decreases with increasing electrolyte concentration \cite{Vargel2020, Sastri2007}.
 
 The architecture of the double layer directly controls corrosion kinetics by imposing physical and electrostatic barriers to ionic transport and charge transfer \cite{Sastri2007}.
+
+\section{Pitting Corrosion of Aluminium Alloys} %%PENDING REVIEW (DONE)
+\label{sec:pitting}
+
+While the passive oxide film that forms spontaneously on aluminium provides effective protection across a broad range of conditions, it is susceptible to localised breakdown in the presence of aggressive anions, most notably chloride \cite{Vargel2020, Revie2008}. This breakdown initiates pitting corrosion, a highly localised form of attack in which small, discrete cavities propagate into the metal while the surrounding surface remains nominally passive \cite{Vargel2020, Sastri2007}.
+
+Pit initiation is strongly associated with the presence of IMPs at the alloy surface. As described in Section~\ref{sec:kinetics}, chloride ions preferentially adsorb at defect sites or at boundaries between IMPs and the aluminium matrix, where they locally displace oxygen and hydroxide ions from the passive film \cite{Vargel2020,Zhang2018,Ghali2010, McCafferty2010}. Once a critical chloride concentration is reached at these sites, the passive film ruptures and active dissolution of the underlying metal commences \cite{Vargel2020,Revie2008}. This breakdown is characterised by a transition from passive to active behaviour at a potential known as the pitting potential ($E_{\text{pit}}$), below which the passive film is stable \cite{Revie2008, Ghali2010}.
+
+Following initiation, pit growth is sustained by an autocatalytic mechanism \cite{Sastri2007,Ghali2010}. Metal dissolution within the pit generates a local excess of cations, which attracts additional chloride ions to maintain charge balance \cite{Vargel2020,Ghali2010,Sastri2007}. The resulting accumulation of metal chloride salts undergoes hydrolysis, acidifying the pit interior and further accelerating dissolution \cite{Revie2008, Sastri2007,Ghali2010,Vargel2020}. The surrounding cathodic regions support the oxygen reduction reaction, maintaining the electrochemical driving force for continued pit growth \cite{Revie2008, Sastri2007,Ghali2010,Vargel2020}. Prior to reaching a stable propagating state, pits may repeatedly initiate and repassivate, a phenomenon known as metastable pitting, which is observable electrochemically as transient current fluctuations at potentials below $E_{\text{pit}}$ \cite{Sastri2007, Ghali2010}.
+
+From a protective coating perspective, the critical objective is therefore not only to provide a barrier against electrolyte ingress, but also to supply active inhibition that can suppress these autocatalytic processes should the barrier be locally breached \cite{MartinezViademonte2020, BoualiReview2020}.
 
 
 \section{Conventional Corrosion Protection Methods}
@@ -305,6 +347,13 @@ The most widely adopted in situ method is hydrothermal treatment, also referred 
 
 Beyond hydrothermal treatment, several alternative in situ fabrication routes have been explored. Electrodeposition offers significantly shorter processing times, approximately 300~s as reported by \citet{He2020}, and can be readily applied to substrates with complex geometries \cite{Cao2022}. However, it generally yields weaker film adhesion and involves higher energy consumption \cite{Cao2022}. Steam coating represents another promising alternative, combining good interfacial bonding with an environmentally benign process \cite{Pan2023, Cao2022}. Although previously limited to magnesium alloys, \citet{Matsui2025} recently demonstrated its successful application to a die-cast aluminium alloy (ADC-12) for the formation of Mg--Al LDH films, extending the applicability of this technique to aluminium substrates.
 
+\subsection{Rationale for ZnAl--LDH on Aluminium Substrates} %% PENDING REVIEW (DONE)
+\label{subsec:ZnAl}
+
+Among the many possible LDH compositions, ZnAl--LDH has emerged as one of the most studied systems for in situ corrosion protection of aluminium alloys. This preference is grounded in both chemical compatibility and processing considerations. As describedin Section~\ref{subsec:LDH_synthesis}, in situ hydrothermal synthesis on aluminium substrates relies on the partial dissolution of the substrate to supply the trivalent$\mathrm{Al}^{3+}$ cation, while the divalent cation is provided externally through the synthesis solution \cite{BoualiReview2020,Cao2022}. Among the candidate divalent cations, $\mathrm{Zn}^{2+}$ is particularly well suited: its ionic radius is compatible with octahedral coordination in the brucite-like layer, and zinc-based LDH systems have consistently demonstrated effective anion exchange kinetics and strong inhibitor release behaviour in chloride-containing environments \cite{Bouali2020, Tedim2011, BoualiReview2020,Cao2022}.
+
+In comparison, MgAl--LDH requires higher synthesis temperatures and pH values to achieve crystalline film formation on aluminium substrates and has been more widely applied to magnesium alloys \cite{BoualiReview2020, Cao2022}. LiAl--LDH, which incorporates monovalent lithium in place of a divalent cation, exhibits a distinct crystal structure and has been less extensively investigated for corrosion protection applications \cite{BoualiReview2020,Becker2019}. The combination of established synthesis protocols, well-documented inhibitor intercalation behaviour, and demonstrated performance on aluminium alloys therefore makes ZnAl--LDH the most appropriate system for the present study.
+
 \subsection{Corrosion Inhibitors}
 \label{subsec:inhibitors}
 
@@ -315,6 +364,8 @@ A wide range of inhibitor anions has been investigated for LDH-based corrosion p
 The relative performance of inhibitors is not universal, however, and is strongly dependent on both the LDH composition and the substrate chemistry. \citet{Matsui2025} reported that molybdate-intercalated Mg--Al LDH provided superior corrosion resistance compared to vanadate-based systems when applied to ADC-12, an Al--Si--Cu die-cast alloy, underscoring the importance of tailoring inhibitor selection to the specific alloy system under investigation.
 
 Synergistic effects between inhibitor combinations have also been reported, further expanding the design space for LDH-based protection systems. \citet{Zhang2015} demonstrated enhanced corrosion protection through the combination of cerium salts and vanadates, while \citet{Tedim2010} showed that LDH nanocontainers co-loaded with vanadate and MBT anions yielded a synergistic anticorrosion effect exceeding that of either inhibitor alone. Beyond inorganic inhibitors, \citet{Lamaka2007} reported that organic species --- including 8-hydroxyquinoline (8-HQ), salicylaldoxime, and quinaldic acid --- can suppress corrosion of AA2024 as effectively as, or in some cases more effectively than, MBT and cerium salts, highlighting the potential of organic inhibitors as complementary or alternative active species in LDH interlayer systems.
+
+%%TALK ABOUT L-CYSTEINE
 
 \section{Influence of IMPs on LDH growth}
 
