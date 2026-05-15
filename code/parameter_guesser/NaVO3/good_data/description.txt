@@ -1,0 +1,4 @@
+R1 - charge transfer resistance
+R2 - corrosion products resistance
+Q1 - double layer capacitance
+Q2 - corrosion products capacitance
