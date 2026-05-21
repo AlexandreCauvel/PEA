@@ -25,6 +25,7 @@
 \usepackage{booktabs}
 \usepackage{makecell}
 \usepackage{xurl}
+\usepackage{subcaption}
 
 
 %% We will use english and portuguese
@@ -418,11 +419,6 @@ From a corrosion monitoring perspective, $C_{\text{dl}}$ is a particularly sensi
 
 where $\epsilon$ is the relative permittivity of the interfacial medium, $\epsilon_0$ is the permittivity of free space, $A$ is the effective interfacial area, and $d$ is the charge separation distance. Additionally, as localised corrosion progresses, for instance through pitting, the electrode surface becomes increasingly rough and geometrically complex, further enlarging the effective interfacial area and driving $C_{\text{dl}}$ to higher values \cite{Lasia2014, Kelly2002}.
 
-%% DESCREVER CPE (done)
-%% FALAR DOS CIRCUITOS MAIS AVANÇADOS DE RANDELS (done)
-%% FALAR DE INHIBITOR EFFICIENCY 
-%% FALAR DAS TIME CONSTANTS (done)
-%% FALAR DO WARBURG ELEMENT 
 
 \subsection{More advanced circuits}
 
@@ -458,6 +454,7 @@ where $R_{ct,0}$ and $R_{ct,i}$ are the polarisation resistances measured in the
 \chapter{Methodology}
 
 \section{Pre-selection of inhibitors}
+\label{sec:inhibitor_selection}
 As discussed in WP2, the first task of the project was to do a pre-selection of the inhibitors using electrochemical impedance spectroscopy (EIS). For this purpose bare metal substrates were sequentially polished using 120, 600, 1200 and 2500 grit sandpaper under water. After polishing, the samples were rinsed with deionized water and subsequently air-dried.
 
 The selected corrosion inhibitors are listed in Table~\ref{tab:inhibitor}, with a standard concentration of 0.005 M, except for those with lower saturation limits. Sodium chloride (NaCl) at 0.05 M was used as the electrolyte. This concentration is commonly chosen because it provides high conductivity, resulting in low solution impedance, and allows easy comparison with existing studies. The pH of each solution was also measured prior to experimentation.
@@ -487,6 +484,7 @@ EIS measurements were then performed inside a Faraday cage using a Gamry Interfa
 A conventional three-electrode configuration was used, comprising a saturated calomel electrode (SCE) as the RE, a platinum foil as the CE, and the exposed AC46000 substrate as the WE. The samples were immersed for a total duration of seven days, with EIS measurements collected at 0 h, 1 h, 4 h, 8 h, 24 h, 48 h, 72 h, 120 h, and 168 h. 
 
 \section{Determine ECM for EIS}
+\label{sec:fitting_software}
 Determining an appropriate equivalent circuit model (ECM) for electrochemical impedance spectroscopy (EIS) spectra is among the most important steps in impedance analysis, as it enables the deconvolution of overlapping electrochemical processes and their quantification through physically meaningful parameters, such as charge transfer resistance ($R_{\text{ct}}$), film resistance ($R_{\text{film}}$), and double-layer capacitance ($C_{\text{dl}}$).
 
 Despite its centrality to the analysis, ECM identification remains a laborious task. Commercial software packages such as ZView and Gamry Echem Analyst rely on nonlinear least-squares (NLLS) fitting routines, most commonly the Levenberg-Marquardt algorithm, which are inherently sensitive to the choice of initial parameter estimates \cite{GamryEISModeling,Zou2023}. While heuristic approaches exist to guide these estimates, such as reading characteristic resistances from the diameters of semicircular arcs in the Nyquist representation or extracting time constants from Bode phase plots, the process remains largely manual and iterative, demanding considerable operator experience to avoid convergence to local minima or physically unreasonable solutions.
@@ -495,9 +493,11 @@ In response to these limitations, a number of open-source, programmatic alternat
 
 Given this landscape, \texttt{impedance.py} emerges as the most viable open-source option. In its standard implementation, it operates analogously to commercial software: the user must supply the impedance dataset, an \textit{a priori} circuit string, and initial parameter guesses. Two optional fitting configurations are available. The first, \texttt{weight\_by\_modulus}, applies the modulus of the complex impedance as a frequency-dependent weighting factor which ensures that data points spanning several decades of impedance magnitude contribute proportionally to the objective function. The second, \texttt{global\_opt}, invokes a basin-hopping algorithm, which combines stochastic perturbation of parameter coordinates with local minimization and a Metropolis-type acceptance criterion to escape local minima. Importantly, \texttt{global\_opt} is incompatible with \texttt{weight\_by\_modulus} and given that EIS datasets span several decades in frequency, commonly from 10~mHz to 100~kHz, and correspondingly large ranges in impedance magnitude, modulus weighting is generally considered essential to prevent low-frequency, high-impedance data from disproportionately dominating the fit residuals. 
 
-To overcome the dependence on user-supplied initial guesses while retaining the precision of local optimization, a hybrid fitting framework was developed building upon impedance.py and the Differential Evolution (DE) algorithm. DE is a stochastic, population-based global optimization metaheuristic well-suited to high-dimensional, non-differentiable, and multimodal objective functions \cite{Ahmad2022,Storn1997}. The algorithm evolves a population of candidate solutions across successive generations through three operators: mutation, which generates trial vectors via linear combinations of population members; crossover, which probabilistically exchanges parameter values between candidate and trial vectors; and selection, which retains whichever vector yields a lower objective function value \cite{Ahmad2022,Storn1997}. Crucially, DE requires no gradient information making it less likely to be stuck at local minima \cite{Leite2022} and therefore particularly appropriate for the complex, rugged parameter landscapes characteristic of multi-element ECM fitting.
+To overcome the dependence on user-supplied initial guesses while retaining the precision of local optimisation, a hybrid fitting framework was developed building upon \texttt{impedance.py} and the Differential Evolution (DE) algorithm. DE is a stochastic, population-based global optimisation metaheuristic well-suited to high-dimensional, non-differentiable, and multimodal objective functions \cite{Ahmad2022, Storn1997}. The algorithm evolves a population of candidate solutions across successive generations through three operators: mutation, which generates trial vectors via linear combinations of population members; crossover, which probabilistically exchanges parameter values between candidate and trial vectors; and selection, which retains whichever vector yields a lower objective function value \cite{Ahmad2022, Storn1997}. Crucially, DE requires no gradient information, making it less likely to become trapped at local minima \cite{Leite2022} and therefore particularly appropriate for the complex, rugged parameter landscapes characteristic of multi-element ECM fitting.
 
-In the proposed workflow, the user supplies only physically motivated bounds for each circuit element rather than precise initial estimates. The DE algorithm then explores this parameter space to identify the order of magnitude and approximate value of each component. To accelerate convergence, given that circuit element values typically span many orders of magnitude, the optimization is performed in logarithmic space, transforming the search domain such that each decade is treated uniformly. This logarithmic reparameterization substantially improves the efficiency of the population-based search and reduces sensitivity to the scale disparity between, for example, charge-transfer resistances on the order of kilohms and double-layer capacitances on the order of microfarads. Once the DE stage yields a sufficiently accurate global estimate, the resulting parameter vector is passed as the initial condition to the Levenberg-Marquardt local optimizer within \texttt{impedance.py}, with \texttt{weight\_by\_modulus} activated, to refine the solution and obtain statistically meaningful parameter estimates together with their associated uncertainties. 
+In the proposed workflow, the user supplies only physically motivated parameter bounds for each circuit element rather than precise initial estimates. The DE algorithm then explores this parameter space to identify the approximate order of magnitude and value of each component. To accelerate convergence, given that circuit element values typically span many orders of magnitude, the optimisation is performed in logarithmic space, transforming the search domain such that each decade is weighted uniformly. This logarithmic reparameterisation substantially improves the efficiency of the population-based search and reduces sensitivity to the scale disparity between, for example, charge-transfer resistances on the order of kilohms and double-layer capacitances on the order of microfarads.
+
+Once the DE stage yields a sufficiently accurate global estimate, the resulting parameter vector is passed to a Nelder--Mead local optimiser, which performs a derivative-free refinement of the solution in the immediate vicinity of the global estimate. This intermediate step improves the quality of the starting point before the final refinement stage, reducing the risk of the subsequent gradient-based optimiser being misled by residual roughness in the objective function landscape. The refined parameter vector is then passed as the initial condition to the Levenberg--Marquardt local optimiser within \texttt{impedance.py}, with \texttt{weight\_by\_modulus} activated, to obtain statistically meaningful parameter estimates together with their associated uncertainties.
 
 \section{Pre-treatments}
 \label{sec:pretreatments}
@@ -521,19 +521,232 @@ For LDH film growth, \qty{300}{\milli\liter} of the synthesis solution was trans
 
 To characterise the LDH films and compare growth across the different substrate conditions, X-ray diffraction (XRD) analysis was conducted. From the diffraction patterns, the basal spacing ($d_{003}$) was determined using Bragg's law, providing structural confirmation of LDH formation and enabling comparison of film crystallinity across the different pre-treatment conditions.
 
-\section{Inhibitor incorporation}
-To incorporate corrosion inhibiting anions into the LDH interlayer galleries, anion exchange was performed by immersing the as-grown LDH films in a \qty{0.1}{\molar} inhibitor solution at \qty{25}{\degreeCelsius} for \qty{3}{\hour}. Following this, the specimens were rinsed with deionised water and dried with compressed air.
+\section{Inhibitor Incorporation}
+\label{sec:inhibitor_incorporation}
 
+Based on the screening results presented in Section~\ref{sec:results_inhibitor_selection}, the three most promising inhibitor systems were selected for intercalation into the LDH interlayer galleries.
 
+To incorporate \ce{NaVO3} and L-cysteine into the LDH interlayer galleries, anion exchange was performed by immersing the as-grown LDH films in a \qty{0.1}{\molar} inhibitor solution at \qty{25}{\degreeCelsius} for \qty{3}{\hour}. Following this, the specimens were rinsed with deionised water and dried with compressed air.
+
+For MBT incorporation, \ce{NaOH} was added at a concentration of \qty{0.1}{\molar} to a \qty{0.1}{\molar} MBT solution to deprotonate the molecule into its anionic form (\ce{MBT^-}), which is required for both solubility and intercalation into the LDH galleries \cite{}. Given the amphoteric nature of aluminium and its susceptibility to alkaline dissolution (Section~\ref{sec:pourbaix}), the pH was adjusted to 10.2 using a \qty{1}{\molar} \ce{NaOH} solution. To minimise the risk of surface attack, the immersion time was limited to \qty{30}{\minute} with visual inspection at \qty{10}{\minute} intervals, after which the specimens were rinsed with deionised water and dried with compressed air.
+
+To verify the successful intercalation of the corrosion inhibiting anions, the specimens were subjected to X-ray diffraction (XRD) analysis. A shift in the characteristic $2\theta$ reflection angles relative to the as-grown LDH films would indicate a change in the basal spacing ($d_{003}$) and consequently in the interlayer gallery height, confirming the incorporation of guest anions into the LDH interlayer space.
+
+\section{Evaluation of Corrosion Performance}
+\label{sec:corrosion_evaluation}
+
+Following successful inhibitor intercalation, the corrosion performance of the LDH-based coatings was evaluated by immersing the specimens in a \qty{0.05}{\molar} \ce{NaCl} solution and conducting electrochemical impedance spectroscopy (EIS) measurements, following the procedure described in Section~\ref{sec:inhibitor_selection}. The resulting spectra were fitted using the software developed in Section~\ref{sec:fitting_software}, and the extracted $R_{\text{ct}}$ and $C_{\text{dl}}$ values were compared across the different inhibitor systems to assess their relative corrosion protection performance. In addition, the specimens were examined optically for visual evidence of corrosion, and potentiodynamic polarisation (PDP) measurements were conducted to complement the impedance analysis.
+
+\section{Top Coating and Complex Geometries}
+\label{sec:topcoat}
+
+Once inhibitor intercalation and corrosion performance had been established, a polyurethane organic topcoat was applied to the inhibitor-intercalated planar specimens and its adhesion was evaluated. This step was omitted for vanadate-intercalated samples, for which topcoat compatibility had already been demonstrated in prior work.
+
+With the multilayer coating system validated on planar substrates, the procedure was subsequently extended to geometrically complex substrates. To assess the spatial extent and uniformity of coating deposition within the complex geometries, cross-sectional analysis was conducted on representative specimens.
 
 \chapter{Results}
-Present the results of your project clearly and concisely, using tables and figures where necessary.
+
+\section{Pre-selection of Inhibitors}
+\label{sec:results_inhibitor_selection}
+
+In the first part of this work, a pre-selection of corrosion inhibitors was conducted based on EIS measurements and subsequent spectral fitting using the software developed in Section~\ref{sec:fitting_software}. The impedance spectra acquired at \qty{1}{\hour} and \qty{168}{\hour} of immersion are presented in Figures~\ref{fig:} to~\ref{fig:}, together with the evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ over the full immersion period.
+
+\section{Pre-treatments}
+\label{sec:results_pretreatments}
+
+To identify the most suitable pre-treatment for LDH growth, SEM and EDS analyses were conducted on specimens subjected to the chemical pre-treatment, the industrial pre-treatment, and mechanical polishing, the latter serving as a reference condition. The results are presented in Figures~\ref{fig:sem_eds_I} to~\ref{fig:sem_eds_III}.
+
+\begin{figure}[htbp]
+   \centering
+   % Linha 1
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/I/SE_SE.png}
+       \caption{SEM}
+       \label{fig:sem_I}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/I/SE_Al.png}
+       \caption{Al}
+       \label{fig:Al_I}
+   \end{subfigure}   
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/I/SE_Fe.png}
+       \caption{Fe}
+       \label{fig:Fe_I}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/I/SE_Cu.png}
+       \caption{Cu}
+       \label{fig:Cu_I}
+   \end{subfigure}
+   \vspace{0.5em}
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/I/SE_Si.png}
+       \caption{Si}
+       \label{fig:Si_I}
+   \end{subfigure}
+   \hfill
+   % Linha 2
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/I/SE_Mn.png}
+       \caption{Mn}
+        \label{fig:Mn_I}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figs/I/SE_Mg.png}
+        \caption{Mg}
+        \label{fig:Mg_I}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figs/I/SE_Zn.png}
+        \caption{Zn}
+        \label{fig:Zn_I}
+    \end{subfigure}
+    \caption{Painel comparativo SEM-EDS em disposição compacta de 2x4.}
+    \label{fig:sem_eds_I}
+\end{figure}
+
+\begin{figure}[htbp]
+   \centering
+   % Linha 1
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/II/SE_SE.png}
+       \caption{SEM}
+       \label{fig:sem_II}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/II/SE_Al.png}
+       \caption{Al}
+       \label{fig:Al_II}
+   \end{subfigure}   
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/II/SE_Fe.png}
+       \caption{Fe}
+       \label{fig:Fe_II}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/II/SE_Cu.png}
+       \caption{Cu}
+       \label{fig:Cu_II}
+   \end{subfigure}
+   \vspace{0.5em}
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/II/SE_Si.png}
+       \caption{Si}
+       \label{fig:Si_II}
+   \end{subfigure}
+   \hfill
+   % Linha 2
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/II/SE_Mn.png}
+       \caption{Mn}
+        \label{fig:Mn_II}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figs/II/SE_Mg.png}
+        \caption{Mg}
+        \label{fig:Mg_II}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figs/II/SE_Zn.png}
+        \caption{Zn}
+        \label{fig:Zn_II}
+    \end{subfigure}
+    \caption{Painel comparativo SEM-EDS em disposição compacta de 2x4.}
+    \label{fig:sem_eds_II}
+\end{figure}
+
+\begin{figure}[htbp]
+   \centering
+   % Linha 1
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/III/SE_SE.png}
+       \caption{SEM}
+       \label{fig:sem_III}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/III/SE_Al.png}
+       \caption{Al}
+       \label{fig:Al_III}
+   \end{subfigure}   
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/III/SE_Fe.png}
+       \caption{Fe}
+       \label{fig:Fe_III}
+   \end{subfigure}
+   \hfill
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/III/SE_Cu.png}
+       \caption{Cu}
+       \label{fig:Cu_III}
+   \end{subfigure}
+   \vspace{0.5em}
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/III/SE_Si.png}
+       \caption{Si}
+       \label{fig:Si_III}
+   \end{subfigure}
+   \hfill
+   % Linha 2
+   \begin{subfigure}[b]{0.24\textwidth}
+       \includegraphics[width=\textwidth]{figs/III/SE_Mn.png}
+       \caption{Mn}
+        \label{fig:Mn_III}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figs/III/SE_Mg.png}
+        \caption{Mg}
+        \label{fig:Mg_III}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.24\textwidth}
+        \includegraphics[width=\textwidth]{figs/III/SE_Zn.png}
+        \caption{Zn}
+        \label{fig:Zn_III}
+    \end{subfigure}
+    \caption{Painel comparativo SEM-EDS em disposição compacta de 2x4.}
+    \label{fig:sem_eds_III}
+\end{figure}
+
+\section{LDH Synthesis}
+\label{sec:results_LDH_synthesis}
+
+To determine which pre-treatment yielded the most favourable conditions for LDH growth, films were synthesised on specimens from all three pre-treatment conditions and characterised by XRD analysis. In addition, LDH growth was assessed on specimens subjected to an anodising procedure prior to synthesis, resulting in a total of four substrate conditions being evaluated. The XRD results are presented in Figure~\ref{fig:}. A SEM analysis was also conducted and its results are presented are in Figure \ref{fig:}.
+% ADICIONAR A FIG DO SEM LDH
+
+\section{Inhibitor Intercalation}
+\label{sec:results_inhibitor_intercalation}
+
+Using the LDH films produced under the optimal pre-treatment conditions, the three inhibitor systems identified in Section~\ref{sec:results_inhibitor_selection} --- \ce{NaVO3}, MBT, and L-cysteine --- were intercalated via anion exchange. XRD analysis was subsequently conducted to verify intercalation, with a shift in the characteristic $2\theta$ reflection angles relative to the nitrate-form LDH serving as evidence of a change in interlayer gallery height and, consequently, of successful replacement of the resident \ce{NO3^-} anions. For \ce{NaVO3} and MBT, the XRD results confirming successful intercalation are presented in Figures~\ref{fig:} to~\ref{fig:}. In the case of L-cysteine, however, no diffraction peaks were observed in the XRD spectra, indicating dissolution of the LDH crystalline structure rather than intercalation. A discussion of the underlying mechanism is provided in Section~\ref{sec:}.
+
+\section{Corrosion Performance Analysis}
+\label{sec:results_corrosion_performance}
+
+Following successful inhibitor intercalation, the corrosion performance of the LDH-based coatings was evaluated by immersing the specimens in a \qty{0.05}{\molar} \ce{NaCl} solution and conducting EIS measurements at regular intervals over a total immersion period of \qty{168}{\hour}. The resulting spectra were fitted using the software developed in Section~\ref{sec:fitting_software}, and the extracted $R_{\text{ct}}$ and $C_{\text{dl}}$ values were compared across the different inhibitor systems to assess their relative corrosion protection performance. Potentiodynamic polarisation (PDP) measurements were additionally conducted to provide complementary kinetic information, and optical inspection of the specimen surfaces was carried out at the end of the immersion period. The impedance spectra at \qty{1}{\hour} and \qty{168}{\hour}, the evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ over the full immersion period, the PDP curves, and optical images of the final surface condition are presented in Figures~\ref{fig:} to~\ref{fig:}.
+
+
+
+
 \chapter{Discussion}
 Interpret the results and discuss their implications.
 Compare your findings with previous research.
 Discuss any limitations of your study.
 \chapter{Conclusion \& Future Work}
 Sum up the main findings and their importance, and discuss how they have the WBS going forward.
+
 
 
 
