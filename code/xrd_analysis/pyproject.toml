@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "matplotlib>=3.10.8",
     "pybaselines>=1.2.1",
+    "pymatgen>=2026.5.4",
     "xrayutilities>=1.7.12",
 ]

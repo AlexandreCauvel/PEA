@@ -26,6 +26,7 @@
 \usepackage{makecell}
 \usepackage{xurl}
 \usepackage{subcaption}
+\usepackage{float}
 
 
 %% We will use english and portuguese
@@ -544,12 +545,73 @@ Once inhibitor intercalation and corrosion performance had been established, a p
 
 With the multilayer coating system validated on planar substrates, the procedure was subsequently extended to geometrically complex substrates. To assess the spatial extent and uniformity of coating deposition within the complex geometries, cross-sectional analysis was conducted on representative specimens.
 
-\chapter{Results}
+\chapter{Results and Discussion}
 
 \section{Pre-selection of Inhibitors}
 \label{sec:results_inhibitor_selection}
 
-In the first part of this work, a pre-selection of corrosion inhibitors was conducted based on EIS measurements and subsequent spectral fitting using the software developed in Section~\ref{sec:fitting_software}. The impedance spectra acquired at \qty{1}{\hour} and \qty{168}{\hour} of immersion are presented in Figures~\ref{fig:} to~\ref{fig:}, together with the evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ over the full immersion period.
+In the first part of this work, a pre-selection of corrosion inhibitors was conducted based on EIS measurements. The impedance spectra acquired at \qty{1}{\hour} and \qty{168}{\hour} of immersion are presented in Figures~\ref{fig:inhibitors_bode} and~\ref{fig:inhibitors_nyquist}.
+
+
+\begin{figure}[H]
+   \centering
+   % Linha 1
+   \begin{subfigure}[b]{0.95\textwidth}
+       \includegraphics[width=\textwidth]{figs/bode_1H_inhibitors.pdf}
+       \caption{1H bode}
+       \label{fig:inhibitors_1h_bode}
+   \end{subfigure}
+
+   \vspace{0.5cm}
+
+   \begin{subfigure}[b]{0.95\textwidth}
+       \includegraphics[width=\textwidth]{figs/bode_168H_inhibitors.pdf}
+       \caption{168H bode}
+       \label{fig:inhibitors_168h_bode}
+   \end{subfigure}
+   \caption{Bode spectra for 1h immersion.}
+   \label{fig:inhibitors_bode}
+\end{figure}
+
+
+\begin{figure}[H]
+   \centering
+   \begin{subfigure}[b]{0.4\textwidth}
+       \includegraphics[width=\textwidth]{figs/nyquist_1H_inhibitors.pdf}
+       \caption{1H nyquist}
+       \label{fig:inhibitors_1h_nyquist}
+   \end{subfigure}
+   \begin{subfigure}[b]{0.4\textwidth}
+       \includegraphics[width=\textwidth]{figs/nyquist_168H_inhibitors.pdf}
+       \caption{168H nyquist}
+       \label{fig:inhibitors_168h_nyquist}
+   \end{subfigure}   
+   \caption{Nyquist spectra for 1h immersion.}
+   \label{fig:inhibitors_nyquist}
+\end{figure}
+
+
+As can be observed in the Nyquist plots (Figures~\ref{fig:inhibitors_1h_nyquist} and~\ref{fig:inhibitors_168h_nyquist}), MBT, \ce{NaVO3}, and L-cysteine exhibit the highest low-frequency impedance magnitudes at both immersion times, indicative of superior inhibition performance. Furthermore, the impedance response of these three inhibitors increases progressively with immersion time, suggesting that their protective action is not merely passive but involves an active reinforcement of the surface film, likely through continued adsorption or the formation of insoluble surface complexes over the course of the experiment. This trend is corroborated by the Bode plots (Figures~\ref{fig:inhibitors_1h_bode} and~\ref{fig:inhibitors_168h_bode}), in which the same three systems consistently exhibit the largest semicircle diameters, reflecting elevated charge-transfer resistance values.
+
+To validate these observations quantitatively, spectral fitting using the software developed in Section~\ref{sec:fitting_software} was performed to evaluate the evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ over the full immersion period. The results are presented in Figure~\ref{fig:Rct_Cdl_evolution}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/Rct_Cdl_evolution.pdf} 
+
+    \caption{Rct and Cdl evolution over time.}
+    
+    \label{fig:Rct_Cdl_evolution}
+\end{figure}
+
+The extracted parameters confirm the trends identified from visual inspection of the spectra. MBT, \ce{NaVO3}, and L-cysteine all attained $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm}, substantially higher than those of the remaining systems. The progressive increase in $R_{\text{ct}}$ with immersion time for these three inhibitors further supports the hypothesis of active and durable film formation at the electrode surface. Sodium molybdate, by contrast, performed comparably to the blank NaCl solution throughout the entire immersion period, with $R_{\text{ct}}$ values consistently in the range of \qtyrange{3}{4}{\kilo\ohm}. This near-complete absence of inhibition under open-circuit conditions is consistent with the known mechanism of molybdate, which requires anodic polarisation to form a protective surface film and therefore provides negligible protection in the context of free immersion in dilute NaCl \cite{Sastri2007, Vargel2020}. BTA and 8-HQ exhibited intermediate behaviour, with $R_{\text{ct}}$ values approximately between \qty{10}{\kilo\ohm} and \qty{30}{\kilo\ohm}, significantly lower than the three best-performing inhibitors.
+
+The double-layer capacitance data further support and refine these conclusions. Sodium molybdate again showed behaviour closely resembling that of the blank NaCl system, with $C_{\text{dl}}$ values approaching \qty{100}{\micro\farad}, consistent with an essentially unprotected electrode surface. Although BTA and 8-HQ displayed relatively low initial $C_{\text{dl}}$ values, suggesting that some degree of initial adsorption does occur, these increased rapidly with immersion time, eventually converging towards values comparable to the uninhibited system. This behaviour indicates that while both inhibitors adsorb at the electrode surface in the early stages of immersion, they fail to maintain a stable protective film over time. The progressive desorption or displacement of the inhibitor allows water molecules and electrolyte ions to repopulate the double layer; given the substantially higher dielectric constant of water ($\varepsilon_r \approx 80$) relative to that of adsorbed organic species, this ingress drives $C_{\text{dl}}$ towards values characteristic of an unprotected surface \cite{Orazem2008, Sastri2007}. In contrast, MBT, L-cysteine, and \ce{NaVO3} maintained $C_{\text{dl}}$ values in the order of \qty{10}{\micro\farad} throughout the experiment, consistent with stable inhibitor adsorption, the sustained exclusion of water and electrolyte from the double layer region, and a durable reduction in interfacial reactivity, as discussed in Section~\ref{subsec:IE_EIS}.
+
+Based on these results, MBT, \ce{NaVO3}, and L-cysteine were identified as the 
+best-performing inhibitors among those evaluated and were therefore selected for 
+subsequent incorporation into the ZnAl--LDH coating system.
+
 
 \section{Pre-treatments}
 \label{sec:results_pretreatments}
@@ -582,7 +644,7 @@ To identify the most suitable pre-treatment for LDH growth, SEM and EDS analyses
        \caption{Cu}
        \label{fig:Cu_I}
    \end{subfigure}
-   \vspace{0.5em}
+   \vspace{0.5cm}
    \begin{subfigure}[b]{0.24\textwidth}
        \includegraphics[width=\textwidth]{figs/I/SE_Si.png}
        \caption{Si}
@@ -637,7 +699,7 @@ To identify the most suitable pre-treatment for LDH growth, SEM and EDS analyses
        \caption{Cu}
        \label{fig:Cu_II}
    \end{subfigure}
-   \vspace{0.5em}
+   \vspace{0.5cm}
    \begin{subfigure}[b]{0.24\textwidth}
        \includegraphics[width=\textwidth]{figs/II/SE_Si.png}
        \caption{Si}
@@ -692,7 +754,7 @@ To identify the most suitable pre-treatment for LDH growth, SEM and EDS analyses
        \caption{Cu}
        \label{fig:Cu_III}
    \end{subfigure}
-   \vspace{0.5em}
+   \vspace{0.5cm}
    \begin{subfigure}[b]{0.24\textwidth}
        \includegraphics[width=\textwidth]{figs/III/SE_Si.png}
        \caption{Si}
