@@ -1,0 +1,2 @@
+control, II and IV were calculated using raw data, therefore it is necessary to multiply the resistances by the area and divide the capacitances
+III was calculated using data/area by mistake, therefore it is necessary to multiply the resistances by the area^2 and divide the capacitances
