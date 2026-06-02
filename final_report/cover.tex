@@ -11,6 +11,13 @@
 
 % Add 'final' parameter to remove "Relatório Intermédio" from cover page
 \documentclass[11pt,twoside,a4paper,final]{report}
+\usepackage[
+    a4paper,
+    inner=3cm,
+    outer=2.5cm,
+    top=2.6cm,
+    bottom=2.3cm
+]{geometry}
 
 \usepackage[engineering,deti]{uaThesisTemplate}
 
@@ -919,36 +926,53 @@ In addition to the XRD analysis, SEM imaging and EDS analysis were conductedon t
     \label{tab:eds_comparison}
     \begin{tabular}{@{} l c c @{}}
         \toprule
-        Element & \makecell{Norm. wt.\,(\%) \\ (Al matrix)} & 
-        \makecell{Norm.\,wt.\,(\%) \\ (Si intermetallic)} \\
+        Element & \makecell{Norm. at.\,(\%) \\ (Al matrix)} & 
+        \makecell{Norm.\,at.\,(\%) \\ (Si intermetallic)} \\
         \midrule
-        Carbon (C)     & 6.60   & 10.17  \\
-        Oxygen (O)     & 31.86  & 30.37  \\
-        Aluminium (Al) & 32.48  & 8.78   \\
-        Zinc (Zn)      & 25.19  & 24.46  \\
-        Silicon (Si)   & 0.64   & 21.98  \\
-        Nitrogen (N)   & 3.23   & 4.24   \\
+        Carbon (C)     & 12.54  & 18.69  \\
+        Oxygen (O)     & 45.43  & 41.91  \\
+        Aluminium (Al) & 27.47  & 7.19   \\
+        Zinc (Zn)      & 8.79  & 8.25  \\
+        Silicon (Si)   & 0.52   & 17.28  \\
+        Nitrogen (N)   & 5.26  & 6.68   \\
         \midrule
         Total          & 100.00 & 100.00 \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-Over the aluminium matrix, the EDS analysis reveals a composition dominated by Al, Zn, and O, which are the principal constituents of the ZnAl--LDHstructure, alongside N, consistent with the presence of intercalated \ce{NO3^-} anions. This is indicative of a dense, continuous LDH film covering the matrixregions. In contrast, over the silicon intermetallic particles, the Si signal is substantially elevated (21.98\,wt.\,\%) while the Al content is markedlyreduced (8.78\,wt.\,\%), suggesting that the EDS interaction volume penetrates througha thinner or less dense LDH layer and reaches the underlying Si-rich substrate. This observation is consistent with the expectation that LDH growth over Si particles is impeded, as the in situ synthesis relies on the partialdissolution of the aluminium matrix to supply the \ce{Al^{3+}} cations required for LDH nucleation --- a source that is absent over electrochemically inert Si intermetallics, as discussed in Section~\ref{sec:IMPs}. The elevated carbon content detected in both regions is attributed to surface contamination, which is commonly observed in EDS analyses conducted under ambient conditions.
+The EDS data reveal the presence of Al, Zn, O, and N across both substrate regions, consistent with the principal constituents of the ZnAl--LDH structure and the intercalated \ce{NO3^-} anions. The most notable difference between the two regions is the substantially elevated Si signal over the intermetallic particles (17.28\,at.\,\%) relative to the matrix (0.52\,at.\,\%), which reflects the underlying Si-rich substrate composition, and the correspondingly reduced Al content (7.19\,at.\,\% versus 27.47\,at.\,\%).
+
+Crucially, the Zn content is nearly identical across both regions --- 8.79\,at.\,\% over the Al matrix and 8.25\,at.\,\% over the Si intermetallic. Since Zn is absent from the AC46000 alloy and is incorporated exclusively through the synthesis solution, its uniform distribution across both substrate types provides strong and direct evidence that LDH was deposited with comparable density over both the aluminium matrix and the silicon intermetallic particles.
+
+Further insight is obtained from the Zn:Al atomic ratios. Over the aluminium matrix, the measured Zn:Al ratio is approximately 0.32; however, in this region the Al signal contains contributions from both the LDH film and the underlying aluminium substrate, which inflates the Al denominator and consequently underestimates the true Zn:Al ratio of the LDH film alone. Over the silicon intermetallic particles, by contrast, the substrate contributes no Al signal, meaning the measured Al derives exclusively from the LDH film itself. The resulting Zn:Al ratio of approximately 1.15 therefore more faithfully reflects the intrinsic stoichiometry of the deposited LDH phase. Considering that the theoretical Zn:Al ratio in ZnAl--LDH corresponds to the $x$ parameter in the general formula, typically in the range $x = 0.25$--$0.33$ \cite{Zhou2017}, which for a Zn$_{1-x}$Al$_x$ composition yields a Zn:Al ratio of approximately 2:1 to 3:1, the experimentally determined ratio over the Si intermetallic is broadly consistent with a well-formed ZnAl--LDH phase. The elevated carbon content detected in both regions is attributed to adventitious surface contamination, commonly observed in EDS analyses conducted under ambient conditions.
 
 \section{Inhibitor Intercalation}
 \label{sec:results_inhibitor_intercalation}
 
-Using the LDH films produced under the optimal pre-treatment conditions, the three inhibitor systems identified in Section~\ref{sec:results_inhibitor_selection} --- \ce{NaVO3}, MBT, and L-cysteine --- were intercalated via anion exchange. XRD analysis was subsequently conducted to verify intercalation, with a shift in the characteristic $2\theta$ reflection angles relative to the nitrate-form LDH serving as evidence of a change in interlayer gallery height and, consequently, of successful replacement of the resident \ce{NO3^-} anions. For \ce{NaVO3} and MBT, the XRD results confirming successful intercalation are presented in Figures~\ref{fig:} to~\ref{fig:}. In the case of L-cysteine, however, no diffraction peaks were observed in the XRD spectra, indicating dissolution of the LDH crystalline structure rather than intercalation, the mechanism of which is discussed below.
+Using the LDH films produced under the optimal pre-treatment conditions, the three inhibitor systems identified in Section~\ref{sec:results_inhibitor_selection} --- \ce{NaVO3}, MBT, and L-cysteine --- were evaluated for intercalation via anion exchange. XRD analysis was subsequently conducted to verify intercalation, with a shift in the characteristic $2\theta$ reflection angles relative to the nitrate-form LDH serving as evidence of a change in interlayer gallery height and, consequently, of successful replacement of the resident \ce{NO3^-} anions. The XRD patterns before and after intercalation, as well as after immersion in \qty{0.05}{\molar} \ce{NaCl}, are presented in Figure~\ref{fig:xrd_intercalation}.
 
-The structural degradation of ZnAl--LDH upon exposure to L-cysteine can be attributed to two concurrent and mutually reinforcing mechanisms. First, L-cysteine is inherently acidic due to its carboxylic acid group, whichreleases protons (\ce{H+}) in solution, locally reducing the pH and initiatingacid-driven dissolution of the hydroxide layers that constitute the LDH framework. Second, the free thiol group (\ce{-SH}) of L-cysteine exhibits a strong coordination affinity for \ce{Zn^{2+}} ions, enabling the molecule to act as a chelating agent that actively extracts zinc from the host layers, forming soluble zinc--cysteine complexes and thereby destabilising the crystal lattice. These two effects --- proton-driven hydroxide dissolution and thiol-mediated zinc leaching --- act in concert to rapidly collapse the LDH framework. Full deprotonation of L-cysteine into its anionic form, which would suppress both mechanisms, would require strongly alkaline conditions incompatible with the chemical stability of the aluminium substrate, as discussed in Section~\ref{sec:pourbaix}. L-cysteine was therefore excluded from further investigation.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.95\textwidth]{figs/XRD_intercalation.pdf} 
+    \caption{XRD patterns of LDH films in the nitrate form (control), following 
+    \ce{NaVO3} intercalation and following MBT intercalation attempt, each 
+    presented before and after immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+    \label{fig:xrd_intercalation}
+\end{figure}
+
+The XRD patterns for the nitrate-form LDH (control), the \ce{NaVO3}-intercalated system, and the MBT intercalation attempt are presented in Figure~\ref{fig:xrd_intercalation}, each shown before and after immersion in \qty{0.05}{\molar} \ce{NaCl}. For \ce{NaVO3}, a clear and systematic shift in the $2\theta$ position of the (003) reflection confirms successful intercalation and subsequent anion exchange during immersion, as discussed in detail below. For MBT, the absence of any discernible diffraction peaks --- both before and after immersion --- confirms the dissolution of the LDH crystalline structure upon exposure to the MBT solution, indicating that intercalation did not occur.
+
+Regarding \ce{NaVO3}, a clear and systematic shift in the $2\theta$ position of the (003) reflection is observed across the three stages. The nitrate-form LDH exhibits a (003) reflection at $2\theta = 9.86^\circ$, corresponding to a basal spacing of \qty{8.97}{\angstrom} and a gallery height of \qty{4.20}{\angstrom}. Following vanadate intercalation, the reflection shifts to $2\theta = 9.51^\circ$, yielding an expanded basal spacing of \qty{9.30}{\angstrom} and a gallery height of \qty{4.53}{\angstrom}, consistent with the larger ionic radius of the vanadate anion (\ce{VO3^-} / \ce{H2VO4^-}) relative to \ce{NO3^-}. After \qty{168}{\hour} of immersion in \ce{NaCl} solution, the reflection shifts further to $2\theta = 10.35^\circ$, corresponding to a reduced basal spacing of \qty{8.55}{\angstrom} and a gallery height of \qty{3.78}{\angstrom}, indicative of the progressive replacement of the larger vanadate anions by the smaller chloride ions (\ce{Cl^-}, ionic radius $\approx$ \qty{1.81}{\angstrom}) through anion exchange during immersion. This confirms that the LDH film actively participates in ion exchange under service conditions, releasing vanadate inhibitor in exchange for the aggressive chloride species present in the electrolyte --- precisely the active protection mechanism for which the system was designed. Alongside the $2\theta$ shift, a progressive broadening and attenuation of the (003) reflection is observed across the three stages, indicating a transition from a well-crystallised LDH structure towards a more amorphous phase, likely associated with the partial disruption of the interlayer ordering upon repeated anion exchange events during immersion.
+
+In the case of MBT and L-cysteine, however, no diffraction peaks were observed in the XRD spectra following the intercalation attempt, indicating dissolution of the LDH crystalline structure rather than intercalation. The structural degradation is attributed to the thiol group (\ce{-SH}) present in both molecules, which exhibits a strong coordination affinity for \ce{Zn^{2+}} ions and enables these species to act as chelating agents, actively extracting zinc from the host layers and forming soluble zinc--thiolate complexes that destabilise and ultimately collapse the crystal lattice. In the case of L-cysteine, this behaviour was additionally confirmed in a parallel study using a different aluminium substrate but an identical LDH synthesis protocol, where dissolution of the LDH structure was consistently reproduced. Although the solution pH was adjusted prior to intercalation in both cases, the local concentration of reactive thiol groups at the LDH surface is not immediately reduced by pH adjustment alone, and their sustained presence is sufficient to initiate zinc leaching and framework dissolution before intercalation can occur. Notwithstanding this, given the superior inhibition performance demonstrated by MBT in the pre-selection study (Section~\ref{sec:results_inhibitor_selection}), it was decided to proceed with its evaluation in the corrosion performance analysis despite the absence of confirmed crystalline intercalation, to assess whether any protective effect could still be achieved through surface adsorption or partial interaction with the LDH film.
 
 \section{Corrosion Performance Analysis}
 \label{sec:results_corrosion_performance}
 
 The corrosion performance of the LDH-based coatings was evaluated in two successive experimental batches. The first batch (LDH-1) comprised specimens subjected to the industrial pre-treatment with a \qty{1}{\hour} LDH growth time, incorporating only \ce{NaVO3} as the interlayer inhibitor, given its status as an established system for aluminium alloy protection. Following analysis of these results, which indicated unsatisfactory corrosion protection performance, the synthesis conditions were revised: the second batch (LDH-2) employed the chemical pre-treatment with an extended LDH growth time of \qty{3}{\hour}, and both \ce{NaVO3} and MBT were evaluated as inhibitor systems. In both cases, corrosion performance was assessed by immersing the specimens in a \qty{0.05}{\molar} \ce{NaCl} solution and conducting EIS measurements at regular intervals over a total immersion period of \qty{168}{\hour}. Potentiodynamic polarisation (PDP) measurements and optical surface inspection were additionally conducted on the LDH-2 specimens to provide complementary information on corrosion kinetics and surface degradation morphology.
 
-\subsection{LDH-1: Industrial Pre-treatment, \qty{1}{\hour} Growth}
+\subsection{LDH-1: Industrial Pre-treatment, 1H Growth}
 \label{subsec:ldh1}
 
 \begin{figure}[htbp]
@@ -1054,9 +1078,11 @@ The evolution of the fitted $R_{\text{ct}}$ and $C_{\text{dl}}$ parameters is sh
 
 Optical inspection of the LDH-1 specimens prior to and following \qty{168}{\hour} of immersion, presented in Figure~\ref{fig:optical_ldh1}, provides visual confirmation of the electrochemical trends described above. Prior to immersion, all LDH-coated specimens display a uniform surface film with a characteristic yellowish hue, consistent with the successful intercalation of \ce{NaVO3} into the LDH interlayer galleries. Following \qty{168}{\hour} of immersion, all specimens exhibit significant surface degradation. Pitting corrosion is identifiable by localised whitish deposits of aluminium oxide and hydroxide corrosion products. The control specimen displays the greatest number of pits, though these remain relatively small and discrete. In contrast, the three LDH-coated specimens show considerably larger pit dimensions alongside evidence of generalised matrix corrosion, consistent with the more extensive interfacial area exposed by the subsurface intermetallic particles uncovered during LDH synthesis, as discussed above. Nonetheless, there is limited but discernible evidence of vanadate inhibitor activity in specimens 1 and 3, which display small yellowish deposits characteristic of vanadium oxide precipitation at incipient pit sites --- a hallmark of localised \ce{NaVO3} release and repassivation attempt. That these deposits are present but insufficient to prevent macroscopic corrosion further supports the conclusion that the inhibitor loading achievable within the LDH films grown under the industrial pre-treatment conditions was inadequate to suppress the corrosive activity of the newly exposed cathodic intermetallic sites.
 
-This counterintuitive behaviour is attributed to the combined effect of the industrial pre-treatment and LDH synthesis on the alloy surface. The aggressive industrial etching removes the superficial intermetallic particles, eliminating the cathodic sites that would otherwise drive localised micro-galvanic corrosion; the control specimen therefore benefits from a relatively inert surface. The LDH synthesis, however, requires partial dissolution of the aluminium matrix to supply \ce{Al^{3+}} cations, and the more extensive matrix dissolution associated with the industrial pre-treatment exposes subsurface intermetallic particles that were not present at the original surface. These newly exposed cathodic sites initiate pitting corrosion that the vanadate inhibitor, present in insufficient concentration to passivate the enlarged reactive area, is unable to suppress. This assessment motivated a revision of the synthesis protocol for the second batch.
+This counterintuitive behaviour is attributed to the combined effect of the industrial pre-treatment and LDH synthesis on the alloy surface. The aggressive industrial etching removes the superficial intermetallic particles, eliminating the cathodic sites that would otherwise drive localised micro-galvanic corrosion; the control specimen therefore benefits from a relatively inert surface. The LDH synthesis, however, requires partial dissolution of the aluminium matrix to supply \ce{Al^{3+}} cations, and the more extensive matrix dissolution associated with the industrial pre-treatment not only exposes subsurface intermetallic particles in the immediate vicinity of the surface, but --- given the aggressive nature of the etching --- can penetrate sufficiently deeply into the substrate to access intermetallic particles that were originally buried well below the surface. These newly exposed cathodic sites, whether at or near the surface or at greater depth, initiate localised pitting corrosion.
 
-\subsection{LDH-2: Chemical Pre-treatment, \qty{3}{\hour} Growth}
+Once a pit is initiated, the geometry of the cavity itself further exacerbates the corrosion process. Within the confined volume of a pit, mass transport is severely restricted, preventing the local dissolution products from diffusing away and the bulk electrolyte from replenishing the aggressive species. This mass-transport limitation drives the local chemistry towards increasingly aggressive conditions --- lower pH and higher chloride concentration --- promoting autocatalytic and largely uncontrolled dissolution of the aluminium matrix within the pit. Furthermore, the geometric inaccessibility of the pit interior significantly limits the ability of the vanadate inhibitor to reach and passivate the active cathodic sites within the cavity. Unlike surface-exposed intermetallic particles, where inhibitor species released from the LDH film can readily diffuse to and adsorb on the reactive site, the restricted geometry of the pit severely impedes inhibitor transport, rendering the \ce{NaVO3} loading achievable within the LDH films insufficient to suppress cathodic activity at these buried sites. This assessment motivated a revision of the synthesis protocol for the second batch.
+
+\subsection{LDH-2: Chemical Pre-treatment, 3H Growth}
 \label{subsec:ldh2}
 
 Based on the findings of the LDH-1 batch, the pre-treatment was changed to the milder chemical etching, which --- as demonstrated in Section~\ref{sec:results_LDH_synthesis} --- yields comparable LDH growth without the deep matrix dissolution associated with the industrial procedure. The LDH growth time was extended to \qty{3}{\hour} to increase film density and consequently the inhibitor loading within the interlayer galleries. Both \ce{NaVO3} and MBT were evaluated as inhibitor systems, with MBT selected on the basis of its superior performance in the pre-selection study described in Section~\ref{sec:results_inhibitor_selection}.
@@ -1196,6 +1222,10 @@ While the LDH-2 batch represents a clear improvement over LDH-1, the overall cor
 \label{sec:results_topcoat}
 
 Following the successful deposition of the inhibitor-intercalated LDH conversion coating, a polyurethane topcoat was applied to both planar and geometrically complex specimens via cathodic electrodeposition, as described in Section~\ref{sec:topcoat}. The resulting coating systems were evaluated by optical inspection, and representative photographs of both substrate geometries are presented in Figure~\ref{fig:}.
+
+%ADD PICTURES AT 72H FOR LDH-2
+%ADD POLARIZATION CURVES AND TALK ABOUT THEM
+%ADD PICTURES OF TOPCOATINGS AND COMPLEX GEOMETRIES AND TALK ABOUT THEM
 
 \chapter{Conclusion \& Future Work}
 Sum up the main findings and their importance, and discuss how they have the WBS going forward.
