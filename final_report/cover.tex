@@ -98,9 +98,9 @@
 %% Optional Keywords and Abstract in additional languages.
 \Abstract{Keywords}{layered double hydroxides, corrosion protection, aluminium alloys, AC46000, intermetallic particles, anion exchange, corrosion inhibitors, electrochemical impedance spectroscopy, ZnAl--LDH}
          {Abstract}{\selectlanguage{english}This work investigates the development and optimisation of a ZnAl--LDH conversion coating system loaded with corrosion inhibitors on the AC46000 die-cast aluminium alloy, as a chromate-free alternative for aerospace corrosion protection applicable to geometrically complex components.\newline
-         A pre-selection of seven inhibitor candidates via EIS identified MBT, \ce{NaVO3}, and L-cysteine as the best-performing systems. SEM-EDS and XRD characterisation confirmed successful ZnAl--LDH formation across all pre-treatment conditions, with comparable film density regardless of substrate condition. \ce{NaVO3} intercalation was confirmed by a systematic shift in the (003) basal reflection, with subsequent chloride exchange during immersion demonstrating active inhibitor release. Both MBT and L-cysteine caused dissolution of the LDH crystalline structure due to thiol-mediated \ce{Zn^{2+}} chelation.\newline
-         Corrosion performance evaluation revealed that an aggressive industrial pre-treatment, despite removing surface intermetallics, exposed subsurface cathodic sites during LDH synthesis, resulting in inferior performance relative to the uncoated control. Switching to a milder chemical pre-treatment with extended LDH growth time yielded improved results: MBT-intercalated specimens demonstrated superior early-stage protection while \ce{NaVO3} provided intermediate performance with evidence of active repassivation. Potentiodynamic polarisation confirmed that while neither inhibitor suppressed cathodic activity at Fe--Mn intermetallic sites, both reduced anodic dissolution. The persistence of Fe--Mn particles was identified as the primary limiting factor for overall corrosion protection performance.\newline
-         Finally, a polyurethane topcoat applied via anodic electrodeposition confirmed uniform coverage and good adhesion on both planar and geometrically complex substrates, validating the complete multilayer system under industrially representative conditions.}
+         An initial pre-selection of seven inhibitor candidates via EIS identified MBT, \ce{NaVO3}, and L-cysteine as the best-performing systems. SEM-EDS and XRD characterisation confirmed successful ZnAl--LDH formation across all pre-treatment conditions, with comparable film density regardless of the substrate condition. \ce{NaVO3} intercalation was confirmed by a systematic shift in the (003) basal reflection, with subsequent chloride exchange during immersion demonstrating active inhibitor release. Conversely, both MBT and L-cysteine caused the dissolution of the LDH crystalline structure due to thiol-mediated \ce{Zn^{2+}} chelation.\newline
+         Corrosion performance evaluation revealed that an aggressive industrial pre-treatment, despite removing surface intermetallics, exposed subsurface cathodic sites during LDH synthesis, resulting in inferior performance relative to the uncoated control. Switching to a milder chemical pre-treatment with an extended LDH growth time yielded improved results: MBT-intercalated specimens demonstrated superior early-stage protection, while \ce{NaVO3} provided intermediate performance with evidence of active repassivation. Potentiodynamic polarisation confirmed that while neither inhibitor suppressed cathodic activity at Fe--Mn intermetallic sites, both significantly reduced anodic dissolution. The persistence of these Fe--Mn particles was identified as the primary limiting factor for the overall corrosion protection performance.\newline
+         Finally, the application of a polyurethane topcoat via anodic electrodeposition confirmed uniform coverage and robust adhesion on both planar and geometrically complex substrates, successfully validating the complete multilayer system under industrially representative conditions.}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -135,7 +135,8 @@
 
 \chapter{Introduction}
 \section{Background}
-Modern aerospace structures rely heavily on high-performance aluminium alloys, especially the 2xxx and 7xxx series, due to their exceptional strength-to-weight ratio and manufacturability. However, under the harsh conditions of the aerospace environment, these materials are highly susceptible to localised corrosion \cite{MartinezViademonte2020,Garg2025}. This degradation is accelerated by intermetallic particles dispersed within the alloy that form micro-galvanic sites, which can significantly shorten a component's lifespan \cite{MartinezViademonte2020,Becker2019,Garg2025}.
+
+Modern aerospace structures rely heavily on high-performance aluminium alloys, particularly the 2xxx and 7xxx series, due to their exceptional strength-to-weight ratio and manufacturability. However, in harsh aerospace environments, these materials are highly susceptible to localised corrosion \cite{MartinezViademonte2020,Garg2025}. This degradation is accelerated by dispersed intermetallic particles (IMPs) that form micro-galvanic sites, significantly shortening component lifespans \cite{MartinezViademonte2020,Becker2019,Garg2025}.
 
 Traditionally, this challenge has been managed using multilayer coatings based on hexavalent chromium (Cr(VI)) \cite{MartinezViademonte2020,BoualiReview2020}. These coatings offered strong adhesion, long-term durability, and, most importantly, a self-healing capability \cite{MartinezViademonte2020,Becker2019,BoualiReview2020}. However, due to the carcinogenic nature of Cr(VI), strict regulatory restrictions have demanded an immediate ban, creating a need for safe, high-performance alternatives that can match the protection offered by chromium-based systems \cite{MartinezViademonte2020,Becker2019,Bouali2020}.
 
@@ -158,17 +159,19 @@ This work follows four central objectives defined in the project plan:
 \end{itemize}
 
 \section{Scope}
+The scope of this investigation encompasses the following aspects:
 \begin{itemize}
-    \item \textbf{Coating System:} Hydrothermal synthesis and optimization of ZnAl-LDH conversion layers on AC46000 alloy via immersion in a metal-containing solution at high temperatures.
+    \item \textbf{Coating System:} Development of ZnAl--LDH conversion layers on AC46000 alloy via hot aqueous synthesis at elevated temperatures, utilising partial substrate dissolution to supply aluminium cations.
     
-    \item \textbf{Inhibitor chemistry:} A targeted screening of environmentally friendly candidates, including vanadates, molybdates and MBT, will be performed at a standard concentration of 0.005 M.
+    \item \textbf{Inhibitor Chemistry:} Screening of environmentally friendly inhibitor candidates, including sodium metavanadate, sodium molybdate, and 2-mercaptobenzothiazole (MBT), at a standard concentration of 0.005 M.
     
-    \item \textbf{Characterization Techniques:} Physical Characterization will use XRD to evaluate inhibition intercalation efficiency, FTIR/Raman to confirm chemical presence of inhibitor molecules within the LDH galleries, and SEM/EDS to analyse coating and substrate morphology.
+    \item \textbf{Physical Characterisation:} X-ray diffraction (XRD) analysis to evaluate inhibitor intercalation efficiency through basal spacing measurements, and scanning electron microscopy with energy-dispersive X-ray spectroscopy (SEM/EDS) to analyse coating morphology, elemental distribution, and substrate microstructure.
     
-    \item \textbf{Electrochemical Assessment:} Corrosion performance is evaluated through long-term EIS (up to 168 hours of immersion in 0.05 M NaCl) and localised SVET for self-healing monitoring.
+    \item \textbf{Electrochemical Assessment:} Corrosion performance evaluation through long-term electrochemical impedance spectroscopy (EIS) monitoring (up to \qty{168}{\hour} in \qty{0.05}{\molar} \ce{NaCl}) and potentiodynamic polarisation (PDP) measurements to determine corrosion kinetics and inhibition mechanisms.
     
-    \item \textbf{Multilayer Configuration:} The final validation phase employs an anaphoretic polyurethane-based organic coating applied over the optimized LDH pre-treatment.
+    \item \textbf{Multilayer Configuration:} Application of a water-based polyurethane organic coating over the optimised LDH pre-treatment via anodic electrodeposition, validated on both planar and complex-geometry specimens.
 \end{itemize}
+
 
 \chapter{Literature Review}
 
@@ -189,7 +192,7 @@ Crucially, Pourbaix diagrams represent equilibrium conditions and provide no ins
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.35\textwidth]{figs/pourbaix.png} 
-    \caption{Pourbaix diagram of aluminium.}
+    \caption{Pourbaix diagram of aluminium \cite{Leung2021}.}
     \label{fig:pourbaix}
 \end{figure}
 
@@ -203,7 +206,7 @@ The EDL is classically described by a combination of the Helmholtz, Stern, and G
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.4\textwidth]{figs/double_layer.png} 
-    \caption{Metal--solution interface: electrical double layer.}
+    \caption{Metal--solution interface: electrical double layer \cite{Vargel2020}.}
     \label{fig:double_layer}
 \end{figure}
 
@@ -226,7 +229,7 @@ Consequently, from a protective coating perspective, the primary objective is no
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/pitting.png} 
-    \caption{Pitting mechanism at cathodic intermetallics in aluminium.}
+    \caption{Pitting mechanism at cathodic intermetallics in aluminium \cite{Erlinger2022}.}
     \label{fig:pitting}
 \end{figure}
 
@@ -239,7 +242,7 @@ Conventional corrosion protection systems for aluminium alloys, particularly in 
     \centering
     \includegraphics[width=0.5\textwidth]{figs/multilayer.png} 
     \caption{Typical multilayer coating system for corrosion protection of 
-    aluminium alloys.}
+    aluminium alloys \cite{MartinezViademonte2020}.}
     \label{fig:multilayer}
 \end{figure}
 
@@ -295,7 +298,7 @@ The corrosion protection efficacy of LDHs stems from a synergistic, dual-action 
     \item \textbf{Stimuli-responsive release of inhibitors:} Concurrently, the exchange process releases pre-loaded inhibiting anions (e.g., vanadate, molybdate, or organic inhibitors) into the local environment. This release is often triggered by local pH changes or the presence of aggressive anions, delivering targeted self-healing protection precisely where the coating is compromised.
 \end{enumerate}
 
-Beyond this primary ion-exchange behaviour, LDHs exhibit a secondary self-healing capability through local dissolution and recrystallisation at coating defects. This process can physically restore barrier integrity and seal micro-cracks \cite{Cao2022}. The convergence of these multiple protection mechanisms yields a synergistic effect, enhancing overall corrosion resistance beyond the sum of the individual contributions. This multifaceted protection is particularly advantageous for heterogeneous microstructures, such as those found in AC46000 cast alloys, where localised galvanic activity demands robust, targeted inhibition.
+Beyond this primary ion-exchange behaviour, LDHs exhibit a secondary self-healing capability through local dissolution and recrystallisation at coating defects. This process can physically restore barrier integrity and seal micro-cracks \cite{Cao2022}. This multifaceted protection is particularly advantageous for heterogeneous microstructures, such as those found in AC46000 cast alloys, where localised galvanic activity demands robust, targeted inhibition.
 
 \subsection{Synthesis of LDH}
 \label{subsec:LDH_synthesis}
@@ -317,7 +320,7 @@ Structural characterisation of the resulting LDH films is predominantly performe
 
 Among the diverse range of possible LDH compositions, ZnAl--LDH has emerged as the preeminent system for the \textit{in situ} corrosion protection of aluminium alloys. This preference is grounded in both thermodynamic compatibility and processing kinetics. 
 
-As outlined in Section~\ref{subsec:LDH_synthesis}, \textit{in situ} hydrothermal synthesis on aluminium relies on the controlled dissolution of the substrate to supply the requisite trivalent $\mathrm{Al}^{3+}$ cations, while the divalent cation is introduced externally via the synthesis solution \cite{BoualiReview2020, Cao2022}. Of the candidate divalent cations, $\mathrm{Zn}^{2+}$ is particularly advantageous. Its ionic radius is highly compatible with the octahedral coordination required within the brucite-like host layer. Furthermore, Zn-based LDH systems consistently exhibit rapid anion exchange kinetics and robust, stimuli-responsive inhibitor release in chloride-containing environments \cite{Bouali2020, Tedim2011, BoualiReview2020, Cao2022}.
+As outlined in Section~\ref{subsec:LDH_synthesis}, the \textit{in situ} hot aqueous solution method on aluminium relies on the controlled dissolution of the substrate to supply the requisite trivalent $\mathrm{Al}^{3+}$ cations, while the divalent cation is introduced externally via the synthesis solution \cite{BoualiReview2020, Cao2022}. Of the candidate divalent cations, $\mathrm{Zn}^{2+}$ is particularly advantageous. Its ionic radius is highly compatible with the octahedral coordination required within the brucite-like host layer. Furthermore, Zn-based LDH systems consistently exhibit rapid anion exchange kinetics and robust, stimuli-responsive inhibitor release in chloride-containing environments \cite{Bouali2020, Tedim2011, BoualiReview2020, Cao2022}.
 
 Consequently, the combination of well-established synthesis protocols, predictable inhibitor intercalation behaviour, and proven efficacy on aluminium substrates establishes ZnAl--LDH as the optimal model system for this study. However, the ultimate protective performance of this architecture is fundamentally governed by the specific choice of the intercalated inhibitor anion, which is examined in the following subsection.
 
@@ -326,7 +329,7 @@ Consequently, the combination of well-established synthesis protocols, predictab
 
 LDHs are typically synthesised with nitrate ions as the initial interlayer anions, owing to their weak affinity for the LDH structure and consequently high exchangeability. Carbonate anions, by contrast, exhibit a significantly stronger affinity and resist subsequent exchange, rendering them unsuitable as precursor anions \cite{Cao2022}. Once the nitrate-LDH is synthesised, it undergoes an anion-exchange step to intercalate the desired corrosion-inhibiting species. 
 
-The nature of the inhibitor dictates the intercalation strategy. Unlike inorganic inhibitors such as vanadate or molybdate, thiol-containing organic inhibitors like 2-mercaptobenzothiazole (MBT) require deprotonation into their anionic form prior to intercalation. Their neutral forms exhibit insufficient aqueous solubility and lack the negative charge required for electrostatic uptake into the positively charged LDH galleries. This is typically achieved by adjusting the solution pH with \ce{NaOH}, converting the neutral molecule into its soluble, exchangeable anionic form.
+The nature of the inhibitor dictates the intercalation strategy. Unlike inorganic inhibitors such as vanadate, thiol-containing organic inhibitors require alkaline pH adjustment prior to intercalation. While 2-mercaptobenzothiazole (MBT) requires this adjustment to achieve sufficient aqueous solubility, L-cysteine is already highly soluble at neutral pH as a zwitterion. Nevertheless, for both molecules, adjusting the solution pH with \ce{NaOH} is essential to deprotonate the thiol group (\ce{-SH}) into its thiolate anion (\ce{-S^-}). This deprotonation imparts the net negative charge required for electrostatic uptake into the positively charged LDH galleries \cite{Tedim2010}.
 
 Vanadates are among the most extensively studied inhibitor systems, with active corrosion protection of AA2024 demonstrated by \citet{Tedim2011} and \citet{Yasakau2014}. \citet{Zhang2015} further showed that vanadate-intercalated ZnAl--LDH provides superior corrosion resistance relative to nitrate-intercalated LDH on the same alloy, while \citet{Zhou2017} reported analogous protective behaviour for AZ91 magnesium alloy. Other inhibitors, including MBT and molybdate, have also been investigated \cite{Cao2022, Tedim2010, Zhang2015}; however, for AA2024, these were found to offer inferior protection relative to vanadates \cite{Zhang2015, Tedim2010}. Crucially, the relative performance of these inhibitors is strongly dependent on both the LDH composition and the substrate chemistry. For instance, \citet{Matsui2025} reported that molybdate-intercalated Mg--Al LDH provided superior corrosion resistance compared to vanadate-based systems on ADC-12, an Al--Si--Cu die-cast alloy. This underscores the critical importance of tailoring inhibitor selection to the specific microstructural and electrochemical characteristics of the alloy system under investigation.
 
@@ -344,7 +347,7 @@ However, this localised growth is sustained by the aggressive anodic dissolution
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.65\textwidth]{figs/ldh_nucleation.png} 
-    \caption{Generalised mechanism of LDH nucleation and matrix trenching at a Cu-rich intermetallic compound in an aluminium alloy.}
+    \caption{Generalised mechanism of LDH nucleation and matrix trenching at a Cu-rich intermetallic compound in an aluminium alloy \cite{Bouali2022}.}
     \label{fig:ldh_nucleation}
 \end{figure}
 
@@ -375,6 +378,9 @@ Electrochemical Impedance Spectroscopy (EIS) is a cornerstone non-destructive te
 
 The resulting complex impedance data, $Z(\omega) = Z' + jZ''$, are typically analysed in two complementary formats. The Nyquist plot ($-Z''$ vs. $Z'$) is highly effective for visualising distinct electrochemical processes, while the Bode plot (impedance modulus $|Z|$ and phase angle $\phi$ vs. frequency on a logarithmic scale) provides superior resolution for identifying overlapping time constants \cite{Orazem2008, Lasia2014}. 
 
+\subsection{Potentiodynamic Polarisation}
+Potentiodynamic polarisation (PDP) monitors shifts in the corrosion potential ($E_{\text{corr}}$) and enables qualitative comparison of anodic and cathodic behaviour. Complementing EIS, PDP reveals how the LDH coating modifies fundamental reaction pathways without requiring kinetic parameter extraction.
+
 \section{Equivalent Circuit Models for EIS}
 \label{sec:ecm}
 
@@ -390,10 +396,10 @@ Determining an appropriate equivalent circuit model (ECM) is a critical step in 
 The REC comprises three primary elements, each corresponding to a specific physical phenomenon:
 
 \paragraph{Solution Resistance ($R_s$)}
-$R_s$ quantifies the ohmic resistive potential drop between the working and reference electrodes \cite{MetrohmEIS3, Lasia2014}. Its magnitude is dictated by the electrolyte conductivity and the cell geometry. In a Nyquist representation, $R_s$ is identified as the high-frequency intercept of the impedance data with the real axis, representing the purely resistive contribution of the bulk electrolyte before any interfacial charge transfer or capacitive processes occur.
+The solution resistance quantifies the ohmic resistive potential drop between the working and reference electrodes \cite{MetrohmEIS3, Lasia2014}. Its magnitude is dictated by the electrolyte conductivity and the cell geometry. In a Nyquist representation, $R_s$ is identified as the high-frequency intercept of the impedance data with the real axis, representing the purely resistive contribution of the bulk electrolyte before any interfacial charge transfer or capacitive processes occur.
 
 \paragraph{Charge-Transfer Resistance ($R_{ct}$)}
-$R_{ct}$ represents the kinetic resistance to electron transfer across the electrode/electrolyte interface. As a strictly kinetic parameter, it is inversely proportional to the rate of the Faradaic reactions. In corrosion studies, $R_{ct}$ is often equated to the polarisation resistance ($R_p$), which relates directly to the corrosion current density ($i_{\text{corr}}$) via the Stern--Geary relationship \cite{Kelly2002, Lasia2014}:
+The charge-transfer resistance represents the kinetic resistance to electron transfer across the electrode/electrolyte interface. As a strictly kinetic parameter, it is inversely proportional to the rate of the Faradaic reactions. In corrosion studies, $R_{ct}$ is often equated to the polarisation resistance ($R_p$), which relates directly to the corrosion current density ($i_{\text{corr}}$) via the Stern--Geary relationship \cite{Kelly2002, Lasia2014}:
 
 \begin{equation}
     i_{\text{corr}} = \frac{B}{R_{\text{ct}}} \label{eq:icorr}
@@ -402,7 +408,7 @@ $R_{ct}$ represents the kinetic resistance to electron transfer across the elect
 where $B$ is the Stern--Geary constant. Consequently, a higher $R_{ct}$ reflects slower interfacial kinetics and a lower corrosion rate, indicating superior corrosion protection. In the Nyquist plot, $R_{ct}$ manifests as the diameter of the capacitive semicircle in the high-to-mid frequency range, arising from the kinetic time constant $\tau_{k} = R_{ct} C_{dl}$ \cite{Das2025, Lasia2014}.
 
 \paragraph{Double-Layer Capacitance ($C_{dl}$) and the Constant Phase Element (CPE)}
-$C_{dl}$ arises from the charge separation at the electrode/electrolyte interface, as described in Section~\ref{sec:kinetics} \cite{Kelly2002, MetrohmEIS3}. While ideal capacitors assume a perfectly smooth, homogeneous surface, solid electrodes---particularly heterogeneous cast alloys and rough conversion coatings---invariably exhibit frequency dispersion due to surface roughness, porosity, and non-uniform current distribution \cite{Lasia2014, Das2025}. 
+The double-layer capacitance arises from the charge separation at the electrode/electrolyte interface, as described in Section~\ref{sec:kinetics} \cite{Kelly2002, MetrohmEIS3}. While ideal capacitors assume a perfectly smooth, homogeneous surface, solid electrodes---particularly heterogeneous cast alloys and rough conversion coatings---invariably exhibit frequency dispersion due to surface roughness, porosity, and non-uniform current distribution \cite{Lasia2014, Das2025}. 
 
 To account for this non-ideal behaviour, the double layer is most accurately represented by a Constant Phase Element (CPE). The impedance of a CPE is defined as:
 
@@ -471,16 +477,17 @@ The theoretical framework established in this chapter---spanning the thermodynam
 
 \chapter{Methodology}
 
-\section{Pre-selection of inhibitors}
+\section{Pre-selection of Inhibitors}
 \label{sec:inhibitor_selection}
-The first task of the project was to do a pre-selection of the inhibitors using electrochemical impedance spectroscopy (EIS). For this purpose bare metal substrates were sequentially polished using 120, 600, 1200 and 2500 grit sandpaper under water. After polishing, the samples were rinsed with deionized water and subsequently air-dried.
 
-The selected corrosion inhibitors are listed in Table~\ref{tab:inhibitor}, with a standard concentration of 0.005 M, except for those with lower saturation limits. Sodium chloride (NaCl) at 0.05 M was used as the electrolyte. This concentration is commonly chosen because it provides high conductivity, resulting in low solution impedance, and allows easy comparison with existing studies. The pH of each solution was also measured prior to experimentation.
+The initial phase of this study involved the electrochemical pre-selection of candidate corrosion inhibitors using electrochemical impedance spectroscopy (EIS). Prior to testing, the bare AC46000 substrates underwent metallographic preparation, being sequentially polished with 120, 600, 1200, and 2500-grit silicon carbide (SiC) abrasive paper under a continuous water flow. Following polishing, the samples were thoroughly rinsed with deionised water and dried under a stream of ambient air.
+
+A diverse range of inorganic and organic inhibitors was evaluated, as detailed in Table~\ref{tab:inhibitor}. All inhibitors were tested at a standard concentration of 0.005 M, with the exception of those with lower aqueous solubility limits, which were tested at their saturation point. The background electrolyte consisted of 0.05 M sodium chloride (NaCl). This specific concentration was selected to ensure high ionic conductivity---thereby minimising uncompensated solution resistance---and to facilitate direct comparison with established literature. The initial pH of each test solution was recorded prior to immersion.
 
 \begin{table}[htbp]
     \centering
     \small 
-    \caption{Composition of the solutions for testing the effectiveness of the inhibitors and respective pH values}
+    \caption{Composition of the solutions for testing the effectiveness of the inhibitors and respective initial pH values.}
     \label{tab:inhibitor}
     \begin{tabular}{@{} r l c S[table-format=1.2] @{}}
         \toprule
@@ -497,96 +504,97 @@ The selected corrosion inhibitors are listed in Table~\ref{tab:inhibitor}, with 
     \end{tabular}
 \end{table}
 
-EIS measurements were then performed inside a Faraday cage using a Gamry Interface 1000 potentiostat linked to a computer and Gamry Framework v.6.33 and Echem Analyst v.6.33 software packages for data acquisition and analysis. Measurements were conducted at open circuit potential with a 10 mV sinusoidal perturbation over a frequency range of 100 kHz to 10 mHz, using 10 points per decade. For the initial measurement, the lower frequency limit was set to 100 mHz due to insufficient sample stability.
+Electrochemical measurements were conducted inside a Faraday cage using a Gamry Interface 1000 potentiostat, controlled via Gamry Framework and Echem Analyst software (v.6.33). EIS spectra were recorded at the open-circuit potential (OCP) by applying a 10 mV root-mean-square (RMS) sinusoidal perturbation. The frequency range spanned from 100 kHz to 10 mHz, with a sampling density of 10 points per decade. For the initial measurement (0 h), the lower frequency limit was restricted to 100 mHz to avoid artefacts arising from transient system instability at early immersion times.
 
-A conventional three-electrode configuration was used, comprising a saturated calomel electrode (SCE) as the RE, a platinum foil as the CE, and the exposed AC46000 substrate as the WE. The samples were immersed for a total duration of \qty{168}{\hour}, with EIS measurements collected at 0, 1, 4, 8, 24, 48, 72, and \qty{168}{\hour}. 
+All electrochemical tests utilised a conventional three-electrode cell configuration, comprising a saturated calomel electrode (SCE) as the reference electrode (RE), a platinum foil counter electrode (CE), and the AC46000 substrate as the working electrode (WE). The WE consisted of cylindrical specimens embedded in an insulating resin, exposing a geometric cross-sectional area of \qty{0.95}{\square\centi\meter} to the electrolyte. The specimens were continuously immersed in the test solutions for a total duration of \qty{168}{\hour} (7 days). To monitor the temporal evolution of the interfacial processes, EIS spectra were acquired at predefined intervals: 0, 1, 4, 8, 24, 48, 72, and \qty{168}{\hour}.
 
-\section{Determine ECM for EIS}
+\section{Equivalent Circuit Modelling and Automated Fitting Strategy}
 \label{sec:fitting_software}
-Determining an appropriate equivalent circuit model (ECM) for electrochemical impedance spectroscopy (EIS) spectra is among the most important steps in impedance analysis, as it enables the deconvolution of overlapping electrochemical processes and their quantification through physically meaningful parameters, such as charge transfer resistance ($R_{\text{ct}}$), film resistance ($R_{\text{film}}$), and double-layer capacitance ($C_{\text{dl}}$).
 
-Despite its centrality to the analysis, ECM identification remains a laborious task. Commercial software packages such as ZView and Gamry Echem Analyst rely on nonlinear least-squares (NLLS) fitting routines, most commonly the Levenberg-Marquardt algorithm, which are inherently sensitive to the choice of initial parameter estimates \cite{GamryEISModeling,Zou2023}. While heuristic approaches exist to guide these estimates, such as reading characteristic resistances from the diameters of semicircular arcs in the Nyquist representation or extracting time constants from Bode phase plots, the process remains largely manual and iterative, demanding considerable operator experience to avoid convergence to local minima or physically unreasonable solutions.
+Determining an appropriate equivalent circuit model (ECM) is critical for deconvoluting overlapping electrochemical processes and quantifying physically meaningful parameters, such as charge-transfer resistance ($R_{\text{ct}}$) and double layer capacitance ($C_{\text{dl}}$). However, ECM identification remains a laborious task. Commercial software packages (e.g., ZView, Gamry Echem Analyst) rely on nonlinear least-squares (NLLS) fitting, typically utilising the Levenberg--Marquardt (LM) algorithm. These routines are highly sensitive to initial parameter estimates and frequently converge to local minima, requiring considerable operator experience to yield physically reasonable solutions \cite{GamryEISModeling, Zou2023}.
 
-In response to these limitations, a number of open-source, programmatic alternatives have been developed, predominantly in Python. Among these, \texttt{impedance.py} provides a flexible framework for ECM fitting and validation \cite{Murbach2020}. More recently, tools such as \texttt{AutoECM} and \texttt{AutoEIS} have incorporated machine learning methodologies into the workflow. AutoECM employs supervised classification models such as Random Forest, XGBoost (XGB), and convolutional neural network (CNN) architectures \cite{Schaeffer2023}. These are trained on libraries of previously validated circuit-spectrum pairs to predict candidate ECMs for new datasets \cite{Schaeffer2023}. AutoEIS, by contrast, adopts a probabilistic framework grounded in Bayesian inference, enabling uncertainty quantification in both circuit structure selection and parameter estimation \cite{Zhang2023}. A notable limitation shared by both tools, however, is the apparent discontinuation of active maintenance by their respective developers. As a consequence, dependency incompatibilities with more recent versions of core scientific Python libraries have rendered them largely non-functional in current environments.
+To automate this process, several open-source Python frameworks have emerged. While tools such as \texttt{AutoECM} \cite{Schaeffer2023} and \texttt{AutoEIS} \cite{Zhang2023} incorporate machine learning and Bayesian inference, both suffer from dependency obsolescence, rendering them incompatible with current computational environments. Consequently, \texttt{impedance.py} \cite{Murbach2020} remains the most viable open-source option. In its standard implementation, it requires the user to supply an \textit{a priori} circuit topology and initial parameter guesses. Although it offers a basin-hopping global optimiser (\texttt{global\_opt}), this feature is fundamentally incompatible with modulus weighting (\texttt{weight\_by\_modulus}). Given that EIS datasets span several decades in both frequency and impedance magnitude, modulus weighting is essential to prevent low-frequency, high-impedance data from disproportionately dominating the fit residuals.
 
-Given this landscape, \texttt{impedance.py} emerges as the most viable open-source option. In its standard implementation, it operates analogously to commercial software: the user must supply the impedance dataset, an \textit{a priori} circuit string, and initial parameter guesses. Two optional fitting configurations are available. The first, \texttt{weight\_by\_modulus}, applies the modulus of the complex impedance as a frequency-dependent weighting factor which ensures that data points spanning several decades of impedance magnitude contribute proportionally to the objective function. The second, \texttt{global\_opt}, invokes a basin-hopping algorithm, which combines stochastic perturbation of parameter coordinates with local minimization and a Metropolis-type acceptance criterion to escape local minima. Importantly, \texttt{global\_opt} is incompatible with \texttt{weight\_by\_modulus} and given that EIS datasets span several decades in frequency, commonly from 10~mHz to 100~kHz, and correspondingly large ranges in impedance magnitude, modulus weighting is generally considered essential to prevent low-frequency, high-impedance data from disproportionately dominating the fit residuals. 
+To overcome the reliance on manual initial guesses while retaining the statistical rigour of local optimisation, a custom hybrid fitting framework was developed, building upon \texttt{impedance.py} and the Differential Evolution (DE) algorithm. DE is a stochastic, population-based global optimisation metaheuristic that requires no gradient information, making it highly robust against the complex, multimodal parameter landscapes characteristic of multi-element ECMs \cite{Ahmad2022, Storn1997, Leite2022}.
 
-To overcome the dependence on user-supplied initial guesses while retaining the precision of local optimisation, a hybrid fitting framework was developed building upon \texttt{impedance.py} and the Differential Evolution (DE) algorithm. DE is a stochastic, population-based global optimisation metaheuristic well-suited to high-dimensional, non-differentiable, and multimodal objective functions \cite{Ahmad2022, Storn1997}. The algorithm evolves a population of candidate solutions across successive generations through three operators: mutation, which generates trial vectors via linear combinations of population members; crossover, which probabilistically exchanges parameter values between candidate and trial vectors; and selection, which retains whichever vector yields a lower objective function value \cite{Ahmad2022, Storn1997}. Crucially, DE requires no gradient information, making it less likely to become trapped at local minima \cite{Leite2022} and therefore particularly appropriate for the complex, rugged parameter landscapes characteristic of multi-element ECM fitting.
+In the proposed workflow, the user supplies only physically motivated parameter bounds for each circuit element. To accommodate the vast scale disparity between components (e.g., kilohm resistances versus microfarad capacitances), the DE optimisation is performed in logarithmic space, ensuring each order of magnitude is weighted uniformly. Once the DE stage yields a robust global estimate, the parameter vector is refined using a Nelder--Mead simplex algorithm to navigate local roughness without requiring derivatives. Finally, this refined vector serves as the initial condition for the Levenberg--Marquardt local optimiser within \texttt{impedance.py}, with \texttt{weight\_by\_modulus} activated. This final stage yields statistically meaningful parameter estimates alongside their associated confidence intervals.
 
-In the proposed workflow, the user supplies only physically motivated parameter bounds for each circuit element rather than precise initial estimates. The DE algorithm then explores this parameter space to identify the approximate order of magnitude and value of each component. To accelerate convergence, given that circuit element values typically span many orders of magnitude, the optimisation is performed in logarithmic space, transforming the search domain such that each decade is weighted uniformly. This logarithmic reparameterisation substantially improves the efficiency of the population-based search and reduces sensitivity to the scale disparity between, for example, charge-transfer resistances on the order of kilohms and double-layer capacitances on the order of microfarads.
-
-Once the DE stage yields a sufficiently accurate global estimate, the resulting parameter vector is passed to a Nelder--Mead local optimiser, which performs a derivative-free refinement of the solution in the immediate vicinity of the global estimate. This intermediate step improves the quality of the starting point before the final refinement stage, reducing the risk of the subsequent gradient-based optimiser being misled by residual roughness in the objective function landscape. The refined parameter vector is then passed as the initial condition to the Levenberg--Marquardt local optimiser within \texttt{impedance.py}, with \texttt{weight\_by\_modulus} activated, to obtain statistically meaningful parameter estimates together with their associated uncertainties.
-
-\section{Pre-treatments}
+\section{Surface Pre-treatments}
 \label{sec:pretreatments}
 
-As previously discussed, the presence of intermetallic particles (IMPs) on the surface of the aluminium alloy can negatively affect LDH growth homogeneity and must therefore be removed prior to coating deposition. Two pre-treatment procedures were evaluated alongside a reference polished condition, and for selected specimens an additional anodising step was subsequently applied. To assess the effectiveness of each pre-treatment, scanning electron microscopy (SEM) and energy dispersive X-ray spectroscopy (EDS) analyses were conducted on the treated surfaces, with the objective of identifying which IMPs remained and determining which pre-treatment was most conducive to homogeneous LDH growth.
+As established in the literature review, the heterogeneous distribution of intermetallic particles (IMPs) on the AC46000 surface severely disrupts the homogeneity of \textit{in situ} LDH growth. To mitigate this, the native oxide and surface-exposed IMPs must be removed prior to coating deposition. In this study, three distinct surface preparation routes were evaluated alongside a reference as-polished condition. To assess the efficacy of each protocol in removing IMPs and preparing the surface for uniform LDH nucleation, the treated morphologies and residual elemental compositions were characterised using scanning electron microscopy (SEM) coupled with energy-dispersive X-ray spectroscopy (EDS).
 
 \subsection{Chemical Pre-treatment}
 \label{subsec:chemical_pretreatment}
 
-The chemical pre-treatment consisted of alkaline cleaning in a \qty{0.1}{\molar} \ce{NaOH} solution at room temperature for \qty{120}{\second}, followed by acid pickling in a \qty{0.1}{\molar} \ce{HNO3} solution for \qty{480}{\second}. Each step was followed by rinsing with deionised water, and the specimens were finally dried in air.
+The simplified chemical pre-treatment comprised a two-step sequence: alkaline etching in a \qty{0.1}{\molar} \ce{NaOH} solution at room temperature for \qty{120}{\second}, followed by acid desmutting in a \qty{0.1}{\molar} \ce{HNO3} solution for \qty{480}{\second}. Each chemical step was followed by a thorough rinse with deionised water, and the specimens were ultimately dried under a stream of ambient air.
 
 \subsection{Industrial Pre-treatment}
 \label{subsec:industrial_pretreatment}
 
-The industrial pre-treatment followed a multistep protocol. Degreasing was performed in Metaclean T2001 (an alkaline cleaner based on metal silicates with complexing and surface-active agents) at a concentration of \qty{48}{\gram\per\liter} and approximately \qty{65}{\degreeCelsius} for \qty{10}{\minute}. Although the recommended immersion time is \qty{25}{\minute}, a shorter duration was deemed sufficient given that no oils or lubricants were employed during specimen preparation. Following rinsing with deionised water, the specimens were alkaline etched in Turco Liquid Aluminetch N2 (a sodium hydroxide and phosphate-based solution) at \qty{38}{\gram\per\liter} and \qty{65}{\degreeCelsius} for \qty{45}{\second}, and subsequently rinsed with deionised water. Desmutting was then carried out in Turco Liquid Smutgo NC (a formulation based on ferric sulfate, nitric acid, sodium hydrogendifluoride, and sulfuric acid) at a concentration of \qty{180}{\milli\liter\per\liter} and \qty{30}{\degreeCelsius} for approximately \qty{5}{\minute}, before a final rinse with deionised water and drying in air.
+The industrial pre-treatment followed a standard commercial multistep protocol. Degreasing was performed in Metaclean T2001 (an alkaline cleaner based on metal silicates, complexing agents, and surfactants) at a concentration of \qty{48}{\gram\per\liter} and \qty{65}{\degreeCelsius} for \qty{10}{\minute}. Although the manufacturer recommends a \qty{25}{\minute} immersion, a shorter duration was deemed sufficient as no machining oils were introduced during specimen preparation. 
+
+Following a deionised water rinse, alkaline etching was conducted in Turco Liquid Aluminetch N2 (a sodium hydroxide and phosphate-based etchant) at \qty{38}{\gram\per\liter} and \qty{65}{\degreeCelsius} for \qty{45}{\second}. Subsequently, desmutting was carried out in Turco Liquid Smutgo NC (a solution containing ferric sulfate, nitric acid, sodium bifluoride, and sulfuric acid) at a concentration of \qty{180}{\milli\liter\per\liter} and \qty{30}{\degreeCelsius} for approximately \qty{5}{\minute}. The specimens were then finally rinsed with deionised water and air-dried.
 
 \subsection{Anodising}
 \label{subsec:anodising}
 
-For selected specimens, a tartaric-sulphuric acid (TSA) anodising step was carried out following the industrial pre-treatment, prior to LDH synthesis. The anodising bath consisted of \qty{80}{\gram\per\liter} tartaric acid and \qty{42}{\gram\per\liter} sulphuric acid at a temperature of \qty{39}{\degreeCelsius}. An AA1050 aluminium alloy plate was used as the cathode. A voltage of \qty{14}{\volt} was applied for \qty{20}{\minute}, after which the specimens were rinsed with deionised water and dried in air prior to LDH synthesis.
+For a subset of specimens, a tartaric-sulphuric acid (TSA) anodising step was integrated immediately following the industrial pre-treatment and prior to LDH synthesis. The anodising bath comprised \qty{80}{\gram\per\liter} tartaric acid and \qty{42}{\gram\per\liter} sulphuric acid, maintained at \qty{39}{\degreeCelsius}. An AA1050 aluminium plate served as the counter electrode in a two-electrode configuration. A constant voltage of \qty{14}{\volt} was applied for \qty{20}{\minute}. Following the anodising step, the specimens were thoroughly rinsed with deionised water and air-dried before undergoing LDH synthesis.
 
 \section{LDH Synthesis}
 \label{sec:LDH_synthesis}
 
-To assess the influence of the pre-treatment on LDH growth, films were grown on three sets of specimens: those subjected to the chemical pre-treatment, those subjected to the industrial pre-treatment, and mechanically polished reference specimens. In all cases, the same in situ hydrothermal synthesis procedure was employed to ensure comparability.
+To systematically evaluate the influence of surface pre-treatment severity and synthesis duration on LDH formation, an experimental matrix was established comprising distinct sample groups. The primary conditions investigated were an industrial pre-treatment coupled with a \qty{1}{\hour} synthesis (hereafter designated as \textbf{LDH-1}), and a simplified chemical pre-treatment coupled with a \qty{3}{\hour} synthesis (designated as \textbf{LDH-2}). 
 
-The synthesis solution was prepared by first dissolving \ce{NH4NO3} at a concentration of \qty{0.6}{\molar} in \qty{600}{\milli\liter} of deionised water (resistivity \qty{18}{\mega\ohm\centi\meter}) under magnetic stirring. The pH of this solution was measured and found to be below 5. \ce{Zn(NO3)2.6H2O} was then added at a concentration of \qty{0.1}{\molar}, together with an additional \qty{300}{\milli\liter} of deionised water. The pH was subsequently adjusted to $6.5 \pm 0.1$ using a 5\% ammonia solution. Deionised water was then added to bring the total volume to \qty{1}{\liter}, and the pH was measured and corrected to $6.5 \pm 0.1$ if required.
+Furthermore, to investigate whether the introduction of a porous anodic oxide layer could mitigate the inherent microstructural heterogeneity of the AC46000 alloy and promote more uniform LDH nucleation, an additional subset of specimens from both the industrial and chemical pre-treatment groups underwent a tartaric-sulphuric acid (TSA) anodising step prior to LDH synthesis. Crucially, to isolate the specific influence of the anodic layer from the variable of synthesis duration, all anodised specimens were subjected to a fixed LDH growth time of \qty{1}{\hour}, regardless of their pre-treatment route. Aside from this, the identical \textit{in situ} hot aqueous solution synthesis procedure was employed for all specimens to ensure strict comparability.
 
-For LDH film growth, \qty{300}{\milli\liter} of the synthesis solution was transferred to a vessel and pre-heated to \qty{95}{\degreeCelsius}, sufficient for the simultaneous immersion of three specimens. The specimens were suspended vertically and fully immersed in the solution under magnetic stirring. Two growth durations were evaluated: \qty{1}{\hour} and \qty{3}{\hour}. Upon completion, the specimens were removed, rinsed with deionised water, and dried with compressed air.
+The synthesis solution was prepared by dissolving ammonium nitrate (\ce{NH4NO3}, \qty{0.6}{\molar} final concentration) in \qty{600}{\milli\liter} of deionised water (resistivity $\geq$ \qty{18}{\mega\ohm\centi\meter}) under continuous magnetic stirring. Zinc nitrate hexahydrate (\ce{Zn(NO3)2.6H2O}, \qty{0.1}{\molar} final concentration) was then added, along with an additional \qty{300}{\milli\liter} of deionised water. The solution pH was adjusted to $6.5 \pm 0.1$ using a 5\% aqueous ammonia solution. Finally, deionised water was added to bring the total volume to \qty{1}{\liter}, and the pH was verified and readjusted to $6.5 \pm 0.1$ if necessary.
 
-To characterise the LDH films and compare growth across the different substrate conditions, X-ray diffraction (XRD) analysis was conducted. From the diffraction patterns, the basal spacing ($d_{003}$) was determined using Bragg's law, providing structural confirmation of LDH formation and enabling comparison of film crystallinity across the different pre-treatment conditions.
+For the LDH film growth, \qty{300}{\milli\liter} of the prepared synthesis solution was transferred to a glass vessel and pre-heated to \qty{95}{\degreeCelsius} on a hotplate under atmospheric pressure. This volume was sufficient to fully immerse three specimens simultaneously. The specimens were suspended vertically in the solution under continuous magnetic stirring for their respective durations (\qty{1}{\hour} or \qty{3}{\hour}). 
+
+Upon completion of the synthesis, the specimens were immediately removed, thoroughly rinsed with deionised water to halt the reaction, and dried under a stream of compressed air. To characterise the resulting LDH films, X-ray diffraction (XRD) analysis was conducted. From the diffraction patterns, the basal spacing ($d_{003}$) was calculated using Bragg's law, providing definitive structural confirmation of the LDH phase and enabling a direct comparison of film crystallinity across the various pre-treatment, duration, and anodising conditions.
 
 \section{Inhibitor Incorporation}
 \label{sec:inhibitor_incorporation}
 
-Following the inhibitor pre-selection study described in 
-Section~\ref{sec:inhibitor_selection}, the best-performing inhibitor systems were selected for intercalation into the LDH interlayer galleries. The selection criteria and results are presented in Section~\ref{sec:results_inhibitor_selection}; the intercalation procedures for each system are described below.
+Following the electrochemical pre-selection study (Section~\ref{sec:inhibitor_selection}), the most effective inhibitor systems were selected for intercalation into the LDH interlayer galleries. The specific selection criteria and comparative results are detailed in Section~\ref{sec:results_inhibitor_selection}. The intercalation procedures for each selected inhibitor are described below.
 
-To incorporate \ce{NaVO3} into the LDH interlayer galleries, anion exchange was performed by immersing the as-grown LDH films in a \qty{0.1}{\molar} inhibitor solution at \qty{25}{\degreeCelsius} for \qty{3}{\hour}. Following this, the specimens were rinsed with deionised water and dried with compressed air.
+To incorporate vanadate, anion exchange was achieved by immersing the as-grown LDH films in a \qty{0.1}{\molar} sodium metavanadate (\ce{NaVO3}) solution at \qty{25}{\degreeCelsius} for \qty{3}{\hour}. Following the exchange, the specimens were thoroughly rinsed with deionised water and dried under a stream of compressed air.
 
-For MBT incorporation, \ce{NaOH} was added at a concentration of \qty{0.1}{\molar} to a \qty{0.1}{\molar} MBT solution to deprotonate the molecule into its anionic form (\ce{MBT^-}), which is required for both solubility and intercalation into the LDH galleries \cite{}. Given the amphoteric nature of aluminium and its susceptibility to alkaline dissolution (Section~\ref{sec:pourbaix}), the pH was adjusted to 10.2 using a \qty{1}{\molar} \ce{NaOH} solution. To minimise the risk of surface attack, the immersion time was limited to \qty{30}{\minute} with visual inspection at \qty{10}{\minute} intervals, after which the specimens were rinsed with deionised water and dried with compressed air.
+The incorporation of 2-mercaptobenzothiazole (MBT) required a modified approach due to its low aqueous solubility in its neutral state. To facilitate intercalation, the molecule must be deprotonated into its anionic form (\ce{MBT^-}). To achieve this, sodium hydroxide was added at a concentration of \qty{0.1}{\molar} to a \qty{0.1}{\molar} MBT solution. Given the amphoteric nature of aluminium and its susceptibility to alkaline dissolution (Section~\ref{sec:pourbaix}), the final solution pH was carefully adjusted to 10.2 using a \qty{1}{\molar} \ce{NaOH} titrant. This specific pH was selected to ensure sufficient deprotonation for solubility and electrostatic uptake, while remaining low enough to mitigate substrate attack. To further minimise the risk of surface degradation, the immersion time was strictly limited to \qty{30}{\minute}, with visual inspections conducted at \qty{10}{\minute} intervals. Upon completion, the specimens were immediately rinsed with deionised water and dried under a stream of compressed air.
 
-A similar approach was adopted for L-cysteine, which also requires deprotonation to facilitate intercalation. Because L-cysteine possesses multiple protonation sites, a \qty{1}{\molar} \ce{NaOH} solution was used to adjust the final solution pH to 8.3. At this pH, the carboxylic acid groups are fully deprotonated, and the thiol groups are partially deprotonated into their anionic thiolate form to allow assembly into the LDH structure.
+A chemically tailored approach was adopted for L-cysteine, which also requires deprotonation to enable electrostatic intercalation. Given its zwitterionic nature and multiple protonation sites, the solution pH was carefully adjusted to 8.3 using \qty{1}{\molar} \ce{NaOH}. At this specific pH, the carboxylic acid groups are fully deprotonated, and a sufficient fraction of the thiol groups are converted into their anionic thiolate form, enabling successful assembly within the LDH galleries without inducing excessive alkaline degradation of the substrate.
 
-To verify the successful intercalation of the corrosion inhibiting anions, the specimens were subjected to X-ray diffraction (XRD) analysis. A shift in the characteristic $2\theta$ reflection angles relative to the as-grown LDH films would indicate a change in the basal spacing ($d_{003}$) and consequently in the interlayer gallery height, confirming the incorporation of guest anions into the LDH interlayer space.
+To verify the successful intercalation of the inhibiting anions, the loaded specimens were subjected to X-ray diffraction (XRD) analysis. Successful incorporation of the guest anions induces a measurable shift in the characteristic low-angle $(003)$ reflection, corresponding to an expansion of the basal spacing ($d_{003}$) and confirming the modification of the interlayer gallery height.
 
 \section{Evaluation of Corrosion Performance}
 \label{sec:corrosion_evaluation}
 
-Following successful inhibitor intercalation, the corrosion performance of the LDH-based coatings was evaluated by immersing the specimens in a \qty{0.05}{\molar} \ce{NaCl} solution and conducting electrochemical impedance spectroscopy (EIS) measurements, following the procedure described in Section~\ref{sec:inhibitor_selection}. The resulting spectra were fitted using the software developed in Section~\ref{sec:fitting_software}, and the extracted $R_{\text{ct}}$ and $C_{\text{dl}}$ values were compared across the different inhibitor systems to assess their relative corrosion protection performance. In addition, the specimens were examined optically for visual evidence of corrosion, and potentiodynamic polarisation (PDP) measurements were conducted to complement the impedance analysis.
+To evaluate the active corrosion protection provided by the intercalated inhibitors, the loaded LDH-coated specimens were immersed in a \qty{0.05}{\molar} \ce{NaCl} solution. Electrochemical impedance spectroscopy (EIS) measurements were conducted utilising the identical experimental setup and parameters detailed in Section~\ref{sec:inhibitor_selection}, with spectra acquired at specific immersion intervals of 0, 1, 24, 48, 72, and \qty{168}{\hour}. The acquired impedance spectra were deconvoluted using the custom automated fitting framework (Section~\ref{sec:fitting_software}). The extracted charge-transfer resistance ($R_{\text{ct}}$) and double-layer capacitance ($C_{\text{dl}}$) values were tracked as a function of immersion time to quantitatively assess and compare the self-healing efficiency of the different inhibitor systems. 
 
-\section{Top Coating and Complex Geometries}
+Complementing the non-destructive EIS monitoring, the specimens were periodically inspected for macroscopic visual evidence of localised attack. Additionally, potentiodynamic polarisation (PDP) measurements were performed at selected intervals to provide direct kinetic insights into the specific anodic and cathodic inhibition mechanisms.
+
+\section{Application of Polyurethane Topcoat and Evaluation on Complex Geometries}
 \label{sec:topcoat}
 
-Once inhibitor intercalation and corrosion performance had been established, a water-based polyurethane colloidal formulation (supplied by CIDETEC, Spain) was applied to the inhibitor-intercalated planar specimens via anodic electrodeposition. In this process, the negatively charged colloidal particles dispersed in the aqueous bath migrate under the applied electric field towards the anodically polarised substrate, where a localised increase in pH at the  anode surface --- caused by water oxidation --- triggers particle coagulation and film formation. The specimens were immersed in the polyurethane bath and a voltage of \qty{80}{\volt} was applied for \qty{1}{\minute} at room temperature. Following deposition, the specimens were allowed to dry in air for approximately \qty{30}{\minute} prior to curing in an oven at \qty{120} {\degreeCelsius} for \qty{1}{\hour}. 
+Following the identification of the optimal inhibitor-loaded LDH system, a water-based polyurethane colloidal formulation (supplied by CIDETEC, Spain) was applied to the coated planar specimens to form a complete multilayer protection architecture. The topcoat was deposited via anodic electrodeposition. During this process, an applied electric field drives the negatively charged polyurethane colloids toward the anodically polarised substrate, where the concurrent anodic oxidation of water generates a localised pH increase at the interface, inducing particle coagulation and the formation of a continuous polymer film. 
 
-To evaluate the adhesion and microstructural integrity of the complete multilayer system, cross-sections of the coated planar specimens were prepared by cutting and examined by SEM and EDS analysis. EDS elemental mapping was conducted to assess the distribution of target elements across the multilayer cross-section and to evaluate the degree of interpenetration between the organic topcoat and the underlying LDH conversion coating. Coating thickness was additionally measured using an Elcometer gauge on both planar and complex geometry specimens.
+The deposition was carried out at room temperature by applying a constant voltage of \qty{80}{\volt} for \qty{1}{\minute}. Following deposition, the specimens were air-dried for \qty{30}{\minute} and subsequently thermally cured in an oven at \qty{120}{\degreeCelsius} for \qty{1}{\hour}. 
+
+To assess the microstructural integrity and interfacial adhesion of the complete multilayer system, cross-sections of the coated planar specimens were prepared and analysed using SEM coupled with EDS. Elemental mapping was specifically employed to evaluate the spatial distribution of key elements and to determine the degree of interpenetration between the organic polyurethane topcoat and the underlying inorganic LDH conversion layer. Furthermore, the dry film thickness of the cured topcoat was measured using an Elcometer gauge. While the electrodeposition process was also applied to complex-geometry components to demonstrate its practical versatility, all quantitative microstructural (SEM/EDS) and thickness characterisations were exclusively performed on the planar specimens to ensure controlled, high-resolution analysis.
 
 \chapter{Results and Discussion}
 
 \section{Pre-selection of Inhibitors}
 \label{sec:results_inhibitor_selection}
 
-In the first part of this work, a pre-selection of corrosion inhibitors was conducted based on EIS measurements. The impedance spectra acquired at \qty{1}{\hour} and \qty{168}{\hour} of immersion are presented in Figures~\ref{fig:inhibitors_bode} and~\ref{fig:inhibitors_nyquist}.
+The initial phase of this study involved the electrochemical pre-selection of candidate corrosion inhibitors based on EIS measurements. The impedance spectra acquired at \qty{1}{\hour} and \qty{168}{\hour} of immersion are presented in Figures~\ref{fig:inhibitors_bode} and~\ref{fig:inhibitors_nyquist}.
 
 \begin{figure}[H]
    \centering
-   % Linha 1
    \begin{subfigure}[b]{0.95\textwidth}
        \includegraphics[width=\textwidth]{figs/bode_1H_inhibitors.pdf}
-       \caption{1H bode}
+       \caption{\qty{1}{\hour}}
        \label{fig:inhibitors_1h_bode}
    \end{subfigure}
 
@@ -594,130 +602,119 @@ In the first part of this work, a pre-selection of corrosion inhibitors was cond
 
    \begin{subfigure}[b]{0.95\textwidth}
        \includegraphics[width=\textwidth]{figs/bode_168H_inhibitors.pdf}
-       \caption{168H bode}
+       \caption{\qty{168}{\hour}}
        \label{fig:inhibitors_168h_bode}
    \end{subfigure}
-   \caption{Bode spectra for 1h immersion.}
+   \caption{Bode plots of the pre-selected inhibitors at (a) \qty{1}{\hour} and (b) \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:inhibitors_bode}
 \end{figure}
 
 \begin{figure}[H]
    \centering
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.45\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_1H_inhibitors.pdf}
-       \caption{1H nyquist}
+       \caption{\qty{1}{\hour}}
        \label{fig:inhibitors_1h_nyquist}
    \end{subfigure}
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.45\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_168H_inhibitors.pdf}
-       \caption{168H nyquist}
+       \caption{\qty{168}{\hour}}
        \label{fig:inhibitors_168h_nyquist}
    \end{subfigure}   
-   \caption{Nyquist spectra for 1h immersion.}
+   \caption{Nyquist plots of the pre-selected inhibitors at (a) \qty{1}{\hour} and (b) \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:inhibitors_nyquist}
 \end{figure}
 
-As can be observed in the Nyquist plots (Figures~\ref{fig:inhibitors_1h_nyquist} and~\ref{fig:inhibitors_168h_nyquist}), MBT, \ce{NaVO3}, and L-cysteine exhibit the highest low-frequency impedance magnitudes at both immersion times, indicative of superior inhibition performance. Furthermore, the impedance response of these three inhibitors increases progressively with immersion time, suggesting that their protective action is not merely passive but involves an active reinforcement of the surface film, likely through continued adsorption or the formation of insoluble surface complexes over the course of the experiment. This trend is corroborated by the Bode plots (Figures~\ref{fig:inhibitors_1h_bode} and~\ref{fig:inhibitors_168h_bode}), in which the same three systems consistently exhibit the largest semicircle diameters, reflecting elevated charge-transfer resistance values.
+As observed in the Nyquist plots (Figures~\ref{fig:inhibitors_1h_nyquist} and~\ref{fig:inhibitors_168h_nyquist}), MBT, \ce{NaVO3}, and L-cysteine exhibit the largest semicircle diameters, indicative of superior charge-transfer resistance and inhibition performance. Furthermore, the impedance response of these three inhibitors increases progressively with immersion time, suggesting that their protective action is not merely passive but involves an active reinforcement of the surface film, likely through continued adsorption or the formation of insoluble surface complexes. This trend is corroborated by the Bode plots (Figures~\ref{fig:inhibitors_1h_bode} and~\ref{fig:inhibitors_168h_bode}), where the same three systems consistently display the highest low-frequency impedance moduli ($|Z|$).
 
-To validate these observations quantitatively, spectral fitting using the software developed in Section~\ref{sec:fitting_software} was performed to evaluate the evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ over the full immersion period. The results are presented in Figure~\ref{fig:Rct_Cdl_evolution_inhibitors}.
+To quantify these observations, spectral fitting using the automated framework developed in Section~\ref{sec:fitting_software} was performed to evaluate the evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ over the full immersion period (Figure~\ref{fig:Rct_Cdl_evolution_inhibitors}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Rct_Cdl_evolution_inhibitors.pdf} 
-
-    \caption{Rct and Cdl evolution over time.}
-    
+    \caption{Evolution of the extracted (a) charge-transfer resistance ($R_{\text{ct}}$) and (b) double-layer capacitance ($C_{\text{dl}}$) over the \qty{168}{\hour} immersion period for the pre-selected inhibitors.}
     \label{fig:Rct_Cdl_evolution_inhibitors}
 \end{figure}
 
-The extracted parameters confirm the trends identified from visual inspection of the spectra. MBT, \ce{NaVO3}, and L-cysteine all attained $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm}, substantially higher than those of the remaining systems. The progressive increase in $R_{\text{ct}}$ with immersion time for these three inhibitors further supports the hypothesis of active and durable film formation at the electrode surface. Sodium molybdate, by contrast, performed comparably to the blank NaCl solution throughout the entire immersion period, with $R_{\text{ct}}$ values consistently in the range of \qtyrange{3}{4}{\kilo\ohm}. This near-complete absence of inhibition under open-circuit conditions is consistent with the known mechanism of molybdate, which requires anodic polarisation to form a protective surface film and therefore provides negligible protection in the context of free immersion in dilute NaCl \cite{Sastri2007, Vargel2020}. BTA and 8-HQ exhibited intermediate behaviour, with $R_{\text{ct}}$ values approximately between \qty{10}{\kilo\ohm} and \qty{30}{\kilo\ohm}, significantly lower than the three best-performing inhibitors.
+The extracted parameters confirm the trends identified from the qualitative inspection of the spectra. MBT, \ce{NaVO3}, and L-cysteine all attained $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm}, substantially higher than those of the remaining systems. The progressive increase in $R_{\text{ct}}$ with immersion time for these three inhibitors further supports the hypothesis of active and durable film formation at the electrode surface. Sodium molybdate, by contrast, performed comparably to the blank \ce{NaCl} solution throughout the entire immersion period, with $R_{\text{ct}}$ values consistently in the range of \qtyrange{3}{4}{\kilo\ohm}. This near-complete absence of inhibition under open-circuit conditions is consistent with the known mechanism of molybdate, which requires anodic polarisation to form a protective surface film and therefore provides negligible protection in the context of free immersion in dilute \ce{NaCl} \cite{Sastri2007, Vargel2020}. BTA and 8-HQ exhibited intermediate behaviour, with $R_{\text{ct}}$ values ranging from \qty{10}{\kilo\ohm} to \qty{30}{\kilo\ohm}, significantly lower than the three best-performing inhibitors.
 
-The double-layer capacitance data further support and refine these conclusions. Sodium molybdate again showed behaviour closely resembling that of the blank NaCl system, with $C_{\text{dl}}$ values approaching \qty{100}{\micro\farad}, consistent with an essentially unprotected electrode surface. Although BTA and 8-HQ displayed relatively low initial $C_{\text{dl}}$ values, suggesting that some degree of initial adsorption does occur, these increased rapidly with immersion time, eventually converging towards values comparable to the uninhibited system. This behaviour indicates that while both inhibitors adsorb at the electrode surface in the early stages of immersion, they fail to maintain a stable protective film over time. The progressive desorption or displacement of the inhibitor allows water molecules and electrolyte ions to repopulate the double layer; given the substantially higher dielectric constant of water ($\varepsilon_r \approx 80$) relative to that of adsorbed organic species, this ingress drives $C_{\text{dl}}$ towards values characteristic of an unprotected surface \cite{Orazem2008, Sastri2007}. In contrast, MBT, L-cysteine, and \ce{NaVO3} maintained $C_{\text{dl}}$ values in the order of \qty{10}{\micro\farad} throughout the experiment, consistent with stable inhibitor adsorption, the sustained exclusion of water and electrolyte from the double layer region, and a durable reduction in interfacial reactivity, as discussed in Section~\ref{subsec:double_layer}.
+The double-layer capacitance data further refine these conclusions. Sodium molybdate again showed behaviour closely resembling that of the blank \ce{NaCl} system, with $C_{\text{dl}}$ values approaching \qty{100}{\micro\farad}, consistent with an essentially unprotected electrode surface. Although BTA and 8-HQ displayed relatively low initial $C_{\text{dl}}$ values---suggesting that some degree of initial adsorption does occur---these increased rapidly with immersion time, eventually converging towards values comparable to the uninhibited system. This behaviour indicates that while both inhibitors adsorb at the electrode surface in the early stages of immersion, they fail to maintain a stable protective film over time. The progressive desorption or displacement of the inhibitor allows water molecules and electrolyte ions to repopulate the double layer; given the substantially higher dielectric constant of water ($\varepsilon_r \approx 80$) relative to that of adsorbed organic species, this ingress drives $C_{\text{dl}}$ towards values characteristic of an unprotected surface \cite{Orazem2008, Sastri2007}. In contrast, MBT, L-cysteine, and \ce{NaVO3} maintained $C_{\text{dl}}$ values on the order of \qty{10}{\micro\farad} throughout the experiment, consistent with stable inhibitor adsorption, the sustained exclusion of water from the double layer region, and a durable reduction in interfacial reactivity.
 
-Using the equation~\ref{eq:IE}, the efficiency of the different inhibitors was calculated and the values are presented in table~\ref{tab:IE}.
+Using Equation~\ref{eq:IE}, the inhibition efficiency ($\eta$) of the different inhibitors was calculated; the results are summarised in Table~\ref{tab:IE}.
 
 \begin{table}[htbp]
     \centering
     \small
-    \caption{Inhibition efficiency ($\eta$) of various chemical compounds extracted from electrochemical parameters.}
+    \caption{Inhibition efficiency ($\eta$) of the evaluated chemical compounds, calculated from the extracted $R_{\text{ct}}$ values.}
     \label{tab:IE}
     \begin{tabular}{@{} l c @{}}
         \toprule
         Inhibitor & Efficiency (\%) \\
         \midrule
         \ce{NaVO3}    & $98.73$ \\
-        L-cystine     & $96.93$ \\
+        L-cysteine    & $96.93$ \\
         MBT           & $96.27$ \\
         BTA           & $86.55$ \\
-        8HQ           & $76.07$ \\
-        Molybdate     & $1.76$  \\
+        8-HQ          & $76.07$ \\
+        Sodium molybdate & $1.76$  \\
         \bottomrule
     \end{tabular}
 \end{table}
 
-Optical inspection of the specimen surfaces following \qty{168}{\hour} of immersion provides complementary visual evidence of the electrochemical trends described above. The photographs are presented in Figure~\ref{fig:optical_inhibitors}.
-
-
+Optical inspection of the specimen surfaces following \qty{168}{\hour} of immersion provides complementary visual evidence of the electrochemical trends described above (Figure~\ref{fig:optical_inhibitors}).
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/before.jpg}
-        \caption{Before}
+        \caption{Initial}
         \label{fig:optical_before}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/Uninhibited.jpg}
-        \caption{Control}
+        \caption{Blank}
         \label{fig:optical_control}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/MBT.jpg}
         \caption{MBT}
         \label{fig:optical_MBT}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/NaVO3.jpg}
         \caption{\ce{NaVO3}}
         \label{fig:optical_NaVO3}
     \end{subfigure}
 
-    \vspace{0.3cm}
-
-    \begin{subfigure}[b]{0.20\textwidth}
+    \vspace{0.2cm}
+    
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/Lcysteine.jpg}
         \caption{L-cysteine}
         \label{fig:optical_Lcysteine}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/Molybdate.jpg}
         \caption{\ce{Na2MoO4}}
         \label{fig:optical_molybdate}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/BTA.jpg}
         \caption{BTA}
         \label{fig:optical_BTA}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.20\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_inhibitors/8HQ.jpg}
         \caption{8-HQ}
         \label{fig:optical_8HQ}
     \end{subfigure}
-    \caption{Optical photographs of specimen surfaces following \qty{168}{\hour} 
-    of immersion in \qty{0.05}{\molar} \ce{NaCl} for all inhibitor systems.}
+    \caption{Optical macrographs of the AC46000 surfaces following \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl} containing the various pre-selected inhibitors.}
     \label{fig:optical_inhibitors}
 \end{figure}
 
-The specimen immersed in the blank \ce{NaCl} solution (control) exhibits extensive and generalised surface degradation, serving as a reference for the uninhibited corrosion behaviour of the alloy. Among the inhibitor systems, MBT demonstrates the most effective protection, with only a single visible pit discernible from the localised discolouration of the surrounding surface --- a finding consistent with its superior $R_{\text{ct}}$ and $C_{\text{dl}}$ performance. \ce{NaVO3} ranks second, showing no visible pitting but a small number of localised yellowish deposits, attributable to the precipitation of vanadate oxides over incipient pit sites, which is indicative of active inhibitor release and localised repassivation. L-cysteine performs comparably, exhibiting no discrete pits but a diffuse whitish surface appearance characteristic of mild generalised aluminium matrix corrosion, suggesting that while localised attack is suppressed, uniform surface oxidation is not entirely prevented.
+The specimen immersed in the blank \ce{NaCl} solution exhibits extensive, generalised surface degradation, serving as a reference for the uninhibited corrosion behaviour of the alloy. Among the inhibitor systems, MBT demonstrates the most effective protection, with only a single visible pit discernible alongside localised discolouration---a finding consistent with its superior $R_{\text{ct}}$ and $C_{\text{dl}}$ performance. \ce{NaVO3} ranks second, showing no visible pitting but a small number of localised yellowish deposits. These are attributable to the precipitation of vanadate oxides over incipient pit sites, indicative of active inhibitor release and localised repassivation. L-cysteine performs comparably, exhibiting no discrete pits but a diffuse whitish surface appearance characteristic of mild, generalised aluminium matrix oxidation, suggesting that while localised attack is suppressed, uniform surface dissolution is not entirely prevented.
 
-BTA and 8-HQ display intermediate levels of degradation, consistent with their moderate $R_{\text{ct}}$ values. The BTA specimen shows both discrete pitting and areas of pronounced generalised corrosion. The 8-HQ specimen similarly exhibits generalised surface corrosion alongside multiple large green-yellowish deposits, attributable to oxide or hydroxide compounds formed through interaction of the 8-HQ ligand with dissolved metal ions at pit sites, indicating that significant localised corrosion had occurred beneath these deposits despite some degree of inhibitor activity.
+BTA and 8-HQ display intermediate levels of degradation, consistent with their moderate $R_{\text{ct}}$ values. The BTA specimen shows both discrete pitting and areas of pronounced generalised corrosion. The 8-HQ specimen similarly exhibits generalised surface corrosion alongside multiple large green-yellowish deposits. These deposits are attributable to copper-8-HQ coordination complexes formed through the interaction of the 8-HQ ligand with dissolved metal ions at active pit sites, indicating that significant localised corrosion had occurred beneath these deposits despite some degree of inhibitor activity.
 
 Sodium molybdate presents the most severely degraded surface among the inhibited specimens, with an appearance closely resembling that of the control sample and exhibiting heavy generalised corrosion. This is fully consistent with the electrochemical data, which showed molybdate to provide essentially no inhibition under free immersion conditions in dilute \ce{NaCl}.
 
@@ -726,7 +723,7 @@ Based on these results, MBT, \ce{NaVO3}, and L-cysteine were identified as the b
 \section{Pre-treatments}
 \label{sec:results_pretreatments}
 
-To identify the most suitable pre-treatment for LDH growth, SEM and EDSanalyses were conducted on specimens subjected to the chemical pre-treatment, the industrial pre-treatment, and mechanical polishing, the latter serving as a reference condition. The results are presented in Figures~\ref{fig:sem_eds_I} to~\ref{fig:sem_eds_III}.
+To identify the most effective surface pre-treatment for promoting homogeneous LDH growth, scanning electron microscopy (SEM) coupled with energy-dispersive X-ray spectroscopy (EDS) was employed to characterise the surface morphology and elemental distribution of the specimens. Three conditions were evaluated: the simplified chemical pre-treatment, the industrial pre-treatment, and a mechanically polished reference. The results are presented in Figures~\ref{fig:sem_eds_I} to~\ref{fig:sem_eds_III}.
 
 \begin{figure}[htbp]
    \centering
@@ -884,18 +881,18 @@ To identify the most suitable pre-treatment for LDH growth, SEM and EDSanalyses 
     \label{fig:sem_eds_III}
 \end{figure}
 
-The EDS maps of the mechanically polished reference specimens (Figure~\ref{fig:sem_eds_I}) reveal a significant presence of Fe--Mn intermetallic particles, consistent with the \ce{Al15(Fe,Mn)3Si2} and related phases characteristic of AC46000, as well as dispersed Cu- and Si-richparticles. Mg and Zn are distributed diffusely across the matrix with no preferential localisation.
+The EDS elemental maps of the mechanically polished reference specimens (Figure~\ref{fig:sem_eds_I}) reveal the unaltered, heterogeneous microstructure of the AC46000 alloy. A significant population of Fe--Mn-rich intermetallic particles (IMPs) is visible, consistent with the \ce{Al15(Fe,Mn)3Si2} and related phases identified in the literature. Additionally, dispersed Cu-rich and eutectic Si particles are clearly delineated. The alloying elements Mg and Zn exhibit a diffuse distribution across the aluminium matrix without preferential localisation.
 
-Following chemical pre-treatment (Figure~\ref{fig:sem_eds_II}), the larger Fe--Mn intermetallic particles are largely removed, with only small, scattered residual traces of these elements remaining on the surface. Copper shows partial but limited removal, while silicon particles persist largely unaffected. The Mg and Zn distribution remains comparable to the polished reference, and the aluminium matrix appears intact, with no evidence of significant matrix dissolution.
+Following the simplified chemical pre-treatment (Figure~\ref{fig:sem_eds_II}), a partial reduction in IMP density is observed. The larger Fe--Mn-rich particles are largely detached from the surface, leaving only scattered residual traces of these elements. Copper-rich phases exhibit partial removal, while the eutectic silicon particles persist largely unaffected, consistent with the inability of nitric acid to dissolve silicon. The distribution of Mg and Zn remains comparable to the polished reference, and the aluminium matrix appears relatively intact, indicating that the mild alkaline etching and acid desmutting steps induce only minimal bulk matrix dissolution.
 
-The industrial pre-treatment (Figure~\ref{fig:sem_eds_III}) produces a markedly more aggressive surface modification. Substantial dissolution of the aluminium matrix is evident, and Fe--Mn and Cu intermetallic particles are effectively removed. However, silicon particles remain prominentlyexposed on the surface, and the diffuse Mg and Zn distribution is largely retained.
+In contrast, the industrial pre-treatment (Figure~\ref{fig:sem_eds_III}) induces a markedly more aggressive surface modification. Extensive dissolution of the aluminium matrix is evident, accompanied by the effective and near-complete removal of both Fe--Mn and Cu-rich intermetallic particles. This is attributed to the prolonged alkaline etching, which drives cathodic undercutting, followed by the highly oxidative acid desmutting step. Despite this aggressive attack, the eutectic silicon particles remain prominently exposed on the surface, indicating that the desmutting duration was insufficient to fully dissolve the larger Si phases, while the diffuse matrix distribution of Mg and Zn is largely retained.
 
-From these observations, the industrially pre-treated specimens are expected to provide the most favourable surface conditions for homogeneous LDH nucleation and growth, as the near-complete removal of cathodic Fe--Mn and Cu IMPs eliminates the primary sources of localised micro-galvanic activity that drive heterogeneous LDH precipitation, as discussed in Section~\ref{sec:imp_ldh}. The residual Si particles, being electrochemically inert, are not expected to significantly disrupt LDH growth. From a corrosion standpoint, the reduced density of cathodic IMPs is also anticipated to suppress localised pitting in favour of more uniform matrix dissolution, which is considerably less detrimental to the structural integrity of the alloy. The chemically pre-treated specimens are likewise expected to outperform the polished reference in both LDH growth homogeneity and corrosion resistance, albeit to a lesser degree than the industrial pre-treatment, given the incomplete removal of Fe--Mn and Cu particles.
+Based on these microstructural observations, the industrially pre-treated specimens are hypothesised to provide the most favourable surface conditions for uniform LDH nucleation. The near-complete removal of the highly cathodic Fe--Mn and Cu-rich IMPs eliminates the primary sites of localised micro-galvanic activity that drive heterogeneous, ``flower-like'' LDH precipitation and severe matrix trenching (Section~\ref{sec:imp_ldh}). While the residual eutectic silicon particles do not trigger intense localised trenching due to their electrochemical inertness, they remain as microstructural discontinuities. Nevertheless, from a corrosion standpoint, the drastic reduction in the density of active cathodic IMPs is anticipated to severely suppress localised pitting. The chemically pre-treated specimens are expected to yield intermediate results, outperforming the polished reference by reducing the density of active IMPs, albeit to a lesser extent than the industrial protocol due to the incomplete removal of the Fe--Mn and Cu phases.
 
 \section{LDH Synthesis}
 \label{sec:results_LDH_synthesis}
 
-To determine which pre-treatment yielded the most favourable conditions forLDH growth, films were synthesised on specimens from all three pre-treatment conditions and characterised by XRD analysis. In addition, LDH growth was assessed on specimens subjected to an anodising procedure prior to synthesis, resulting in a total of four substrate conditions being evaluated. The inclusion of the anodised condition was motivated by prior work on the same alloy, which suggested that anodising promotes LDH nucleation and growth. The XRD patterns are presented in Figure~\ref{fig:xrd_ldh}, and complementary SEM-EDS analysis is shown in Figure~\ref{fig:sem_LDH}.
+To determine which pre-treatment yielded the most favourable conditions for LDH growth, films were synthesised on specimens from all three pre-treatment conditions and characterised by XRD analysis. Additionally, LDH growth was assessed on specimens subjected to an anodising procedure prior to synthesis, resulting in a total of four substrate conditions being evaluated. The inclusion of the anodised condition was motivated by prior work on the same alloy, which suggested that a porous anodic oxide layer could promote LDH nucleation. The XRD patterns are presented in Figure~\ref{fig:xrd_ldh}, and complementary SEM-EDS analysis is shown in Figure~\ref{fig:sem_LDH}.
 
 \begin{figure}[htbp]
     \centering
@@ -929,24 +926,24 @@ To determine which pre-treatment yielded the most favourable conditions forLDH g
        \caption{}
        \label{fig:sem_LDH_4}
    \end{subfigure}
-   \caption{SEM pictures with progressive zoom of LDH films grown on industrially pre-treated specimens. (c) and (d) correspond to zoom-ins on top of aluminium matrix and Si-IMPs respectively.}
+   \caption{SEM micrographs showing the morphology of LDH films grown on industrially pre-treated specimens at varying magnifications. (c) and (d) correspond to higher-magnification zoom-ins of the LDH film grown over the aluminium matrix and the Si eutectic phase, respectively.}
    \label{fig:sem_LDH}
 \end{figure}
 
-Optical inspection of the LDH films was also conducted to provide a qualitative assessment of film coverage and surface morphology, and is presented in Figure~\ref{fig:optical_LDH}.
+Optical inspection of the LDH films was also conducted to provide a qualitative assessment of macroscopic film coverage and surface morphology, as presented in Figure~\ref{fig:optical_LDH}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/optical_LDH.jpg}
-    \caption{Optical photograph of a representative LDH film grown on an industrially pre-treated specimen.}
+    \caption{Optical photograph showing representative LDH films grown on industrially pre-treated specimens, highlighting spatial variations in film coverage.}
     \label{fig:optical_LDH}
 \end{figure}
 
-Optical inspection of the LDH films, presented in Figure~\ref{fig:optical_LDH}, reveals generally good surface coverage, albeit not entirely homogeneous across all specimens. The presence of the LDH film is identifiable by its characteristic white appearance. In the central specimen, small dispersed spots of reduced or absent LDH coverage are distributed across the surface, suggesting localised regions where film nucleation was either inhibited or resulted in a film of insufficient density to be visually detectable. The rightmost specimen, by contrast, does not exhibit these scattered spots but instead displays a more pronounced central band of visibly lower LDH density. This spatial inhomogeneity in film coverage is likely associated with the heterogeneous microstructure of the AC46000 die-cast alloy: the casting process gives rise to large, coarse phase regions with distinct local compositions, which respond differently to the alkaline etching and LDH synthesis conditions, resulting in spatially non-uniform \ce{Al^{3+}} availability and consequently uneven LDH nucleation and growth across the surface. 
+Optical inspection reveals generally good surface coverage, albeit with some spatial inhomogeneity. The presence of the LDH film is identifiable by its characteristic white appearance. In the central specimen, small dispersed spots of reduced or absent LDH coverage are distributed across the surface, suggesting localised regions where film nucleation was either inhibited or resulted in a film of insufficient density to be visually detectable. The rightmost specimen, by contrast, does not exhibit these scattered spots but instead displays a more pronounced central band of visibly lower LDH density. This spatial inhomogeneity in film coverage is likely associated with the heterogeneous microstructure of the AC46000 die-cast alloy: the casting process gives rise to large, coarse phase regions with distinct local compositions, which respond differently to the alkaline etching and LDH synthesis conditions. This results in spatially non-uniform \ce{Al^{3+}} availability and consequently uneven LDH nucleation and growth across the macroscopic surface. 
 
-The XRD patterns confirm successful LDH formation on all four substrate conditions. The reference patterns for the aluminium matrix and silicon eutectic phases are included for comparison. The ZnAl--LDH phase adopts a three-layer rhombohedral stacking sequence (polytype 3R, space group $R\bar{3}m$), which gives rise to the characteristic (003) and (006) basal reflections at approximately $2\theta \approx 10^\circ$ and $2\theta \approx 20^\circ$, respectively \cite{Zhou2017}. The comparable intensities of these reflections across all four substrate conditions indicate that the LDH film density is similar regardless of the pre-treatment applied, and that the anodising procedure confers no measurable advantage in terms of LDH yield or crystallinity. Given that anodising constitutes an additional processing step involving aggressive acid exposure, it was not carried forward in subsequent work.
+The XRD patterns confirm successful LDH formation on all four substrate conditions. Reference patterns for the aluminium matrix and silicon eutectic phases are included for comparison. The ZnAl--LDH phase adopts a three-layer rhombohedral stacking sequence (polytype 3R, space group $R\bar{3}m$), which gives rise to the characteristic (003) and (006) basal reflections at approximately $2\theta \approx 10^\circ$ and $2\theta \approx 20^\circ$, respectively \cite{Zhou2017}. The comparable intensities of these reflections across all four substrate conditions indicate that the LDH film density and crystallinity are similar regardless of the pre-treatment applied. Crucially, the anodising procedure confers no measurable advantage in terms of LDH yield. Given that anodising constitutes an additional processing step involving aggressive acid exposure, it was not carried forward in subsequent work.
 
-The basal spacing ($d_{003}$) and interlayer gallery height were determinedfrom the $2\theta$ positions of the (003) reflection using Bragg's law, assuming a brucite layer thickness of \qty{0.477}{\nano\meter} \cite{Zhou2017}. Theresults are summarised in Table~\ref{tab:xrd_pretreatments}.
+The basal spacing ($d_{003}$) and interlayer gallery height were determined from the $2\theta$ positions of the (003) reflection using Bragg's law, assuming a brucite layer thickness of \qty{0.477}{\nano\meter} \cite{Zhou2017}. The results are summarised in Table~\ref{tab:xrd_pretreatments}.
 
 \begin{table}[htbp]
     \centering
@@ -956,7 +953,7 @@ The basal spacing ($d_{003}$) and interlayer gallery height were determinedfrom 
     \begin{tabular}{@{} l c c c @{}}
         \toprule
         \makecell[l]{Pre-treatment} & \makecell{$2\theta$ ($^\circ$)} & 
-        \makecell{Basal spacing (\AA)} & \makecell{Gallery height  (\AA)} \\
+        \makecell{Basal spacing (\AA)} & \makecell{Gallery height (\AA)} \\
         \midrule
         Chemical etching                & 9.86 & 8.97 & 4.20 \\
         Chemical etching + anodising    & 9.92 & 8.92 & 4.15 \\
@@ -968,7 +965,7 @@ The basal spacing ($d_{003}$) and interlayer gallery height were determinedfrom 
 
 The gallery heights obtained across all conditions range from \qty{4.13}{\angstrom} to \qty{4.20}{\angstrom}, which are consistent with the presence of \ce{NO3^-} as the interlayer anion, given its reported ionic diameter of \qtyrange{3.54}{3.78}{\angstrom} \cite{Zhou2017}. The slight variations in gallery height between conditions are within the expected range of experimental uncertainty and do not indicate any systematic difference in interlayer occupancy attributable to the pre-treatment.
 
-In addition to the XRD analysis, SEM imaging and EDS analysis were conducted on the industrially pre-treated specimens to confirm the presence and spatial distribution of the LDH film. The normalised elemental compositions measured over the aluminium matrix and over silicon eutectic phases are compared in Table~\ref{tab:eds_comparison}.
+In addition to XRD analysis, SEM imaging and EDS analysis were conducted on the industrially pre-treated specimens to confirm the presence and spatial distribution of the LDH film. The normalised elemental compositions measured over the aluminium matrix and over the silicon eutectic phases are compared in Table~\ref{tab:eds_comparison}.
 
 \begin{table}[htbp]
     \centering
@@ -995,36 +992,41 @@ In addition to the XRD analysis, SEM imaging and EDS analysis were conducted on 
 
 The EDS data reveal the presence of Al, Zn, O, and N across both substrate regions, consistent with the principal constituents of the ZnAl--LDH structure and the intercalated \ce{NO3^-} anions. The most notable difference between the two regions is the substantially elevated Si signal over the intermetallic particles (17.28\,at.\,\%) relative to the matrix (0.52\,at.\,\%), which reflects the underlying Si-rich substrate composition, and the correspondingly reduced Al content (7.19\,at.\,\% versus 27.47\,at.\,\%).
 
-Crucially, the Zn content is nearly identical across both regions --- 8.79\,at.\,\% over the Al matrix and 8.25\,at.\,\% over the Si eutectic phase. Since Zn is absent from the AC46000 alloy and is incorporated exclusively through the synthesis solution, its uniform distribution across both substrate types provides strong and direct evidence that LDH was deposited with comparable density over both the aluminium matrix and the silicon particles.
+Crucially, the Zn content is nearly identical across both regions: 8.79\,at.\,\% over the Al matrix and 8.25\,at.\,\% over the Si eutectic phase. Since the bulk AC46000 alloy contains only trace amounts of Zn, this substantial and uniform Zn signal is derived exclusively from the synthesis solution. Its uniform distribution across both substrate types provides strong, direct evidence that the LDH was deposited with comparable density over both the aluminium matrix and the silicon particles.
 
-Further insight is obtained from the Zn:Al atomic ratios. Over the aluminium matrix, the measured Zn:Al ratio is approximately 0.32; however, in this region the Al signal contains contributions from both the LDH film and the underlying aluminium substrate, which inflates the Al denominator and consequently underestimates the true Zn:Al ratio of the LDH film alone. Over the silicon phases, the substrate contributes no Al signal from the Si phase itself, meaning the measured Al derives predominantly from the LDH film. However, the resulting Zn:Al ratio of approximately 1.15, while higher than that measured over the aluminium matrix (0.32), remains below the theoretical Zn:Al ratio of ZnAl--LDH of approximately 2:1 to 3:1 --- corresponding to the $x$ parameter in the general formula, typically in the range $x = 0.25$--$0.33$ \cite{Zhou2017}. This suggests that the Al signal over the Si phase is still partially inflated by a residual contribution from the surrounding aluminium matrix, captured within the lateral spread of the EDS interaction volume at the particle boundaries. Nonetheless, the progressive increase in the Zn:Al ratio from the matrix region to the Si eutectic phase region is consistent with a reduced substrate Al contribution and supports the conclusion that a ZnAl--LDH film of comparable density was deposited over both substrate types. The carbon signal detected in both regions is attributed to the conductive carbon film deposited on the specimens prior to SEM-EDS analysis, a standard sample preparation procedure employed to prevent surface charging during electron beam irradiation.
+Further insight is obtained from the Zn:Al atomic ratios. Over the aluminium matrix, the measured Zn:Al ratio is approximately 0.32; however, in this region, the Al signal contains significant contributions from both the LDH film and the underlying aluminium substrate. This inflates the Al denominator and consequently underestimates the true Zn:Al ratio of the LDH film alone. Over the silicon phases, the substrate contributes no Al signal from the Si phase itself, meaning the measured Al derives predominantly from the LDH film. However, the resulting Zn:Al ratio of approximately 1.15, while higher than that measured over the aluminium matrix, remains below the theoretical Zn:Al ratio of ZnAl--LDH (typically 2:1 to 3:1, corresponding to $x = 0.25$--$0.33$ in the general formula \cite{Zhou2017}). This suggests that the Al signal over the Si phase is still partially inflated by a residual contribution from the surrounding aluminium matrix, captured within the lateral spread of the EDS interaction volume at the particle boundaries. Nonetheless, the progressive increase in the Zn:Al ratio from the matrix region to the Si eutectic phase region is consistent with a reduced substrate Al contribution and supports the conclusion that a ZnAl--LDH film of comparable density was deposited over both substrate types. Finally, the carbon signal detected in both regions is attributed to the conductive carbon coating applied to the specimens prior to SEM-EDS analysis to prevent surface charging.
 
 \section{Inhibitor Intercalation}
 \label{sec:results_inhibitor_intercalation}
 
-Using the LDH films produced under the optimal pre-treatment conditions, the three inhibitor systems identified in Section~\ref{sec:results_inhibitor_selection} --- \ce{NaVO3}, MBT, and L-cysteine --- were evaluated for intercalation via anion exchange. XRD analysis was subsequently conducted to verify intercalation, with a shift in the characteristic $2\theta$ reflection angles relative to the nitrate-form LDH serving as evidence of a change in interlayer gallery height and, consequently, of successful replacement of the resident \ce{NO3^-} anions. The XRD patterns before and after intercalation, as well as after immersion in \qty{0.05}{\molar} \ce{NaCl}, are presented in Figure~\ref{fig:xrd_intercalation}.
+Following the identification of the optimal pre-treatment conditions, the three top-performing inhibitors from the pre-selection study (Section~\ref{sec:results_inhibitor_selection})---\ce{NaVO3}, MBT, and L-cysteine---were considered for intercalation into the ZnAl--LDH interlayer galleries. However, L-cysteine was excluded from the intercalation trials on the AC46000 substrates. Simultaneous parallel studies conducted on AA2024 alloys using an identical LDH synthesis protocol demonstrated that the attempted intercalation of L-cysteine induces the complete dissolution of the LDH crystalline structure. 
+
+Because both L-cysteine and MBT contain a thiol functional group, it was anticipated that MBT might present a similar challenge. Nevertheless, the intercalation of MBT was still attempted on the AC46000 substrates due to its excellent inhibition efficiency in the pre-selection phase and the novelty of its application, as its interaction with ZnAl--LDH on this specific alloy had not been previously explored. XRD analysis was subsequently conducted to verify successful intercalation, which would be evidenced by a shift in the characteristic $2\theta$ reflection angles relative to the nitrate-form LDH. The XRD patterns before and after intercalation, as well as after immersion in \qty{0.05}{\molar} \ce{NaCl}, are presented in Figure~\ref{fig:xrd_intercalation}.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/XRD_intercalation.pdf} 
-    \caption{XRD patterns of LDH films in the nitrate form (control), following 
-    \ce{NaVO3} intercalation and following MBT intercalation attempt, each 
-    presented before and after immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+    \caption{XRD patterns of LDH films in the nitrate form (control), following \ce{NaVO3} intercalation, and following the MBT intercalation attempt, each presented before and after immersion in \qty{0.05}{\molar} \ce{NaCl}.}
     \label{fig:xrd_intercalation}
 \end{figure}
 
-The XRD patterns for the nitrate-form LDH (control), the \ce{NaVO3}-intercalated system, and the MBT intercalation attempt are presented in Figure~\ref{fig:xrd_intercalation}, each shown before and after immersion in \qty{0.05}{\molar} \ce{NaCl}. For \ce{NaVO3}, a clear and systematic shift in the $2\theta$ position of the (003) reflection confirms successful intercalation and subsequent anion exchange during immersion, as discussed in detail below. For MBT, the absence of any discernible diffraction peaks --- both before and after immersion --- confirms the dissolution of the LDH crystalline structure upon exposure to the MBT solution, indicating that intercalation did not occur.
+For the \ce{NaVO3}-intercalated system, a clear and systematic shift in the $2\theta$ position of the (003) reflection is observed across the three evaluated stages. The nitrate-form LDH (control) exhibits a (003) reflection at $2\theta = 9.86^\circ$, corresponding to a basal spacing of \qty{8.97}{\angstrom} and a gallery height of \qty{4.20}{\angstrom}. Following vanadate intercalation, this reflection shifts to a lower angle of $2\theta = 9.51^\circ$, yielding an expanded basal spacing of \qty{9.30}{\angstrom} and a gallery height of \qty{4.53}{\angstrom}. This expansion is consistent with the successful accommodation of vanadate species within the interlayer galleries. The increased gallery height relative to the nitrate-form LDH reflects the larger effective size of the intercalated vanadate anion, though the precise speciation of the intercalated species---which may include \ce{VO3^-}, \ce{HVO4^{2-}}, \ce{V2O7^{4-}}, or oligomeric forms depending on local pH and concentration---was not independently resolved in this work.
 
-Regarding \ce{NaVO3}, a clear and systematic shift in the $2\theta$ position of the (003) reflection is observed across the three stages. The nitrate-form LDH exhibits a (003) reflection at $2\theta = 9.86^\circ$, corresponding to a basal spacing of \qty{8.97}{\angstrom} and a gallery height of \qty{4.20}{\angstrom}. Following vanadate intercalation, the reflection shifts to $2\theta = 9.51^\circ$, yielding an expanded basal spacing of \qty{9.30}{\angstrom} and a gallery height of \qty{4.53}{\angstrom}, consistent with the accommodation of vanadate species within the interlayer galleries. The observed gallery height expansion relative to the nitrate-form LDH is consistent with the larger effective size of the intercalated vanadate anion, though the precise speciation of the intercalated species --- which may include \ce{VO3^-}, \ce{HVO4^{2-}}, \ce{V2O7^{4-}}, or oligomeric forms depending on local pH and concentration conditions --- was not independently confirmed in this work. After \qty{168}{\hour} of immersion in \ce{NaCl} solution, the reflection shifts further to $2\theta = 10.35^\circ$, corresponding to a reduced basal spacing of \qty{8.55}{\angstrom} and a gallery height of \qty{3.78}{\angstrom}, indicative of the progressive replacement of the larger vanadate anions by the smaller chloride ions (\ce{Cl^-}, ionic radius $\approx$ \qty{1.81}{\angstrom}) through anion exchange during immersion. This confirms that the LDH film actively participates in ion exchange under service conditions, releasing vanadate inhibitor in exchange for the aggressive chloride species present in the electrolyte --- precisely the active protection mechanism for which the system was designed. Alongside the $2\theta$ shift, a progressive broadening and attenuation of the (003) reflection is observed across the three stages, indicating a transition from a well-crystallised LDH structure towards a more amorphous phase. This structural degradation is attributed to two concurrent processes: the partial disruption of the interlayer ordering associated with repeated anion exchange events, and the gradual chemical attack of the LDH film by the corrosive environment itself --- including the locally acidic conditions generated by pit formation and matrix dissolution, as well as the direct interaction of chloride ions with the hydroxide layers --- which progressively undermines the long-range crystalline order of the film during immersion.
+After \qty{168}{\hour} of immersion in the \ce{NaCl} solution, the (003) reflection shifts to a higher angle of $2\theta = 10.35^\circ$, corresponding to a reduced basal spacing of \qty{8.55}{\angstrom} and a gallery height of \qty{3.78}{\angstrom}. This contraction is indicative of the progressive replacement of the larger intercalated vanadate anions by the smaller chloride ions (\ce{Cl^-}, ionic radius $\approx$ \qty{1.81}{\angstrom}) via anion exchange. This result definitively confirms that the LDH film actively participates in ion exchange under service conditions, releasing the vanadate inhibitor in exchange for aggressive chloride species from the electrolyte---precisely the active, self-healing protection mechanism for which the system was designed. 
 
-In the case of MBT and L-cysteine, however, no diffraction peaks were observed in the XRD spectra following the intercalation attempt, indicating dissolution of the LDH crystalline structure rather than intercalation. The structural degradation is attributed to the thiol group (\ce{-SH}) present in both molecules, which exhibits a strong coordination affinity for \ce{Zn^{2+}} ions and enables these species to act as chelating agents, actively extracting zinc from the host layers and forming soluble zinc--thiolate complexes that destabilise and ultimately collapse the crystal lattice. In the case of L-cysteine, this behaviour was additionally confirmed in a parallel study using a different aluminium substrate but an identical LDH synthesis protocol, where dissolution of the LDH structure was consistently reproduced. Although the solution pH was adjusted prior to intercalation in both cases, the local concentration of reactive thiol groups at the LDH surface is not immediately reduced by pH adjustment alone, and their sustained presence is sufficient to initiate zinc leaching and framework dissolution before intercalation can occur. Notwithstanding this, given the superior inhibition performance demonstrated by MBT in the pre-selection study (Section~\ref{sec:results_inhibitor_selection}), it was decided to proceed with its evaluation in the corrosion performance analysis despite the absence of confirmed crystalline intercalation. In this case, any protective effect is more likely attributable to the remnant amorphous oxide and hydroxide film --- composed principally of aluminium and zinc oxides/hydroxides remaining after LDH dissolution --- acting as a passive barrier, potentially in combination with MBT adsorption onto this residual film, rather than to active inhibitor release through an anion exchange mechanism.
+Alongside this $2\theta$ shift, a progressive broadening and attenuation of the (003) reflection is observed across the three stages. This indicates a transition from a well-crystallised LDH structure towards a more amorphous phase. This structural degradation is attributed to two concurrent processes: the partial disruption of interlayer ordering associated with repeated anion exchange events, and the gradual chemical attack of the LDH film by the corrosive environment. The latter includes the locally acidic conditions generated by pit formation and matrix dissolution, as well as the direct interaction of chloride ions with the hydroxide layers, which progressively undermines the long-range crystalline order of the film during immersion.
+
+In stark contrast to the vanadate system, the XRD pattern for the MBT-intercalated specimen revealed a complete absence of crystalline diffraction peaks (Figure~\ref{fig:xrd_intercalation}). Rather than successful intercalation, exposure to the MBT solution induced the collapse of the LDH crystalline structure. This behaviour perfectly mirrors the dissolution previously observed for L-cysteine on the AA2024 alloy. The structural degradation caused by both thiol-containing inhibitors is fundamentally attributed to the deprotonated, negatively charged thiolate anions ($\text{-S}^-$) present in the alkaline intercalation solutions. These negatively charged thiolate groups exhibit an exceptionally strong coordination affinity for \ce{Zn^{2+}} ions. Consequently, they act as powerful chelating agents, actively extracting zinc from the host brucite layers and forming soluble zinc--thiolate complexes. This aggressive zinc leaching fundamentally destabilises and ultimately collapses the LDH crystal lattice, preventing the formation of a structured intercalated phase.
+
+Given the consistent structural failure observed for L-cysteine across both the parallel and current studies, it was excluded from further evaluation in the multilayer coating system. MBT, however, was retained for the final corrosion performance evaluation for the above-mentioned reasons. In the absence of a crystalline LDH reservoir, the protective mechanism of the MBT-treated system fundamentally shifts. Any observed corrosion resistance is no longer attributable to active inhibitor release via anion exchange, but rather to the remnant amorphous oxide and hydroxide film---composed principally of aluminium and zinc oxides/hydroxides remaining after LDH dissolution---acting as a passive barrier. Protection instead relies on the uncontrolled desorption and subsequent reprecipitation of MBT at active corrosion zones, a process that rapidly depletes mobile inhibitive species and precludes sustained, long-term protection.
+
 
 \section{Corrosion Performance Analysis}
 \label{sec:results_corrosion_performance}
 
-The corrosion performance of the LDH-based coatings was evaluated in two successive experimental batches. The first batch (LDH-1) comprised specimens subjected to the industrial pre-treatment with a \qty{1}{\hour} LDH growth time, incorporating only \ce{NaVO3} as the interlayer inhibitor, given its status as an established system for aluminium alloy protection. Following analysis of these results, which indicated unsatisfactory corrosion protection performance, the synthesis conditions were revised: the second batch (LDH-2) employed the chemical pre-treatment with an extended LDH growth time of \qty{3}{\hour}, and both \ce{NaVO3} and MBT were evaluated as inhibitor systems. In both cases, corrosion performance was assessed by immersing the specimens in a \qty{0.05}{\molar} \ce{NaCl} solution and conducting EIS measurements at regular intervals over a total immersion period of \qty{168}{\hour}. Potentiodynamic polarisation (PDP) measurements and optical surface inspection were additionally conducted on the LDH-2 specimens to provide complementary information on corrosion kinetics and surface degradation morphology.
+The corrosion performance of the LDH-based coatings was evaluated in two successive experimental batches. The first batch (LDH-1) comprised specimens subjected to the industrial pre-treatment with a \qty{1}{\hour} LDH growth time, incorporating only \ce{NaVO3} as the interlayer inhibitor, given its status as an established benchmark for aluminium alloy protection. Following analysis of these results, which indicated unsatisfactory corrosion protection performance, the synthesis conditions were revised. The second batch (LDH-2) employed the simplified chemical pre-treatment with an extended LDH growth time of \qty{3}{\hour}, and both \ce{NaVO3} and MBT were evaluated as inhibitor systems. In both cases, corrosion performance was assessed by immersing the specimens in a \qty{0.05}{\molar} \ce{NaCl} solution and conducting EIS measurements at regular intervals over a total immersion period of \qty{168}{\hour}. Potentiodynamic polarisation (PDP) measurements and optical surface inspection were additionally conducted on the LDH-2 specimens to provide complementary information on corrosion kinetics and surface degradation morphology.
 
-\subsection{LDH-1: Industrial Pre-treatment, 1 hour growth}
+\subsection{LDH-1: Industrial Pre-treatment, \qty{1}{\hour} Growth}
 \label{subsec:ldh1}
 
 \begin{figure}[htbp]
@@ -1042,99 +1044,99 @@ The corrosion performance of the LDH-based coatings was evaluated in two success
        \caption{\qty{168}{\hour} immersion.}
        \label{fig:ldh1_168h_bode}
    \end{subfigure}
-   \caption{Bode spectra for LDH-1 specimens at \qty{1}{\hour} and 
-   \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+   \caption{Bode spectra for LDH-1 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:ldh1_bode}
 \end{figure}
 
 \begin{figure}[htbp]
    \centering
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.45\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_1H_LDH_1.pdf}
        \caption{\qty{1}{\hour} immersion.}
        \label{fig:ldh1_1h_nyquist}
    \end{subfigure}
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.45\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_168H_LDH_1.pdf}
        \caption{\qty{168}{\hour} immersion.}
        \label{fig:ldh1_168h_nyquist}
    \end{subfigure}   
-   \caption{Nyquist spectra for LDH-1 specimens at \qty{1}{\hour} and 
-   \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+   \caption{Nyquist spectra for LDH-1 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:ldh1_nyquist}
 \end{figure}
 
-The Bode and Nyquist spectra for the LDH-1 batch are presented in Figures~\ref{fig:ldh1_bode} and~\ref{fig:ldh1_nyquist}. From the earliest immersion time, the low-frequency impedance modulus of the control specimen exceeds that of all vanadate-intercalated LDH specimens, and this trend is maintained throughout the \qty{168}{\hour} immersion period, indicating that the LDH-coated specimens do not provide a net improvement in barrier performance relative to the uncoated reference under these conditions.
+The Bode and Nyquist spectra for the LDH-1 batch are presented in Figures~\ref{fig:ldh1_bode} and~\ref{fig:ldh1_nyquist}. From the earliest immersion time, the low-frequency impedance modulus ($|Z|_{f \to 0}$) of the uncoated control specimen exceeds that of all vanadate-intercalated LDH specimens. This trend is maintained throughout the \qty{168}{\hour} immersion period, indicating that the LDH-coated specimens do not provide a net improvement in barrier performance relative to the uncoated reference under these specific conditions.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Rct_Cdl_evolution_LDH1.pdf} 
-    \caption{Evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ as a function of 
-    immersion time for LDH-1 specimens in \qty{0.05}{\molar} \ce{NaCl}.}
+    \caption{Evolution of the extracted charge-transfer resistance ($R_{\text{ct}}$) and double-layer capacitance ($C_{\text{dl}}$) as a function of immersion time for LDH-1 specimens in \qty{0.05}{\molar} \ce{NaCl}.}
     \label{fig:Rct_Cdl_evolution_ldh1}
 \end{figure}
 
-The evolution of the fitted $R_{\text{ct}}$ and $C_{\text{dl}}$ parameters is shown in Figure~\ref{fig:Rct_Cdl_evolution_ldh1}. Although the vanadate-intercalated specimens initially exhibit higher $R_{\text{ct}}$ values than the control, this advantage is rapidly lost: $R_{\text{ct}}$ decreases steeply with immersion time and is surpassed by the control specimen within the early stages of the experiment, thereafter following a declining trend. The $C_{\text{dl}}$ evolution is similarly unfavourable --- while specimens 2 and 3 display a relatively low initial capacitance, this rises sharply and converges with that of the control and specimen 1, all of which stabilise in the range of 40--100~$\mu$F~cm$^{-2}$, indicative of extensive water uptake and active interfacial corrosion.
+The evolution of the fitted $R_{\text{ct}}$ and $C_{\text{dl}}$ parameters is shown in Figure~\ref{fig:Rct_Cdl_evolution_ldh1}. Although the vanadate-intercalated specimens initially exhibit higher $R_{\text{ct}}$ values than the control, this advantage is rapidly lost. The $R_{\text{ct}}$ decreases steeply with immersion time and is surpassed by the control specimen within the early stages of the experiment, thereafter following a continuous declining trend. The $C_{\text{dl}}$ evolution is similarly unfavourable: while certain LDH-coated specimens display a relatively low initial capacitance, this value rises sharply and converges with that of the control. All specimens eventually stabilise in the range of \qtyrange{40}{100}{\micro\farad\per\square\centi\meter}, a magnitude indicative of extensive electrolyte uptake and active interfacial corrosion.
 
-\begin{figure}[htbp] %still have to fill in the pictures and do discussion
+\begin{figure}[htbp] 
     \centering
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/control_before.jpg}
         \caption{Control}
         \label{fig:optical_ldh1_before_control}
     \end{subfigure}
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/NaVO3_1_before.jpg}
         \caption{\ce{NaVO3} 1}
         \label{fig:optical_ldh1_before_1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/NaVO3_2_before.jpg}
         \caption{\ce{NaVO3} 2}
         \label{fig:optical_ldh1_before_2}
     \end{subfigure}
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/NaVO3_3_before.jpg}
         \caption{\ce{NaVO3} 3}
         \label{fig:optical_ldh1_before_3}
     \end{subfigure}
 
-    \vspace{0.3cm}
+    \vspace{0.2cm}
 
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/control_after.jpg}
         \caption{Control}
         \label{fig:optical_ldh1_after_control}
     \end{subfigure}
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/NaVO3_1_after.jpg}
         \caption{\ce{NaVO3} 1}
         \label{fig:optical_ldh1_after_1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/NaVO3_2_after.jpg}
         \caption{\ce{NaVO3} 2}
         \label{fig:optical_ldh1_after_2}
     \end{subfigure}
-    \begin{subfigure}[b]{0.18\textwidth}
+    \begin{subfigure}[b]{0.16\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH1/NaVO3_3_after.jpg}
         \caption{\ce{NaVO3} 3}
         \label{fig:optical_ldh1_after_3}
     \end{subfigure}
-    \caption{Optical photographs of LDH-1 specimens in \qty{0.05}{\molar} \ce{NaCl}. Top row (a)--(d): prior to immersion. Bottom row (e)--(h): following \qty{168}{\hour} of immersion. (a,e)~Control, (b,f)~\ce{NaVO3}~1, (c,g)~\ce{NaVO3}~2, (d,h)~\ce{NaVO3}~3.}
+    \caption{Optical macrographs of LDH-1 specimens in \qty{0.05}{\molar} \ce{NaCl}. Top row (a)--(d): prior to immersion. Bottom row (e)--(h): following \qty{168}{\hour} of immersion. (a,e)~Control, (b,f)~\ce{NaVO3}~1, (c,g)~\ce{NaVO3}~2, (d,h)~\ce{NaVO3}~3.}
     \label{fig:optical_ldh1}
 \end{figure}
 
-Optical inspection of the LDH-1 specimens prior to and following \qty{168}{\hour} of immersion, presented in Figure~\ref{fig:optical_ldh1}, provides visual confirmation of the electrochemical trends described above. Prior to immersion, all LDH-coated specimens display a uniform surface film with a characteristic yellowish hue, consistent with the successful intercalation of \ce{NaVO3} into the LDH interlayer galleries. Following \qty{168}{\hour} of immersion, all specimens exhibit significant surface degradation. Pitting corrosion is identifiable by localised whitish deposits of aluminium oxide and hydroxide corrosion products. The control specimen displays the greatest number of pits, though these remain relatively small and discrete. In contrast, the three LDH-coated specimens show considerably larger pit dimensions alongside evidence of generalised matrix corrosion, consistent with the more extensive interfacial area exposed by the subsurface intermetallic particles uncovered during LDH synthesis, as discussed above. Nonetheless, there is limited but discernible evidence of vanadate inhibitor activity in specimens 1 and 3, which display small yellowish deposits characteristic of vanadium oxide precipitation at incipient pit sites --- a hallmark of localised \ce{NaVO3} release and repassivation attempt. That these deposits are present but insufficient to prevent macroscopic corrosion further supports the conclusion that the inhibitor loading achievable within the LDH films grown under the industrial pre-treatment conditions was inadequate to suppress the corrosive activity of the newly exposed cathodic intermetallic sites.
+Optical inspection of the LDH-1 specimens prior to and following \qty{168}{\hour} of immersion, presented in Figure~\ref{fig:optical_ldh1}, provides visual confirmation of the electrochemical trends described above. Prior to immersion, all LDH-coated specimens display a uniform surface film with a characteristic yellowish hue, consistent with the successful intercalation of \ce{NaVO3} into the LDH interlayer galleries. Following \qty{168}{\hour} of immersion, all specimens exhibit significant surface degradation. Pitting corrosion is identifiable by localised whitish deposits of aluminium oxide and hydroxide corrosion products. The control specimen displays the greatest number of pits, though these remain relatively small and discrete. In contrast, the LDH-coated specimens show considerably larger pit dimensions alongside evidence of generalised matrix corrosion. This is consistent with the more extensive interfacial area exposed by subsurface intermetallic particles uncovered during the LDH synthesis process, as discussed previously. 
 
-This counterintuitive behaviour is attributed to the combined effect of the industrial pre-treatment and LDH synthesis on the alloy surface. The aggressive industrial etching removes the superficial intermetallic particles, eliminating the cathodic sites that would otherwise drive localised micro-galvanic corrosion; the control specimen therefore benefits from a relatively inert surface. The LDH synthesis, however, requires partial dissolution of the aluminium matrix to supply \ce{Al^{3+}} cations, and the more extensive matrix dissolution associated with the industrial pre-treatment not only exposes subsurface intermetallic particles in the immediate vicinity of the surface, but --- given the aggressive nature of the etching --- can penetrate sufficiently deeply into the substrate to access intermetallic particles that were originally buried well below the surface. These newly exposed cathodic sites, whether at or near the surface or at greater depth, initiate localised pitting corrosion.
+Nonetheless, there is limited but discernible evidence of vanadate inhibitor activity in specific coated specimens (Figures~\ref{fig:optical_ldh1_after_1} and \ref{fig:optical_ldh1_after_3}), which display small yellowish deposits characteristic of vanadium oxide precipitation at incipient pit sites---a hallmark of localised \ce{NaVO3} release and repassivation attempts. The presence of these deposits, despite being insufficient to prevent macroscopic corrosion, supports the conclusion that the inhibitor loading achievable within the LDH films grown under the industrial pre-treatment conditions was inadequate to suppress the corrosive activity of the newly exposed cathodic intermetallic sites.
 
-Once a pit is initiated, the geometry of the cavity itself further exacerbates the corrosion process. Within the confined volume of a pit, mass transport is severely restricted, preventing the local dissolution products from diffusing away and the bulk electrolyte from replenishing the aggressive species. This mass-transport limitation drives the local chemistry towards increasingly aggressive conditions --- lower pH and higher chloride concentration --- promoting autocatalytic and largely uncontrolled dissolution of the aluminium matrix within the pit. Furthermore, the geometric inaccessibility of the pit interior significantly limits the ability of the vanadate inhibitor to reach and passivate the active cathodic sites within the cavity. Unlike surface-exposed intermetallic particles, where inhibitor species released from the LDH film can readily diffuse to and adsorb on the reactive site, the restricted geometry of the pit severely impedes inhibitor transport, rendering the \ce{NaVO3} loading achievable within the LDH films insufficient to suppress cathodic activity at these buried sites. This assessment motivated a revision of the synthesis protocol for the second batch.
+This counterintuitive behaviour is attributed to the combined effect of the industrial pre-treatment and the subsequent LDH synthesis. The aggressive industrial etching induces severe cathodic undercutting, effectively removing superficial intermetallic particles but simultaneously digging deep trenches into the surrounding aluminium matrix. Consequently, the uncoated control specimen benefits from a relatively inert surface, as the most active cathodic sites have been physically removed. However, the subsequent LDH synthesis requires partial dissolution of the aluminium matrix to supply the requisite \ce{Al^{3+}} cations. When applied to an already deeply trenched surface, even a minor degree of matrix dissolution during the \qty{1}{\hour} synthesis is sufficient to fully expose subsurface intermetallic particles that were previously undermined and buried just below the surface. These newly exposed, highly cathodic sites then initiate severe localised pitting corrosion.
+
+Once a pit is initiated, the geometry of the cavity further exacerbates the corrosion process. Within the confined volume of a pit, mass transport is severely restricted, preventing local dissolution products from diffusing away and hindering the replenishment of inhibitor species from the bulk electrolyte. This mass-transport limitation drives the local chemistry towards increasingly aggressive conditions (lower pH and higher chloride concentration), promoting the autocatalytic and largely uncontrolled dissolution of the aluminium matrix. Furthermore, the geometric inaccessibility of the pit interior significantly limits the ability of the vanadate inhibitor to reach and passivate the active pitting sites within the cavity. Unlike surface-exposed intermetallic particles, where inhibitor species released from the LDH film can readily diffuse to the reactive site, the restricted geometry of a deep pit severely impedes inhibitor transport. Consequently, the \ce{NaVO3} loading achievable within the LDH films is rendered insufficient to suppress cathodic activity at these buried sites. This critical assessment motivated the revision of the synthesis protocol for the second batch (LDH-2).
 
 \subsection{LDH-2: Chemical Pre-treatment, 3 hour growth}
 \label{subsec:ldh2}
 
-Based on the findings of the LDH-1 batch, the pre-treatment was changed to the milder chemical etching, which --- as demonstrated in Section~\ref{sec:results_LDH_synthesis} --- yields comparable LDH growth without the deep matrix dissolution associated with the industrial procedure. The LDH growth time was extended to \qty{3}{\hour} to increase film density and consequently the inhibitor loading within the interlayer galleries. Both \ce{NaVO3} and MBT were evaluated as inhibitor systems, with MBT selected on the basis of its superior performance in the pre-selection study described in Section~\ref{sec:results_inhibitor_selection}.
+In response to the unsatisfactory performance of the LDH-1 batch, the surface preparation protocol was revised. The aggressive industrial pre-treatment was replaced by the milder chemical etching, which, as demonstrated in Section~\ref{sec:results_LDH_synthesis}, yields comparable LDH growth without inducing the deep matrix trenching that exposed subsurface intermetallics. Furthermore, the LDH growth duration was extended to \qty{3}{\hour} to increase film density and maximise the inhibitor loading within the interlayer galleries. Both \ce{NaVO3} and MBT were evaluated as active agents, with MBT included based on its excellent inhibition efficiency demonstrated during the bare-metal pre-selection study (Section~\ref{sec:results_inhibitor_selection}).
+
 
 \begin{figure}[htbp]
    \centering
@@ -1151,255 +1153,232 @@ Based on the findings of the LDH-1 batch, the pre-treatment was changed to the m
        \caption{\qty{168}{\hour} immersion.}
        \label{fig:ldh2_168h_bode}
    \end{subfigure}
-   \caption{Bode spectra for LDH-2 specimens at \qty{1}{\hour} and 
-   \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+   \caption{Bode spectra for LDH-2 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:ldh2_bode}
 \end{figure}
 
 \begin{figure}[htbp]
    \centering
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.45\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_1H_LDH_2.pdf}
        \caption{\qty{1}{\hour} immersion.}
        \label{fig:ldh2_1h_nyquist}
    \end{subfigure}
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.45\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_168H_LDH_2.pdf}
        \caption{\qty{168}{\hour} immersion.}
        \label{fig:ldh2_168h_nyquist}
    \end{subfigure}   
-   \caption{Nyquist spectra for LDH-2 specimens at \qty{1}{\hour} and 
-   \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+   \caption{Nyquist spectra for LDH-2 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:ldh2_nyquist}
 \end{figure}
 
-The Bode and Nyquist spectra for LDH-2 are presented in Figures~\ref{fig:ldh2_bode} and~\ref{fig:ldh2_nyquist}. At \qty{1}{\hour} of immersion, the \ce{NaVO3}-intercalated specimens display a low-frequency impedance response comparable to the control, while the MBT-intercalated specimens exhibit a markedly superior response, with a low-frequency impedance modulus approximately one order of magnitude higher than both the control and vanadate systems. By \qty{168}{\hour}, however, the MBT systems show a progressive decline in impedance, converging towards values similar to those of the \ce{NaVO3} and control specimens, suggesting gradual inhibitor depletion or consumption over the immersion period.
+The Bode and Nyquist spectra for the LDH-2 batch are presented in Figures~\ref{fig:ldh2_bode} and~\ref{fig:ldh2_nyquist}. At \qty{1}{\hour} of immersion, the \ce{NaVO3}-intercalated specimens display a low-frequency impedance response comparable to that of the uncoated control. In stark contrast, the MBT-intercalated specimens exhibit a markedly superior barrier response, with a low-frequency impedance modulus ($|Z|_{f \to 0}$) approximately one order of magnitude higher than both the control and the vanadate systems. By \qty{168}{\hour}, however, the MBT systems show a progressive decline in impedance, converging towards values similar to those of the \ce{NaVO3} and control specimens, indicating rapid depletion of mobile inhibitive species due to uncontrolled desorption and reprecipitation, rather than controlled release.
+
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{figs/Rct_Cdl_evolution_LDH2.pdf} 
-    \caption{Evolution of $R_{\text{ct}}$ and $C_{\text{dl}}$ as a function of 
-    immersion time for LDH-2 specimens in \qty{0.05}{\molar} \ce{NaCl}.}
+    \caption{Evolution of the extracted charge-transfer resistance ($R_{\text{ct}}$) and double-layer capacitance ($C_{\text{dl}}$) as a function of immersion time for LDH-2 specimens in \qty{0.05}{\molar} \ce{NaCl}.}
     \label{fig:Rct_Cdl_evolution_ldh2}
 \end{figure}
 
-The $R_{\text{ct}}$ and $C_{\text{dl}}$ evolution for LDH-2 is shown in Figure~\ref{fig:Rct_Cdl_evolution_ldh2}. The MBT-intercalated specimens exhibit substantially elevated $R_{\text{ct}}$ values at early immersion times, consistent with the high initial impedance observed in the Bode spectra; however, after approximately \qty{24}{\hour} of immersion, their $R_{\text{ct}}$ values decrease to levels comparable to those of the \ce{NaVO3} and control specimens. Notably, all LDH-2 coated systems retain a modest but consistent advantage over the control specimen at \qty{168}{\hour}: while the control exhibits an $R_{\text{ct}}$ below \qty{6}{\kilo\ohm\centi\meter\squared}, all inhibitor-loaded specimens maintain values exceeding \qty{10}{\kilo\ohm\centi\meter\squared}. With respect to $C_{\text{dl}}$, both vanadate-intercalated specimens consistently display higher capacitance than the control throughout the immersion period, remaining in the vicinity of 90~$\mu$F~cm$^{-2}$, which is indicative of a larger effective electrochemically active area. In contrast, both MBT-intercalated specimens exhibit lower $C_{\text{dl}}$ values than the control throughout the experiment, despite a gradual increasing trend that suggests the capacitance may exceed that of the control beyond \qty{168}{\hour}.
+The evolution of the extracted $R_{\text{ct}}$ and $C_{\text{dl}}$ parameters is detailed in Figure~\ref{fig:Rct_Cdl_evolution_ldh2}. The MBT-intercalated specimens exhibit substantially elevated $R_{\text{ct}}$ values at early immersion times, consistent with the high initial impedance. However, after approximately \qty{24}{\hour}, their $R_{\text{ct}}$ values decrease sharply to levels comparable to the \ce{NaVO3} and control specimens, confirming the unstructured remnant film causes rapid inhibitor exhaustion. Notably, all LDH-2 coated systems retain a modest but consistent advantage over the control at \qty{168}{\hour}: while the control exhibits an $R_{\text{ct}}$ below \qty{6}{\kilo\ohm\centi\meter\squared}, all inhibitor-loaded specimens maintain values exceeding \qty{10}{\kilo\ohm\centi\meter\squared}. 
+
+
+
+With respect to $C_{\text{dl}}$, both vanadate-intercalated specimens consistently display higher capacitance than the control throughout the immersion period, stabilising in the vicinity of \qty{90}{\micro\farad\per\square\centi\meter}. This elevated capacitance is indicative of a larger effective electrochemically active area, likely resulting from extensive water uptake and the rough, porous nature of the degrading LDH film. In contrast, both MBT-intercalated specimens exhibit lower $C_{\text{dl}}$ values than the control throughout the experiment. Although they display a gradual increasing trend---suggesting that the capacitance may eventually surpass that of the control beyond \qty{168}{\hour}---their sustained lower values confirm the superior initial barrier properties of the MBT-treated surface.
 
 \begin{figure}[htbp]
     \centering
+    % Row 1: Prior to immersion
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/control_before.jpg}
         \caption{Control}
         \label{fig:optical_ldh2_before_control}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/MBT_1_before.jpg}
         \caption{MBT 1}
         \label{fig:optical_ldh2_before_1}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/MBT_2_before.jpg}
         \caption{MBT 2}
         \label{fig:optical_ldh2_before_2}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/NaVO3_1_before.jpg}
         \caption{\ce{NaVO3} 1}
         \label{fig:optical_ldh2_before_3}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/NaVO3_2_before.jpg}
         \caption{\ce{NaVO3} 2}
         \label{fig:optical_ldh2_before_4}
     \end{subfigure}
-    \caption{Optical photographs of LDH-2 specimens prior to immersion in \qty{0.05}{\molar} \ce{NaCl}. (a)~Control, (b)~MBT~1, (c)~MBT~2, (d)~\ce{NaVO3}~1, (e)~\ce{NaVO3}~2.}
-    \label{fig:optical_ldh2_before}
-\end{figure}
 
-\begin{figure}[htbp]
-    \centering
+    \vspace{0.3cm}
+
+    % Row 2: After 72h
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/control_72h.jpg}
         \caption{Control}
         \label{fig:optical_ldh2_72h_control}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/MBT_1_72h.jpg}
         \caption{MBT 1}
         \label{fig:optical_ldh2_72h_1}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/MBT_2_72h.jpg}
         \caption{MBT 2}
         \label{fig:optical_ldh2_72h_2}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/NaVO3_1_72h.jpg}
         \caption{\ce{NaVO3} 1}
         \label{fig:optical_ldh2_72h_3}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/NaVO3_2_72h.jpg}
         \caption{\ce{NaVO3} 2}
         \label{fig:optical_ldh2_72h_4}
     \end{subfigure}
-    \caption{Optical photographs of LDH-2 specimens after \qty{72}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}. (a)~Control, (b)~MBT~1, (c)~MBT~2, (d)~\ce{NaVO3}~1, (e)~\ce{NaVO3}~2.}
-    \label{fig:optical_ldh2_72h}
-\end{figure}
 
-\begin{figure}[htbp]
-    \centering
+    \vspace{0.3cm}
+
+    % Row 3: After 168h
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/control_after.jpg}
         \caption{Control}
         \label{fig:optical_ldh2_after_control}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/MBT_1_after.jpg}
         \caption{MBT 1}
         \label{fig:optical_ldh2_after_1}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/MBT_2_after.jpg}
         \caption{MBT 2}
         \label{fig:optical_ldh2_after_2}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/NaVO3_1_after.jpg}
         \caption{\ce{NaVO3} 1}
         \label{fig:optical_ldh2_after_3}
-    \end{subfigure}
-    \hfill
+    \end{subfigure} \hfill
     \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/optical_LDH2/NaVO3_2_after.jpg}
         \caption{\ce{NaVO3} 2}
         \label{fig:optical_ldh2_after_4}
     \end{subfigure}
-    \caption{Optical photographs of LDH-2 specimens after \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}. (a)~Control, (b)~MBT~1, (c)~MBT~2, (d)~\ce{NaVO3}~1, (e)~\ce{NaVO3}~2.}
-    \label{fig:optical_ldh2_after}
+
+    \caption{Optical macrographs of LDH-2 specimens in \qty{0.05}{\molar} \ce{NaCl}. Top row (a)--(e): prior to immersion. Middle row (f)--(j): after \qty{72}{\hour} of immersion. Bottom row (k)--(o): after \qty{168}{\hour} of immersion. (a,f,k)~Control, (b,g,l)~MBT~1, (c,h,m)~MBT~2, (d,i,n)~\ce{NaVO3}~1, (e,j,o)~\ce{NaVO3}~2.}
+    \label{fig:optical_ldh2}
 \end{figure}
 
-Optical inspection of the LDH-2 specimens at three stages of immersion, presented from Figure~\ref{fig:optical_ldh2_before} to~\ref{fig:optical_ldh2_after} , provides visual confirmation of the electrochemical trends described above. Prior to immersion, the \ce{NaVO3}-intercalated specimens (Figures~\ref{fig:optical_ldh2_before_3} and~\ref{fig:optical_ldh2_before_4}) display visible surface heterogeneities in the LDH film, with areas of incomplete substrate coverage, which may partially account for their comparatively weaker electrochemical performance relative to the MBT-intercalated specimens.
+Optical inspection of the LDH-2 specimens across three stages of immersion (Figure~\ref{fig:optical_ldh2}) provides visual confirmation of the electrochemical trends. Prior to immersion, the \ce{NaVO3}-intercalated specimens (Figures~\ref{fig:optical_ldh2_before_3} and~\ref{fig:optical_ldh2_before_4}) display visible surface heterogeneities, including areas of incomplete substrate coverage. This morphological non-uniformity partially accounts for their comparatively weaker initial electrochemical performance relative to the MBT-intercalated specimens.
 
-At \qty{72}{\hour} of immersion, a clear differentiation between the inhibitor systems is already apparent, consistent with the electrochemical parameters extracted at this time point. The MBT-intercalated specimens display a homogeneous surface with no visible signs of pitting or generalised corrosion, in agreement with the substantially lower $C_{\text{dl}}$ values recorded for these specimens at \qty{72}{\hour} (20--30~$\mu$F~cm$^{-2}$ compared to approximately 70~$\mu$F~cm$^{-2}$ for the control), indicating that the LDH coating remains largely intact and water uptake has not yet occurred to a significant extent. The \ce{NaVO3}-intercalated specimens, while not exhibiting discrete pits at this stage, already show a diffuse whitish surface appearance indicative of incipient generalised aluminium matrix corrosion, consistent with their $C_{\text{dl}}$ values being comparable to those of the control at this time point. The control specimen, by contrast, already displays significant discrete pitting at \qty{72}{\hour}, confirming that the inhibitor-loaded systems provide measurably superior corrosion protection even at intermediate immersion times.
+At \qty{72}{\hour} of immersion, a clear differentiation between the inhibitor systems is already apparent. The MBT-intercalated specimens display a relatively homogeneous surface with no visible signs of pitting or generalised corrosion. This is in excellent agreement with the substantially lower $C_{\text{dl}}$ values recorded at this time point (\qtyrange{20}{30}{\micro\farad\per\square\centi\meter} compared to approximately \qty{70}{\micro\farad\per\square\centi\meter} for the control), indicating that the MBT-treated coating remains largely intact and that significant water uptake has not yet occurred. The \ce{NaVO3}-intercalated specimens, while not yet exhibiting discrete pits, already show a diffuse whitish surface appearance indicative of incipient generalised aluminium matrix corrosion. This visual degradation aligns with their $C_{\text{dl}}$ values, which have already converged with those of the control. The control specimen, by contrast, displays significant discrete pitting at \qty{72}{\hour}, confirming that both inhibitor-loaded systems provide measurably superior corrosion protection at intermediate immersion times.
 
-Following \qty{168}{\hour} of immersion, the control specimen exhibits the most severe surface degradation, characterised by large discrete pits and extensive generalised aluminium matrix dissolution. The MBT-intercalated specimens present the best overall surface condition, with only minor pitting and a generalised yellowish surface deposit, the precise composition of which was not characterised in this work but is likely associated with the surface interaction products of MBT with dissolved metal species. The \ce{NaVO3}-intercalated specimens display an intermediate level of degradation --- superior to the control but inferior to the MBT systems --- with moderate pitting distributed across the surface alongside localised yellowish deposits characteristic of vanadium oxide precipitation at pit sites, confirming that vanadate release and repassivation did occur, albeit insufficiently to fully suppress corrosion progression over the full immersion period. These visual observations are fully consistent with the $R_{\text{ct}}$ and $C_{\text{dl}}$ trends discussed above and corroborate the ranking of inhibitor performance established by the electrochemical analysis.
+Following \qty{168}{\hour} of immersion, the control specimen exhibits the most severe surface degradation, characterised by large discrete pits and extensive generalised matrix dissolution. The MBT-intercalated specimens present the best overall surface condition, featuring only minor pitting and a generalised yellowish surface deposit. While the precise composition of this deposit was not independently characterised, it is highly likely associated with the surface interaction products of MBT with dissolved metal species. The \ce{NaVO3}-intercalated specimens display an intermediate level of degradation---superior to the control but inferior to the MBT systems---with moderate pitting distributed across the surface alongside localised yellowish deposits. These deposits are characteristic of vanadium oxide precipitation at active pit sites, confirming that vanadate release and repassivation attempts did occur, albeit insufficiently to fully suppress corrosion progression over the full immersion period. These visual observations are fully consistent with the $R_{\text{ct}}$ and $C_{\text{dl}}$ trends and corroborate the performance ranking established by the electrochemical analysis.
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\textwidth]{figs/tafel_curves.pdf}
-    \caption{Potentiodynamic polarisation curves for LDH-2 specimens following 
-    \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+    \caption{Potentiodynamic polarisation curves for LDH-2 specimens following \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
     \label{fig:pdp}
 \end{figure}
 
-The potentiodynamic polarisation curves for the LDH-2 specimens following \qty{168}{\hour} of immersion are presented in Figure~\ref{fig:pdp}. The cathodic branches of all three specimens are virtually superimposed, confirming that neither \ce{NaVO3} nor MBT is effective at suppressing the cathodic activity of the Fe--Mn and Cu-rich intermetallic sites that drive oxygen reduction in this system, as discussed in Section~\ref{sec:results_pretreatments}. In contrast, a clear differentiation is observed in the anodic branches, where the inhibitor-intercalated specimens exhibit measurably lower anodic current densities than the control, indicating that both inhibitor systems retard anodic dissolution of the aluminium matrix to a significant extent. The $E_{\text{corr}}$ values of the \ce{NaVO3} and MBT specimens are both shifted in the noble direction relative to the control, consistent with partial anodic inhibition reducing the equilibrium between anodic and cathodic partial reactions.
+The potentiodynamic polarisation curves for the LDH-2 specimens, recorded following \qty{168}{\hour} of immersion, are presented in Figure~\ref{fig:pdp}. The uncoated control specimen exhibits the most active corrosion potential ($E_{\text{corr}} \approx \qty{-0.60}{\volt}$) and the highest current densities across both branches. In contrast, both the MBT- and \ce{NaVO3}-intercalated specimens display a clear shift of $E_{\text{corr}}$ in the noble direction to approximately \qty{-0.52}{\volt}. Furthermore, the inhibitor-loaded systems exhibit measurably lower current densities in the anodic region; for instance, at \qty{-0.4}{\volt}, the anodic current densities of the MBT and \ce{NaVO3} specimens are approximately one order of magnitude lower than that of the control. Crucially, however, the cathodic branches of all three specimens are virtually superimposed at higher overpotentials. This overlapping cathodic behaviour confirms that neither inhibitor system effectively suppresses the cathodic oxygen reduction reaction at the intermetallic sites. Consequently, both \ce{NaVO3} and MBT act primarily as anodic inhibitors, retarding the dissolution of the aluminium matrix without passivating the cathodic IMPs.
 
-While the LDH-2 batch represents a clear improvement over LDH-1, the overall corrosion protection performance remains below the target level, attributed primarily to the persistence of Fe--Mn intermetallic particles on the chemically pre-treated surface. Unlike Cu-rich particles, which are the primary targets of vanadate and MBT inhibitors \cite{Tedim2011, Zhang2015}, the Fe--Mn IMPs characteristic of AC46000 are not effectively passivated by either inhibitor system, and their continued cathodic activity sustains localised corrosion that the inhibitor loading within the LDH galleries is insufficient to fully suppress.
+While the LDH-2 batch and its associated inhibitors represent a clear electrochemical improvement over the bare alloy, the overall long-term corrosion protection performance remains below the ideal target level. This limitation is attributed primarily to the persistence of Fe--Mn intermetallic particles on the chemically pre-treated surface. Unlike the Cu-rich intermetallics found in wrought alloys like AA2024, which are the primary targets of vanadate and MBT inhibitors \cite{Tedim2011, Zhang2015}, the Fe--Mn IMPs characteristic of the AC46000 cast alloy are not effectively passivated by either inhibitor system. Their continued, unhindered cathodic activity sustains localised micro-galvanic corrosion that the inhibitor loading achievable within the LDH galleries is ultimately insufficient to fully suppress.
 
-\section{Top Coating and Complex Geometries}
+\section{Polyurethane Topcoat Application on Planar and Complex Geometries}
 \label{sec:results_topcoat}
 
-Following the successful deposition of the inhibitor-intercalated LDH conversion coating, a water-based polyurethane colloidal formulation was applied to both planar and geometrically complex specimens via anodic electrodeposition, as described in Section~\ref{sec:topcoat}. The resulting coating systems were evaluated by optical inspection, cross-sectional SEM-EDS analysis, and Elcometer thickness measurements.
+Following the successful deposition and inhibitor intercalation of the LDH conversion coating, a water-based polyurethane colloidal formulation was applied to both planar and complex-geometry specimens via anodic electrodeposition, as detailed in Section~\ref{sec:topcoat}. The resulting multilayer coating systems were evaluated through optical inspection, cross-sectional SEM-EDS analysis, and dry film thickness measurements.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/topcoat/planar_MBT.jpg}
         \caption{Planar MBT}
         \label{fig:topcoat_planar_MBT}
     \end{subfigure}
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/topcoat/cg_MBT_1.jpg}
         \caption{CG MBT 1}
         \label{fig:topcoat_cg_MBT_1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/topcoat/cg_MBT_2.jpg}
         \caption{CG MBT 2}
         \label{fig:topcoat_cg_MBT_2}
     \end{subfigure}
     \\
     \vspace{0.3cm}
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/topcoat/planar_NaVO3.jpg}
         \caption{Planar \ce{NaVO3}}
         \label{fig:topcoat_planar_NaVO3}
     \end{subfigure}
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/topcoat/cg_NaVO3_1.jpg}
         \caption{CG \ce{NaVO3} 1}
         \label{fig:topcoat_cg_NaVO3_1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.2\textwidth}
+    \begin{subfigure}[b]{0.18\textwidth}
         \includegraphics[width=\textwidth]{figs/topcoat/cg_NaVO3_2.jpg}
         \caption{CG \ce{NaVO3} 2}
         \label{fig:topcoat_cg_NaVO3_2}
     \end{subfigure}
-    \caption{Optical photographs of polyurethane-coated specimens following 
-    anodic electrodeposition and curing. Top row (a)--(c): MBT-intercalated 
-    specimens. Bottom row (d)--(f): \ce{NaVO3}-intercalated specimens. 
-    Left column: planar substrates. Centre and right columns: geometrically 
-    complex substrates.}
+    \caption{Optical macrographs of polyurethane-coated specimens following anodic electrodeposition and curing. Top row (a)--(c): MBT-intercalated specimens. Bottom row (d)--(f): \ce{NaVO3}-intercalated specimens. Left column: planar substrates. Centre and right columns: geometrically complex substrates.}
     \label{fig:optical_topcoat}
 \end{figure}
 
-Optical inspection of the coated specimens, presented in Figure~\ref{fig:optical_topcoat}, confirms that the polyurethane topcoat forms a uniform and continuous film across all specimens for both planar and geometrically complex substrates, demonstrating that the anodic electrodeposition process is capable of conformally coating non-planar geometries. One notable observation is the presence of surface pores visible on the planar \ce{NaVO3} specimen (Figure~\ref{fig:topcoat_planar_NaVO3}), attributed to pre-existing macroscopic porosity in the die-cast substrate rather than to the deposition process itself: the casting process inherently generates gas porosity and shrinkage voids, and where these defects intersect the surface they present cavities of sufficient size that the polyurethane film is unable to bridge them completely.
+Optical inspection of the coated specimens (Figure~\ref{fig:optical_topcoat}) confirms that the polyurethane topcoat forms a uniform, continuous film across all evaluated substrates. This demonstrates the capability of the anodic electrodeposition process to conformally coat non-planar, complex geometries. A notable observation is the presence of surface pores on the planar \ce{NaVO3}-intercalated specimen (Figure~\ref{fig:topcoat_planar_NaVO3}). These defects are attributed to pre-existing macroscopic porosity inherent to the die-cast substrate rather than the electrodeposition process itself. The die-casting process naturally generates gas porosity and shrinkage voids; where these subsurface defects intersect the machined surface, they present cavities of sufficient size that the polyurethane film cannot completely bridge them.
 
-To further characterise the multilayer system, cross-sections of the coated planar specimens were prepared by cutting and examined by SEM-EDS analysis, and coating thickness was measured using an Elcometer gauge. During the cutting procedure, no delamination was observed at the cut edges, confirming good interfacial adhesion between the polyurethane topcoat and the underlying LDH conversion coating. The cross-sectional SEM-EDS results are presented in Figures~\ref{fig:} to~\ref{fig:}. EDS elemental mapping across the cross-section reveals the spatial distribution of the constituent elements of each layer and provides insight into the degree of interpenetration between the polyurethane topcoat and the LDH film at their interface. Coating thickness measurements are summarised in Table~\ref{tab:thickness}.
+To further characterise the microstructural integrity of the multilayer system, cross-sections of the coated planar specimens were prepared and analysed using SEM-EDS, alongside dry film thickness measurements taken with an Elcometer gauge. Notably, no delamination or interfacial failure was observed at the cut edges during the metallographic preparation, confirming robust mechanical adhesion between the polyurethane topcoat and the underlying LDH conversion layer. 
 
-[Discussion of SEM-EDS cross-section and thickness results to be added.]
+The cross-sectional SEM micrographs and corresponding EDS elemental maps are presented in Figures~\ref{fig:} to~\ref{fig:}. The elemental mapping reveals the spatial distribution of the constituent elements across the multilayer architecture, specifically evaluating the degree of interpenetration between the organic polyurethane matrix and the inorganic LDH film at the interface. The quantitative thickness measurements for both planar and complex-geometry specimens are summarised in Table~\ref{tab:thickness}.
+
+% --- PLACEHOLDER FOR FINAL DISCUSSION ---
+% [Discussion of SEM-EDS cross-section and thickness results to be added here. 
+% Ensure you discuss the specific thickness values, the uniformity of the coating 
+% on complex geometries, and any observations regarding the interfacial bonding 
+% or chemical interpenetration seen in the EDS maps.]
 
 \chapter{Conclusion \& Future Work}
 
 \section{Conclusion}
 
-This work investigated the synthesis, optimisation, and corrosion protection performance of ZnAl--LDH conversion coatings loaded with corrosion inhibitors on the AC46000 die-cast aluminium alloy, with the ultimate aim of validating the system on geometrically complex substrates as a chromate-free alternative for aerospace applications.
+This work investigated the synthesis, optimisation, and corrosion protection performance of ZnAl--LDH conversion coatings loaded with corrosion inhibitors on the AC46000 die-cast aluminium alloy. The ultimate objective was to validate this multilayer system on geometrically complex substrates as a viable, chromate-free alternative for aerospace applications.
 
-A pre-selection of corrosion inhibitors was first conducted by evaluating seven candidate systems via EIS over \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}. MBT, \ce{NaVO3}, and L-cysteine were identified as the best-performing inhibitors, demonstrating $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm} and stable $C_{\text{dl}}$ values in the order of \qty{10}{\micro\farad} throughout the immersion period, indicative of active and durable film formation. Sodium molybdate provided negligible protection under free immersion conditions, consistent with its known mechanism of requiring anodic polarisation to form a protective film. BTA and 8-HQ exhibited intermediate and transient protection, failing to maintain stable surface films over extended immersion.
+A pre-selection of corrosion inhibitors was first conducted by evaluating seven candidate systems via EIS over \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}. MBT, \ce{NaVO3}, and L-cysteine were identified as the most effective inhibitors, demonstrating $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm} and stable $C_{\text{dl}}$ values on the order of \qty{10}{\micro\farad} throughout the immersion period, indicative of active and durable surface film formation. Sodium molybdate provided negligible protection, as the severe pitting of AC46000 overwhelms the redox-driven precipitation of \ce{MoO2} and \ce{MoO3} films required for surface passivation. BTA and 8-HQ exhibited intermediate and transient protection, failing to maintain stable surface films over extended immersion.
 
-SEM-EDS characterisation of the pre-treated surfaces confirmed that the industrial pre-treatment achieved near-complete removal of Fe--Mn and Cu-rich intermetallic particles, leaving only electrochemically inert Si particles exposed. The chemical pre-treatment achieved partial removal of Fe--Mn particles, while the polished reference retained the full complement of surface IMPs. XRD analysis confirmed successful ZnAl--LDH formation on all substrate conditions, with comparable film density and basal spacing consistent with \ce{NO3^-} intercalation regardless of the pre-treatment applied. EDS analysis of the LDH films further confirmed uniform Zn deposition across both the aluminium matrix and Si phase, with the Zn:Al ratio over the Si particle providing a more faithful estimate of the intrinsic LDH stoichiometry, broadly consistent with the theoretical ZnAl--LDH composition.
+SEM-EDS characterisation of the pre-treated surfaces confirmed that the industrial pre-treatment achieved near-complete removal of Fe--Mn and Cu-rich intermetallic particles (IMPs), leaving primarily the electrochemically inert Si particles exposed. The chemical pre-treatment achieved partial removal of Fe--Mn particles, while the polished reference retained the full complement of surface IMPs. XRD analysis confirmed successful ZnAl--LDH formation on all substrate conditions, with comparable film density and basal spacing consistent with \ce{NO3^-} intercalation, regardless of the pre-treatment applied. EDS analysis of the LDH films further confirmed uniform Zn deposition across both the aluminium matrix and the Si phase. The Zn:Al ratio measured over the Si particles provided a more faithful estimate of the intrinsic LDH stoichiometry, which was broadly consistent with the theoretical ZnAl--LDH composition.
 
-XRD analysis of the intercalated systems confirmed successful \ce{NaVO3} intercalation, evidenced by a systematic shift in the (003) basal reflection from $2\theta = 9.86^\circ$ to $9.51^\circ$, corresponding to an expansion of the interlayer gallery height from \qty{4.20}{\angstrom} to \qty{4.53}{\angstrom}. Following immersion, a further shift to $2\theta = 10.35^\circ$ confirmed the exchange of vanadate for chloride anions under service conditions, demonstrating active inhibitor release. Both MBT and L-cysteine caused dissolution of the LDH crystalline structure, attributed to the strong chelating affinity of their thiol groups for \ce{Zn^{2+}} ions in the host layers.
+XRD analysis of the intercalated systems confirmed the successful incorporation of \ce{NaVO3}, evidenced by a systematic shift in the (003) basal reflection from $2\theta = 9.86^\circ$ to $9.51^\circ$, corresponding to an expansion of the interlayer gallery height from \qty{4.20}{\angstrom} to \qty{4.53}{\angstrom}. Following immersion, a further shift to $2\theta = 10.35^\circ$ confirmed the exchange of vanadate for chloride anions under service conditions, definitively demonstrating active inhibitor release. In contrast, the attempted intercalation of the thiol-containing inhibitors (MBT and L-cysteine) resulted in the dissolution of the LDH crystalline structure, attributed to the strong chelating affinity of their deprotonated thiolate groups for \ce{Zn^{2+}} ions in the host layers. Consequently, these systems lack a structured reservoir for controlled release, limiting their long-term active protection capabilities and restricting their efficacy to the initial stages of immersion.
 
-Corrosion performance evaluation was conducted in two batches. The first batch (LDH-1), based on the industrial pre-treatment with \qty{1}{\hour} LDH growth, yielded unsatisfactory results: the control specimen outperformed all vanadate-intercalated LDH specimens, attributed to the exposure of subsurface intermetallic particles during the aggressive industrial etching and LDH synthesis, which initiated pit corrosion that the inhibitor loading was insufficient to suppress. The second batch (LDH-2), employing the milder chemical pre-treatment with an extended \qty{3}{\hour} LDH growth time, demonstrated a clear improvement. MBT-intercalated specimens exhibited the best corrosion protection, with low-frequency impedance approximately one order of magnitude higher than the control at \qty{1}{\hour} and $R_{\text{ct}}$ values substantially elevated at early immersion times. \ce{NaVO3}-intercalated specimens showed intermediate performance, with localised vanadate oxide deposits confirming active inhibitor release. PDP analysis confirmed that neither inhibitor system suppressed cathodic activity at Fe--Mn intermetallic sites, but both reduced the anodic dissolution rate of the aluminium matrix. The overall corrosion protection performance of LDH-2 remains below the target level, attributed primarily to the persistence of Fe--Mn intermetallic particles on the chemically pre-treated surface, which are not effectively passivated by either \ce{NaVO3} or MBT under the conditions investigated.
+Corrosion performance evaluation was conducted in two distinct batches. The first batch (LDH-1), based on the industrial pre-treatment with a \qty{1}{\hour} LDH growth time, yielded unsatisfactory corrosion protection. The uncoated control specimen outperformed all vanadate-intercalated LDH specimens, a counterintuitive result attributed to the synergistic effect of aggressive industrial etching and subsequent matrix dissolution, which exposed subsurface intermetallic particles and initiated severe pitting that the inhibitor loading was insufficient to suppress. 
 
-Finally, a water-based polyurethane topcoat was successfully applied to both planar and geometrically complex specimens via anodic electrodeposition. Optical inspection confirmed uniform and continuous film formation across all substrate geometries, and cross-cut testing confirmed good interfacial adhesion between the polyurethane topcoat and the underlying LDH conversion coating, demonstrating the feasibility of the complete multilayer system on industrially representative complex geometries.
+The second batch (LDH-2), employing the milder chemical pre-treatment with an extended \qty{3}{\hour} LDH growth time, demonstrated a clear improvement. MBT-intercalated specimens exhibited the best corrosion protection, with a low-frequency impedance modulus approximately one order of magnitude higher than the control at \qty{1}{\hour} and substantially elevated $R_{\text{ct}}$ values at early immersion times. \ce{NaVO3}-intercalated specimens showed intermediate performance, with localised vanadate oxide deposits confirming active inhibitor release. PDP analysis confirmed that neither inhibitor system effectively suppressed the cathodic activity at Fe--Mn intermetallic sites; however, both significantly reduced the anodic dissolution rate of the aluminium matrix. Ultimately, the long-term corrosion protection performance of the LDH-2 system remains below the ideal target level, primarily due to the persistence of Fe--Mn intermetallic particles on the chemically pre-treated surface, which are not effectively passivated by either \ce{NaVO3} or MBT under the conditions investigated.
+
+Finally, a water-based polyurethane topcoat was successfully applied to both planar and complex-geometry specimens via anodic electrodeposition. Optical inspection confirmed uniform and continuous film formation across all substrate geometries. Furthermore, the complete absence of delamination observed during the metallographic preparation of the cross-sections for SEM-EDS analysis demonstrated robust interfacial adhesion between the polyurethane topcoat and the underlying LDH conversion coating, confirming the practical feasibility of the complete multilayer system on industrially representative complex geometries. 
+
+%% Probabilty after results from SEM-EDS we'll have more to write about in conclusion
 
 \section{Future Work}
 
-Several directions are identified for future investigation to address the limitations of the present work and extend its findings:
+Several directions are identified for future investigation. The primary limitation is the inability of \ce{NaVO3} and MBT to suppress Fe--Mn intermetallic activity; future work should investigate alternative inhibitor systems such as cerium-based compounds or benzimidazole derivatives, either as standalone intercalants or in synergistic combinations. The dissolution of ZnAl--LDH by thiol-containing inhibitors also suggests exploring alternative host compositions (e.g., MgAl--LDH) or surface adsorption strategies.
 
-\begin{itemize}
+The trade-off between IMP removal efficiency and subsurface exposure requires investigation of milder pre-treatment formulations and optimisation of LDH synthesis parameters (temperature, time, concentration, pH) to maximise inhibitor loading while minimising substrate attack. Long-term durability assessment via accelerated corrosion testing (neutral salt spray, cyclic testing) combined with localised electrochemical characterisation (SVET, SECM) would provide comprehensive performance validation and mechanistic insights.
 
-    \item \textbf{Inhibitor systems targeting Fe--Mn intermetallics:} The primary limitation identified in this work is the inability of \ce{NaVO3} and MBT to suppress the cathodic activity of Fe--Mn intermetallic particles, which are the dominant cathodic sites in AC46000. Future work should investigate inhibitor systems with demonstrated efficacy against Fe-rich phases, such as cerium-based compounds or benzimidazole derivatives, either as standalone intercalants or in synergistic combination with vanadate.
-
-    \item \textbf{Alternative pre-treatment strategies:} The results demonstrated a fundamental trade-off between IMP removal efficiency and subsurface IMP exposure during LDH synthesis. Future work should investigate milder or more selective pre-treatment formulations capable of removing surface IMPs without inducing deep matrix dissolution, as well as the optimisation of LDH synthesis conditions to minimise the extent of matrix dissolution required for film formation.
-
-    \item \textbf{Optimisation of LDH synthesis parameters:} The influence of synthesis temperature, immersion time, solution concentration, and pH on LDH film density, crystallinity, and coverage homogeneity was not systematically investigated in this work. A parametric study of these variables could identify conditions that maximise inhibitor loading while minimising substrate attack, particularly over Si eutectic phases.
-
-    \item \textbf{Alternative thiol-based inhibitors:} The dissolution of LDH by MBT and L-cysteine, attributed to thiol-mediated zinc chelation, suggests that direct intercalation of thiol-containing inhibitors into ZnAl--LDH is not straightforward. Future work could explore alternative LDH host compositions less susceptible to thiol chelation, such as MgAl--LDH or CaAl--LDH, or investigate surface adsorption of MBT onto pre-formed LDH films as an alternative to interlayer intercalation.
-
-    \item \textbf{Long-term and accelerated corrosion testing:} The corrosion performance evaluation in this work was limited to \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}. Future work should include accelerated corrosion tests such as neutral salt spray (NSS) and cyclic corrosion testing to assess the long-term durability of the multilayer system under conditions more representative of the aerospace service environment.
-
-    \item \textbf{Adhesion and mechanical performance of the multilayer system:} While cross-cut testing confirmed good initial adhesion of the polyurethane topcoat, a more comprehensive assessment of the mechanical performance of the complete multilayer system --- including pull-off adhesion strength, flexibility, and resistance to impact and abrasion --- is required to validate its suitability for aerospace applications.
-
-    \item \textbf{Localised electrochemical characterisation:} The use of scanning vibrating electrode technique (SVET) or scanning electrochemical microscopy (SECM) would enable spatially resolved mapping of anodic and cathodic activity at the alloy surface, providing direct experimental evidence of the inhibitor's action at specific IMP sites and complementing the macroscopic EIS and PDP data obtained in this work.
-
-    \item \textbf{Benchmarking against established systems:} A direct performance comparison between the optimised LDH-based multilayer system and established reference coatings, such as TCP conversion coatings or chromate-inhibited primers, under identical test conditions would provide a quantitative assessment of the system's competitiveness and identify the performance gap that remains to be closed.
-
-\end{itemize}
+Finally, comprehensive mechanical testing (pull-off adhesion, flexibility, impact resistance) and direct benchmarking against established reference coatings (TCP conversion coatings, chromate primers) under identical test conditions are required to fully validate the industrial applicability and competitiveness of the developed multilayer system.
 
 
 
