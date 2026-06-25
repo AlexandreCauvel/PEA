@@ -576,6 +576,12 @@ To overcome the reliance on manual initial guesses while retaining the statistic
 
 In the proposed workflow, the user supplies only physically motivated parameter bounds for each circuit element. To accommodate the vast scale disparity between components (e.g., kilohm resistances versus microfarad capacitances), the DE optimisation is performed in logarithmic space, ensuring each order of magnitude is weighted uniformly. Once the DE stage yields a robust global estimate, the parameter vector is refined using a Nelder--Mead simplex algorithm to navigate local roughness without requiring derivatives. Finally, this refined vector serves as the initial condition for the Levenberg--Marquardt local optimiser within \texttt{impedance.py}, with \texttt{weight\_by\_modulus} activated. This final stage yields statistically meaningful parameter estimates alongside their associated confidence intervals.
 
+To accurately deconvolute the electrochemical response, a two-time constant (2RC) equivalent circuit model was selected, comprising the solution resistance ($R_s$) in series with two parallel RC elements. The outer RC element represents the barrier properties of the surface film, encompassing both the native aluminium oxide and the LDH (or its amorphous remnant), characterised by film resistance ($R_{\text{film}}$) and capacitance ($C_{\text{film}}$). The inner RC element corresponds to the charge transfer processes at the metal-electrolyte interface, defined by the charge transfer resistance ($R_{\text{ct}}$) and double-layer capacitance ($C_{\text{dl}}$).
+
+While a more comprehensive model incorporating a Warburg diffusion element and additional time constants would theoretically capture the entire frequency spectrum, such an approach requires data extending to significantly lower frequencies to properly resolve the diffusion tail. Furthermore, a fully resolved four-RC model for this specific system would need to account for the charge transfer, the barrier film, a fourth time constant associated with the specific electrochemical response of the intermetallic particles or the highly porous outer regions of the LDH, and the low-frequency diffusion process. Because the experimental frequency range did not extend low enough to isolate these distinct low-frequency phenomena, the lowest frequency data points were excluded from the fitting range to prevent mass transport interference. Additionally, the highest frequency data points were also excluded to eliminate measurement artifacts and inductive loops that could distort the resolution of the primary capacitive loops. Consequently, by utilising a 2RC model fitted over a restricted frequency window, the extracted $C_{\text{dl}}$ values represent an effective capacitance. Therefore, exceptionally high $C_{\text{dl}}$ values may still partially reflect the lumped capacitive contributions of these unresolved low-frequency processes, in addition to indicating extensive water uptake and active corrosion.
+
+\newpage
+
 \section{Surface Pre-treatments}
 \label{sec:pretreatments}
 
@@ -655,7 +661,7 @@ The initial phase of this study involved the electrochemical pre-selection of ca
 
 \begin{figure}[H]
    \centering
-   \begin{subfigure}[b]{0.9\textwidth}
+   \begin{subfigure}[b]{0.95\textwidth}
        \includegraphics[width=\textwidth]{figs/bode_1H_inhibitors.pdf}
        \caption{\qty{1}{\hour}}
        \label{fig:inhibitors_1h_bode}
@@ -663,7 +669,7 @@ The initial phase of this study involved the electrochemical pre-selection of ca
 
    \vspace{0.5cm}
 
-   \begin{subfigure}[b]{0.9\textwidth}
+   \begin{subfigure}[b]{0.95\textwidth}
        \includegraphics[width=\textwidth]{figs/bode_168H_inhibitors.pdf}
        \caption{\qty{168}{\hour}}
        \label{fig:inhibitors_168h_bode}
@@ -681,7 +687,7 @@ As observed in the Nyquist plots (Figures~\ref{fig:inhibitors_1h_nyquist} and~\r
        \caption{\qty{1}{\hour}}
        \label{fig:inhibitors_1h_nyquist}
    \end{subfigure}
-   \begin{subfigure}[b]{0.4\textwidth}
+   \begin{subfigure}[b]{0.407\textwidth}
        \includegraphics[width=\textwidth]{figs/nyquist_168H_inhibitors.pdf}
        \caption{\qty{168}{\hour}}
        \label{fig:inhibitors_168h_nyquist}
@@ -699,9 +705,9 @@ To quantify these observations, spectral fitting using the automated framework d
     \label{fig:Rct_Cdl_evolution_inhibitors}
 \end{figure}
 
-The extracted parameters confirm the trends identified from the qualitative inspection of the spectra. MBT, \ce{NaVO3}, and L-cysteine all attained $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm\centi\meter\squared}, substantially higher than those of the remaining systems. The progressive increase in $R_{\text{ct}}$ with immersion time for these three inhibitors further supports the hypothesis of active and durable film formation at the electrode surface. Sodium molybdate, by contrast, performed comparably to the blank \ce{NaCl} solution throughout the entire immersion period, with $R_{\text{ct}}$ values consistently in the range of \qtyrange{3}{4}{\kilo\ohm\centi\meter\squared}. This near-complete absence of inhibition under open-circuit conditions is consistent with the known mechanism of molybdate, which requires anodic polarisation to form a protective surface film and therefore provides negligible protection in the context of free immersion in dilute \ce{NaCl} \cite{Sastri2007, Vargel2020}. BTA and 8-HQ exhibited intermediate behaviour, with $R_{\text{ct}}$ values ranging from \qty{10}{\kilo\ohm\centi\meter\squared} to \qty{30}{\kilo\ohm\centi\meter\squared}, significantly lower than the three best-performing inhibitors.
+The extracted parameters confirm the trends identified from the qualitative inspection of the spectra. MBT, \ce{NaVO3}, and L-cysteine all attained $R_{\text{ct}}$ values in excess of \qty{100}{\kilo\ohm\centi\meter\squared}, substantially higher than those of the remaining systems. The progressive increase in $R_{\text{ct}}$ with immersion time for these three inhibitors further supports the hypothesis of active and durable film formation at the electrode surface. Sodium molybdate, by contrast, performed comparably to the blank \ce{NaCl} solution throughout the entire immersion period, with $R_{\text{ct}}$ values consistently in the range of \qtyrange{3}{4}{\kilo\ohm\centi\meter\squared}. BTA and 8-HQ exhibited intermediate behaviour, with $R_{\text{ct}}$ values ranging from \qty{10}{\kilo\ohm\centi\meter\squared} to \qty{30}{\kilo\ohm\centi\meter\squared}, significantly lower than the three best-performing inhibitors.
 
-The double-layer capacitance data further refine these conclusions. Sodium molybdate again showed behaviour closely resembling that of the blank \ce{NaCl} system, with $C_{\text{dl}}$ values approaching \qty{100}{\micro\farad\per\centi\meter\squared}, consistent with an essentially unprotected electrode surface. Although BTA and 8-HQ displayed relatively low initial $C_{\text{dl}}$ values, suggesting that some degree of initial adsorption does occur, they increased rapidly with immersion time, eventually converging towards values comparable to the uninhibited system. Notably, a capacitance variation exceeding an order of magnitude may indicate that the system is no longer probing the same process, potentially shifting from the true double-layer capacitance to a much more reactive regime influenced by mass transport control. This behaviour indicates that while both inhibitors adsorb at the electrode surface in the early stages of immersion, they fail to maintain a stable protective film over time. The progressive desorption or displacement of the inhibitor allows water molecules and electrolyte ions to repopulate the double layer; given the substantially higher dielectric constant of water ($\varepsilon_r \approx 80$) relative to that of adsorbed organic species, this ingress drives $C_{\text{dl}}$ towards values characteristic of an unprotected surface \cite{Orazem2008, Sastri2007}. In contrast, MBT, L-cysteine, and \ce{NaVO3} maintained $C_{\text{dl}}$ values on the order of \qty{10}{\micro\farad\per\centi\meter\squared} throughout the experiment, consistent with stable inhibitor adsorption, the sustained exclusion of water from the double layer region, and a durable reduction in interfacial reactivity.
+The double-layer capacitance data further refine these conclusions. Sodium molybdate again showed behaviour closely resembling that of the blank \ce{NaCl} system, with $C_{\text{dl}}$ values approaching \qty{100}{\micro\farad\per\centi\meter\squared}, consistent with an essentially unprotected electrode surface. Although BTA and 8-HQ displayed relatively low initial $C_{\text{dl}}$ values, suggesting that some degree of initial adsorption does occur, they increased rapidly with immersion time, eventually converging towards values comparable to the uninhibited system. Notably, a capacitance variation exceeding an order of magnitude may indicate that the system is no longer probing the same process, potentially shifting from the true double-layer capacitance to a much more reactive regime influenced by mass transport control. This behaviour indicates that while both inhibitors adsorb at the electrode surface in the early stages of immersion, they fail to maintain a stable protective film over time. The progressive desorption or displacement of the inhibitor allows water molecules and electrolyte ions to repopulate the double layer; given the substantially higher dielectric constant of water ($\varepsilon_r \approx 80$) relative to that of adsorbed organic species, this ingress drives $C_{\text{dl}}$ towards values characteristic of an unprotected surface \cite{Orazem2008, Sastri2007}. In contrast, MBT, L-cysteine, and \ce{NaVO3} maintained $C_{\text{dl}}$ values on the order of \qty{10}{\micro\farad\per\centi\meter\squared} throughout the experiment, consistent with stable inhibitor adsorption, the sustained exclusion of water from the double layer region, and a durable reduction in interfacial reactivity. Additionally, it is important to acknowledge that because the EIS spectra were uniformly fitted using a 2RC model over a restricted frequency window, the exceptionally high $C_{\text{dl}}$ values observed for the poorly protected systems represent an effective capacitance. These elevated values may be partially inflated by the lumped contributions of unresolved low-frequency mass transport processes, in addition to reflecting extensive water uptake and active corrosion.
 
 Using Equation~\ref{eq:IE}, the inhibition efficiency ($\eta$) of the different inhibitors was calculated; the results are summarised in Table~\ref{tab:IE}.
 
@@ -710,16 +716,11 @@ Using Equation~\ref{eq:IE}, the inhibition efficiency ($\eta$) of the different 
     \small
     \caption{Inhibition efficiency ($\eta$) of the evaluated chemical compounds, calculated from the extracted $R_{\text{ct}}$ values.}
     \label{tab:IE}
-    \begin{tabular}{@{} l c @{}}
+    \begin{tabular}{@{} l c c c c c c @{}}
         \toprule
-        Inhibitor & Efficiency (\%) \\
+        Inhibitor & \ce{NaVO3} & L-cysteine & MBT & BTA & 8-HQ & \ce{Na2MoO4} \\
         \midrule
-        \ce{NaVO3}    & $98.73$ \\
-        L-cysteine    & $96.93$ \\
-        MBT           & $96.27$ \\
-        BTA           & $86.55$ \\
-        8-HQ          & $76.07$ \\
-        Sodium molybdate & $1.76$  \\
+        Efficiency (\%) & $98.73$ & $96.93$ & $96.27$ & $86.55$ & $76.07$ & $1.76$ \\
         \bottomrule
     \end{tabular}
 \end{table}
@@ -951,7 +952,7 @@ To determine which pre-treatment yielded the most favourable conditions for LDH 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/XRD_LDH.pdf} 
+    \includegraphics[width=0.95\textwidth]{figs/XRD_LDH.pdf} 
     \caption{XRD patterns of LDH films grown on specimens subjected to the four substrate conditions. Reference patterns for the aluminium matrix and silicon eutectic phases are included for comparison. The inset shows the low-angle region highlighting the (003) and (006) basal reflections characteristic of the ZnAl--LDH phase.}
     \label{fig:xrd_ldh}
 \end{figure}
@@ -960,7 +961,7 @@ The XRD patterns confirm successful LDH formation on all four substrate conditio
 
 The basal spacing ($d_{003}$) and interlayer gallery height were determined from the $2\theta$ positions of the (003) reflection using Bragg's law, assuming a brucite layer thickness of \qty{0.477}{\nano\meter} \cite{Zhou2017}. The results are summarised in Table~\ref{tab:xrd_pretreatments}.
 
-\begin{table}[htbp]
+\begin{table}[H]
     \centering
     \small 
     \caption{Structural parameters derived from XRD analysis of LDH films grown on specimens subjected to different pre-treatment conditions.}
@@ -1058,7 +1059,7 @@ Because both L-cysteine and MBT contain a thiol functional group, it was anticip
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.8\textwidth]{figs/XRD_intercalation.pdf} 
+    \includegraphics[width=0.90\textwidth]{figs/XRD_intercalation.pdf} 
     \caption{XRD patterns of LDH films in the nitrate form (control), following \ce{NaVO3} intercalation, and following the MBT intercalation attempt, each presented before and after immersion in \qty{0.05}{\molar} \ce{NaCl}.}
     \label{fig:xrd_intercalation}
 \end{figure}
@@ -1079,31 +1080,14 @@ Given the consistent structural failure observed for L-cysteine in parallel stud
 \section{Corrosion Performance Analysis}
 \label{sec:results_corrosion_performance}
 
-The corrosion performance of the developed LDH-based coatings was evaluated through an iterative approach comprising two distinct experimental batches. The initial phase (LDH-1) evaluated the vanadate-intercalated system synthesized under the industrial pre-treatment conditions, which ultimately underperformed relative to the uncoated alloy. Driven by these limitations, the synthesis protocol was strategically revised. The subsequent phase (LDH-2) evaluated the impact of a milder chemical pre-treatment and extended synthesis duration, comparing the performance of MBT-intercalated and \ce{NaVO3}-intercalated systems. The following sections detail the electrochemical and macroscopic degradation trends observed across both batches, highlighting the mechanistic differences in their corrosion protection capabilities and the critical influence of the underlying substrate microstructure.
+The corrosion performance of the developed LDH-based coatings was evaluated through an iterative approach comprising two distinct experimental batches. The initial phase (LDH-1) evaluated the vanadate-intercalated system synthesized under the industrial pre-treatment conditions, which ultimately underperformed relative to the uncoated alloy. Driven by these limitations, the synthesis protocol was strategically revised. The subsequent phase (LDH-2) evaluated the impact of a milder chemical pre-treatment and extended synthesis duration, comparing the performance of MBT-intercalated and \ce{NaVO3}-intercalated systems. The following sections detail the electrochemical and macroscopic degradation trends observed across both batches.
+
+Before discussing the specific trends, it is important to establish a methodological caveat regarding the extracted double-layer capacitance ($C_{\text{dl}}$) values. Because the EIS spectra were uniformly fitted using a 2RC model over a restricted frequency window (excluding low-frequency diffusion and high-frequency artifacts), the extracted $C_{\text{dl}}$ represents an effective capacitance. Consequently, whenever $C_{\text{dl}}$ values exceed typical double-layer magnitudes (e.g., $>$\qty{30}{\micro\farad\per\square\centi\meter}), these elevated values should be interpreted as a combination of true electrochemically active area expansion (due to extensive water uptake and active corrosion) and the lumped capacitive contributions of unresolved low-frequency mass transport processes.
 
 \subsection{LDH-1: Industrial Pre-treatment, 1 hour growth}
 \label{subsec:ldh1}
 
 The Bode and Nyquist spectra for the LDH-1 batch are presented in Figures~\ref{fig:ldh1_bode} and~\ref{fig:ldh1_nyquist}. 
-
-\begin{figure}[!htbp]
-   \centering
-   \begin{subfigure}[b]{0.9\textwidth}
-       \includegraphics[width=\textwidth]{figs/bode_1H_LDH_1.pdf}
-       \caption{\qty{1}{\hour} immersion.}
-       \label{fig:ldh1_1h_bode}
-   \end{subfigure}
-
-   \vspace{0.3cm}
-
-   \begin{subfigure}[b]{0.9\textwidth}
-       \includegraphics[width=\textwidth]{figs/bode_168H_LDH_1.pdf}
-       \caption{\qty{168}{\hour} immersion.}
-       \label{fig:ldh1_168h_bode}
-   \end{subfigure}
-   \caption{Bode spectra for LDH-1 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
-   \label{fig:ldh1_bode}
-\end{figure}
 
 \begin{figure}[H]
    \centering
@@ -1119,6 +1103,25 @@ The Bode and Nyquist spectra for the LDH-1 batch are presented in Figures~\ref{f
    \end{subfigure}   
    \caption{Nyquist spectra for LDH-1 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
    \label{fig:ldh1_nyquist}
+\end{figure}
+
+\begin{figure}[H]
+   \centering
+   \begin{subfigure}[b]{0.95\textwidth}
+       \includegraphics[width=\textwidth]{figs/bode_1H_LDH_1.pdf}
+       \caption{\qty{1}{\hour} immersion.}
+       \label{fig:ldh1_1h_bode}
+   \end{subfigure}
+
+   \vspace{0.3cm}
+
+   \begin{subfigure}[b]{0.95\textwidth}
+       \includegraphics[width=\textwidth]{figs/bode_168H_LDH_1.pdf}
+       \caption{\qty{168}{\hour} immersion.}
+       \label{fig:ldh1_168h_bode}
+   \end{subfigure}
+   \caption{Bode spectra for LDH-1 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+   \label{fig:ldh1_bode}
 \end{figure}
 
 From the earliest immersion time, the low-frequency impedance modulus ($|Z|_{f \to 0}$) of the uncoated control specimen exceeds that of all vanadate-intercalated LDH specimens. This trend is maintained throughout the \qty{168}{\hour} immersion period, indicating that the LDH-coated specimens do not provide a net improvement in barrier performance relative to the uncoated reference under these specific conditions.
@@ -1200,26 +1203,6 @@ In response to the unsatisfactory performance of the LDH-1 batch, the surface pr
 
 The Bode and Nyquist spectra for the LDH-2 batch are presented in Figures~\ref{fig:ldh2_bode} and~\ref{fig:ldh2_nyquist}.
 
-
-\begin{figure}[H]
-   \centering
-   \begin{subfigure}[b]{0.9\textwidth}
-       \includegraphics[width=\textwidth]{figs/bode_1H_LDH_2.pdf}
-       \caption{\qty{1}{\hour} immersion.}
-       \label{fig:ldh2_1h_bode}
-   \end{subfigure}
-
-   \vspace{0.3cm}
-
-   \begin{subfigure}[b]{0.9\textwidth}
-       \includegraphics[width=\textwidth]{figs/bode_168H_LDH_2.pdf}
-       \caption{\qty{168}{\hour} immersion.}
-       \label{fig:ldh2_168h_bode}
-   \end{subfigure}
-   \caption{Bode spectra for LDH-2 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
-   \label{fig:ldh2_bode}
-\end{figure}
-
 \begin{figure}[H]
    \centering
    \begin{subfigure}[b]{0.4\textwidth}
@@ -1236,21 +1219,39 @@ The Bode and Nyquist spectra for the LDH-2 batch are presented in Figures~\ref{f
    \label{fig:ldh2_nyquist}
 \end{figure}
 
+\begin{figure}[H]
+   \centering
+   \begin{subfigure}[b]{0.95\textwidth}
+       \includegraphics[width=\textwidth]{figs/bode_1H_LDH_2.pdf}
+       \caption{\qty{1}{\hour} immersion.}
+       \label{fig:ldh2_1h_bode}
+   \end{subfigure}
+
+   \vspace{0.3cm}
+
+   \begin{subfigure}[b]{0.95\textwidth}
+       \includegraphics[width=\textwidth]{figs/bode_168H_LDH_2.pdf}
+       \caption{\qty{168}{\hour} immersion.}
+       \label{fig:ldh2_168h_bode}
+   \end{subfigure}
+   \caption{Bode spectra for LDH-2 specimens at \qty{1}{\hour} and \qty{168}{\hour} of immersion in \qty{0.05}{\molar} \ce{NaCl}.}
+   \label{fig:ldh2_bode}
+\end{figure}
+
 At \qty{1}{\hour} of immersion, the \ce{NaVO3}-intercalated specimens display a low-frequency impedance response comparable to that of the uncoated control. In stark contrast, the MBT-intercalated specimens exhibit a markedly superior barrier response, with a low-frequency impedance modulus ($|Z|_{f \to 0}$) approximately one order of magnitude higher than both the control and the vanadate systems. By \qty{168}{\hour}, however, the MBT systems show a progressive decline in impedance, converging towards values similar to those of the \ce{NaVO3} and control specimens, indicating rapid depletion of mobile inhibitive species due to uncontrolled desorption and reprecipitation, rather than controlled release.
 
-The evolution of the extracted $R_{\text{ct}}$ and $C_{\text{dl}}$ parameters is detailed in Figure~\ref{fig:Rct_Cdl_evolution_ldh2}. 
+The evolution of the extracted $R_{\text{ct}}$ and $C_{\text{dl}}$ parameters is detailed in Figure~\ref{fig:Rct_Cdl_evolution_ldh2}. The MBT-intercalated specimens exhibit substantially elevated $R_{\text{ct}}$ values at early immersion times, consistent with the high initial impedance. However, after approximately \qty{24}{\hour}, their $R_{\text{ct}}$ values decrease sharply to levels comparable to the \ce{NaVO3} and control specimens, confirming the unstructured remnant film causes rapid inhibitor exhaustion. Notably, all LDH-2 coated systems retain a modest but consistent advantage over the control at \qty{168}{\hour}: while the control exhibits an $R_{\text{ct}}$ below \qty{6}{\kilo\ohm\centi\meter\squared}, all inhibitor-loaded specimens maintain values exceeding \qty{10}{\kilo\ohm\centi\meter\squared}. 
 
 
-\begin{figure}[H]
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{figs/Rct_Cdl_evolution_LDH2.pdf} 
     \caption{Evolution of the extracted charge-transfer resistance ($R_{\text{ct}}$) and double-layer capacitance ($C_{\text{dl}}$) as a function of immersion time for LDH-2 specimens in \qty{0.05}{\molar} \ce{NaCl}.}
     \label{fig:Rct_Cdl_evolution_ldh2}
 \end{figure}
 
-The MBT-intercalated specimens exhibit substantially elevated $R_{\text{ct}}$ values at early immersion times, consistent with the high initial impedance. However, after approximately \qty{24}{\hour}, their $R_{\text{ct}}$ values decrease sharply to levels comparable to the \ce{NaVO3} and control specimens, confirming the unstructured remnant film causes rapid inhibitor exhaustion. Notably, all LDH-2 coated systems retain a modest but consistent advantage over the control at \qty{168}{\hour}: while the control exhibits an $R_{\text{ct}}$ below \qty{6}{\kilo\ohm\centi\meter\squared}, all inhibitor-loaded specimens maintain values exceeding \qty{10}{\kilo\ohm\centi\meter\squared}. 
-
-With respect to $C_{\text{dl}}$, both vanadate-intercalated specimens consistently display higher capacitance than the control throughout the immersion period, stabilising in the vicinity of \qty{90}{\micro\farad\per\square\centi\meter}. This elevated capacitance is indicative of a larger effective electrochemically active area, likely resulting from extensive water uptake and the rough, porous nature of the degrading LDH film. In contrast, both MBT-intercalated specimens exhibit lower $C_{\text{dl}}$ values than the control throughout the experiment. Although they display a gradual increasing trend---suggesting that the capacitance may eventually surpass that of the control beyond \qty{168}{\hour}---their sustained lower values confirm the superior initial barrier properties of the MBT-treated surface.
+With respect to $C_{\text{dl}}$, both vanadate-intercalated specimens consistently display higher capacitance than the control throughout the immersion period, stabilising in the vicinity of \qty{90}{\micro\farad\per\square\centi\meter}. This elevated capacitance is indicative of a larger effective electrochemically active area, likely resulting from extensive water uptake and the rough, porous nature of the degrading LDH film. In contrast, both MBT-intercalated specimens exhibit lower $C_{\text{dl}}$ values than the control throughout the experiment. Although they display a gradual increasing trend, suggesting that the capacitance may eventually surpass that of the control beyond \qty{168}{\hour}, their sustained lower values confirm the superior initial barrier properties of the MBT-treated surface.
 
 Optical inspection of the LDH-2 specimens across three stages of immersion (Figure~\ref{fig:optical_ldh2}) provides visual confirmation of the electrochemical trends.
 
@@ -1366,8 +1367,6 @@ Consequently, both \ce{NaVO3} and MBT act primarily as anodic inhibitors, retard
 
 While the LDH-2 batch and its associated inhibitors represent a clear improvement over the bare alloy, the overall long-term corrosion protection performance remains below the ideal target level. This limitation is attributed primarily to the persistence of Fe--Mn intermetallic particles on the chemically pre-treated surface. Unlike the Cu-rich intermetallics found in wrought alloys like AA2024, which are the primary targets of vanadate and MBT inhibitors \cite{Tedim2011, Zhang2015}, the Fe--Mn IMPs characteristic of the AC46000 cast alloy are not effectively passivated by either inhibitor system. Their continued, unhindered cathodic activity sustains localised micro-galvanic corrosion that the inhibitor loading achievable within the LDH galleries is ultimately insufficient to fully suppress.
 
-\newpage
-
 \section{Polyurethane Topcoat Application on Planar and Complex Geometries}
 \label{sec:results_topcoat}
 
@@ -1439,7 +1438,7 @@ To provide a comprehensive overview of the multilayer architecture, Figure~\ref{
 
 Complementing these overview micrographs, the corresponding EDS elemental maps are presented in Figures~\ref{fig:sem_topcoating_MBT} to~\ref{fig:sem_topcoating_V}. The elemental mapping reveals the distribution of the constituent elements across the multilayer architecture, specifically evaluating the degree of interpenetration between the organic polyurethane matrix and the inorganic LDH film at the interface.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
    \centering
    \begin{subfigure}[b]{0.18\textwidth}
        \includegraphics[width=\textwidth]{figs/topcoating_sem/MBT/SE_SE.png}
@@ -1504,7 +1503,7 @@ Complementing these overview micrographs, the corresponding EDS elemental maps a
     \label{fig:sem_topcoating_MBT}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
    \centering
    \begin{subfigure}[b]{0.19\textwidth}
        \includegraphics[width=\textwidth]{figs/topcoating_sem/V/SE_SE.png}
