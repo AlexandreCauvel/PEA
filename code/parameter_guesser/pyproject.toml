@@ -7,5 +7,6 @@ requires-python = ">=3.12"
 dependencies = [
     "gamry-parser>=0.4.6",
     "impedance>=1.7.1",
+    "ipyfilechooser>=0.6.0",
     "schemdraw>=0.22",
 ]
